@@ -23,7 +23,7 @@ for k,(ic,h,p,im,pos) in enumerate(SV):
     on=' on' if k==0 else ''
     alt=h.replace('&amp;','and')
     tabs+=f'<button class="tb{on}" data-k="{k}" role="tab"><span class="ti">{IC[ic]}</span><span class="tt">{h}</span><span class="ar">→</span></button>'
-    media=(f'<div class="pm cut"><div class="bgc"></div><img src="img/parakram-hero-portrait.webp" alt="{alt}" width="800" height="620" loading="lazy"></div>' if im=='hero'
+    media=(f'<div class="pm cut"><div class="bgc"></div><img src="img/parakram-hero-tall.webp" alt="{alt}" width="800" height="800" loading="lazy"></div>' if im=='hero'
       else f'<div class="pm"><img src="img/parakram-{im}.webp" alt="{alt}" style="object-position:{pos}" loading="lazy"></div>')
     panels+=f'<article class="pn{on}" data-k="{k}">{media}<div class="pb"><div class="num">0{k+1}<small>/ 08</small></div><h3>{h}</h3><p>{p}</p><ul><li>Trained &amp; verified personnel</li><li>Available 24/7</li><li>Customized to your site</li></ul><a class="btn btn-g" href="#planner">Plan this service →</a></div></article>'
     mega+=f'<a href="#services" data-go="{k}"><i>{IC[ic]}</i>{h}</a>'
@@ -38,6 +38,7 @@ html=r'''<!DOCTYPE html>
 <meta name="description" content="Parakram Security India Pvt. Ltd. Manned, armed, industrial, commercial, residential, hospital, educational and bank &amp; ATM security. 9+ years, 1,500+ trained professionals, 24/7. Haridwar, Uttarakhand.">
 <meta name="theme-color" content="#050d3a">
 <link rel="canonical" href="https://parakram-website.vercel.app/"><meta property="og:site_name" content="Parakram Security India"><meta property="og:title" content="Parakram Security India | Your Safety Is Our Mission"><meta property="og:description" content="Professionally managed private security with trained, verified personnel, customized solutions, 24/7."><meta property="og:type" content="website"><meta property="og:url" content="https://parakram-website.vercel.app/"><meta property="og:image" content="https://parakram-website.vercel.app/og-image.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Parakram Security India | Your Safety Is Our Mission"><meta name="twitter:description" content="Manned, armed, industrial, commercial, residential, hospital, educational and bank &amp; ATM security. 24/7."><meta name="twitter:image" content="https://parakram-website.vercel.app/og-image.jpg">
+<script>try{if(!sessionStorage.getItem("intro")&&!matchMedia("(prefers-reduced-motion:reduce)").matches)document.documentElement.classList.add("intro")}catch(e){}</script>
 <link rel="icon" href="favicon.png" type="image/png"><link rel="apple-touch-icon" href="logo.png"><link rel="preload" as="image" href="img/parakram-hero-portrait.webp" type="image/webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
@@ -613,10 +614,10 @@ body .stat:last-child b{font-size:38px!important}
 @keyframes fadeIn{from{opacity:0}}
 @keyframes hxIn{from{opacity:0;transform:scale(1.035)}}
 @keyframes upIn{from{opacity:0;transform:translateY(26px)}}
-.util{animation:fadeIn .9s ease backwards}
-header{animation:hdrIn 1s cubic-bezier(.16,1,.3,1) .15s backwards}
-.hx{animation:hxIn 1.6s cubic-bezier(.16,1,.3,1) .1s backwards}
-.stats{animation:upIn 1s cubic-bezier(.16,1,.3,1) 1s backwards}
+html:not(.intro) .util{animation:fadeIn .9s ease backwards}
+html:not(.intro) header{animation:hdrIn 1s cubic-bezier(.16,1,.3,1) .15s backwards}
+html:not(.intro) .hx{animation:hxIn 1.6s cubic-bezier(.16,1,.3,1) .1s backwards}
+html:not(.intro) .stats{animation:upIn 1s cubic-bezier(.16,1,.3,1) 1s backwards}
 .cue{position:absolute;left:50%;bottom:20px;width:24px;height:38px;border:2px solid rgba(255,255,255,.5);border-radius:14px;transform:translateX(-50%);z-index:6;animation:fadeIn 1s ease 1.6s backwards;transition:border-color .3s}
 .cue:hover{border-color:var(--gold)}.cue i{position:absolute;left:50%;top:7px;width:3px;height:8px;margin-left:-1.5px;border-radius:2px;background:var(--gold);animation:cue 1.9s cubic-bezier(.4,0,.2,1) infinite}
 @keyframes cue{0%{transform:translateY(0);opacity:1}70%{transform:translateY(14px);opacity:0}100%{opacity:0}}
@@ -627,9 +628,39 @@ header{animation:hdrIn 1s cubic-bezier(.16,1,.3,1) .15s backwards}
 @media(max-width:980px){.cue{display:none}#nudge{left:12px;right:12px;width:auto;bottom:70px}}
 body.no #nudge{display:none}
 @media(prefers-reduced-motion:reduce){.util,header,.hx,.stats,.cue{animation:none}}
+
+/* ===== security intro ===== */
+#intro{position:fixed;inset:0;z-index:1000;display:none;place-items:center;cursor:pointer}
+html.intro{overflow:hidden}html.intro #intro{display:grid;animation:introFail .01s 6s forwards}@keyframes introFail{to{opacity:0;visibility:hidden}}
+#intro .ip{position:absolute;left:0;right:0;height:50.4%;background:#050d3a;transition:transform 1s cubic-bezier(.76,0,.24,1)}#intro .top{top:0}#intro .bot{bottom:0}
+#intro .igrid{position:absolute;inset:0;background:radial-gradient(600px 400px at 50% 45%,rgba(255,196,0,.14),transparent 70%),linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:auto,56px 56px,56px 56px;mask-image:radial-gradient(circle at 50% 45%,#000,transparent 75%);transition:opacity .5s}
+#intro.open .top{transform:translateY(-101%)}#intro.open .bot{transform:translateY(101%)}#intro.open .igrid,#intro.open .ic2,#intro.open .it,#intro.open .ibar,#intro.open .skip2{opacity:0;transition:opacity .45s}
+#intro .ic2{position:relative;width:150px;height:150px;margin-top:-70px;z-index:2}
+#intro .shd{position:absolute;left:-14px;top:-16px;width:calc(100% + 28px);height:calc(100% + 34px);overflow:visible}
+#intro .shd path{fill:none;stroke:#ffc400;stroke-width:1.4;stroke-dasharray:340;stroke-dashoffset:340;animation:idraw 1.15s cubic-bezier(.65,0,.35,1) .15s forwards;filter:drop-shadow(0 0 6px rgba(255,196,0,.6))}
+#intro .lg{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transform:scale(.86);animation:ilg .9s cubic-bezier(.16,1,.3,1) .8s forwards}
+#intro .scan{position:absolute;left:-14px;right:-14px;top:0;height:2px;background:linear-gradient(90deg,transparent,#ffc400,transparent);box-shadow:0 0 20px 5px rgba(255,196,0,.55);opacity:0;animation:iscan 1.1s ease-in-out 1.2s forwards}
+@keyframes idraw{to{stroke-dashoffset:0}}@keyframes ilg{to{opacity:1;transform:none}}@keyframes iscan{0%{top:-4%;opacity:1}90%{opacity:1}100%{top:104%;opacity:0}}
+#intro .it{position:absolute;left:0;right:0;top:calc(50% + 62px);text-align:center;color:#fff;z-index:2}
+#intro .it b{display:block;font:800 30px Manrope;letter-spacing:.34em;padding-left:.34em;opacity:0;animation:itx .9s cubic-bezier(.16,1,.3,1) 1.15s forwards}
+#intro .it span{display:block;font:600 11px Inter;letter-spacing:.3em;color:#aab0d6;margin-top:8px;opacity:0;animation:itx .9s cubic-bezier(.16,1,.3,1) 1.35s forwards}
+#intro .it em{display:block;font:500 14px Inter;font-style:normal;color:#ffc400;margin-top:18px;opacity:0;animation:itx .9s cubic-bezier(.16,1,.3,1) 1.65s forwards}
+@keyframes itx{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+#intro .ibar{position:absolute;left:50%;bottom:11%;width:190px;height:2px;background:rgba(255,255,255,.16);transform:translateX(-50%);z-index:2}
+#intro .ibar i{position:absolute;inset:0;background:#ffc400;transform-origin:left;transform:scaleX(0);animation:ibar 2.2s cubic-bezier(.4,0,.2,1) forwards}@keyframes ibar{to{transform:scaleX(1)}}
+#intro .skip2{position:absolute;right:22px;bottom:22px;z-index:3;background:none;border:1px solid rgba(255,255,255,.3);color:#fff;font:600 11.5px Inter;letter-spacing:.16em;text-transform:uppercase;padding:9px 16px;border-radius:999px;cursor:pointer;opacity:.75;transition:.25s}#intro .skip2:hover{opacity:1;border-color:#ffc400;color:#ffc400}
+@media(max-width:600px){#intro .ic2{width:120px;height:120px}#intro .it{top:calc(50% + 46px)}#intro .it b{font-size:23px}#intro .it span{font-size:9.5px}}
+/* armed panel: portrait fills the whole frame */
+.pm.cut{align-items:stretch!important}
+.pm.cut img{position:absolute!important;inset:0;width:100%!important;height:100%!important;object-fit:cover!important;object-position:28% 0!important}
+@media(max-width:980px){.pm.cut img{object-position:50% 0!important}}
 </style>
 </head>
 <body>
+<div id="intro" aria-hidden="true"><div class="ip top"></div><div class="ip bot"></div><div class="igrid"></div>
+<div class="ic2"><svg class="shd" viewBox="0 0 100 120"><path d="M50 4 L94 19 V58 C94 89 73 109 50 117 C27 109 6 89 6 58 V19 Z"/></svg><img class="lg" src="logo.png" alt="" width="150" height="150"><div class="scan"></div></div>
+<div class="it"><b>PARAKRAM</b><span>SECURITY INDIA PVT. LTD.</span><em>Your Safety Is Our Mission</em></div>
+<div class="ibar"><i></i></div><button class="skip2" type="button">Skip</button></div>
 <a class="skip" href="#main">Skip to content</a>
 <div id="pg"></div>
 <div id="toast" role="status" aria-live="polite"></div>
@@ -883,6 +914,11 @@ if(!mq('(pointer:coarse)'))$('.stat,.vals div,.covt li').forEach(c=>c.addEventLi
 const hide=()=>{n.classList.remove('on');try{sessionStorage.setItem('nudge','1')}catch(e){}};
 n.querySelector('.x').onclick=hide;n.querySelector('a').addEventListener('click',hide);
 let ready=false,shown=false;const check=()=>{if(shown||!ready||scrollY<600)return;const pl=document.getElementById('planner').getBoundingClientRect();if(pl.top<innerHeight&&pl.bottom>0)return;shown=true;n.classList.add('on');setTimeout(()=>n.classList.remove('on'),16000)};setTimeout(()=>{ready=true;check()},10000);addEventListener('scroll',check,{passive:true})})();
+
+/* security intro: short, skippable, once per visit */
+(()=>{const I=document.getElementById('intro'),root=document.documentElement;if(!I||!root.classList.contains('intro'))return;let done=false;
+const end=()=>{if(done)return;done=true;I.classList.add('open');setTimeout(()=>{root.classList.remove('intro');try{sessionStorage.setItem('intro','1')}catch(e){}},900)};
+setTimeout(end,2500);I.addEventListener('click',end);addEventListener('keydown',e=>{if(e.key==='Escape'||e.key==='Enter')end()});I.querySelector('.skip2').addEventListener('click',e=>{e.stopPropagation();end()})})();
 /* planner wizard */
 (()=>{const w=document.getElementById('wz'),st=$('#wz .step'),bars=$('#wz .st i');let s=0;const show=n=>{s=n;st.forEach((e,k)=>e.classList.toggle('on',k==n));bars.forEach((e,k)=>e.classList.toggle('on',k<=n))};
 $('#wz [data-nx]').forEach(b=>b.onclick=()=>show(Math.min(s+1,3)));$('#wz [data-bk]').forEach(b=>b.onclick=()=>show(Math.max(s-1,0)));
