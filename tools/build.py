@@ -1,4 +1,35 @@
-<!DOCTYPE html>
+# Generates ../index.html  (run: python3 tools/build.py)
+import os
+H=os.path.dirname(os.path.abspath(__file__))
+IC={
+'man':'<svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M4 21c0-4.5 3.6-7 8-7s8 2.5 8 7"/></svg>',
+'arm':'<svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>',
+'ind':'<svg viewBox="0 0 24 24"><path d="M3 21V9l6 4V9l6 4V5h6v16z"/></svg>',
+'com':'<svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18"/><path d="M8 7h2M14 7h2M8 11h2M14 11h2M8 15h2M14 15h2"/></svg>',
+'res':'<svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"/><path d="M5 10v11h14V10"/></svg>',
+'hos':'<svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 7v10M7 12h10"/></svg>',
+'edu':'<svg viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/></svg>',
+'bnk':'<svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="1"/><circle cx="12" cy="12" r="3"/></svg>'}
+SV=[('man','Manned Security','Trained, verified guards for round-the-clock protection of your premises.','operations','30% 40%'),
+('arm','Armed Security','Disciplined armed personnel for high-security requirements.','hero','' ),
+('ind','Industrial Security','Protection for plants, warehouses and industrial campuses.','training','60% 50%'),
+('com','Commercial Security','Professional guards for offices and business premises.','operations','80% 40%'),
+('res','Residential Security','Courteous, reliable security for homes and societies.','about','40% 50%'),
+('hos','Hospital Security','Calm, courteous security for hospitals and healthcare facilities.','about','70% 30%'),
+('edu','Educational Security','Safe, well-supervised campuses for schools and institutions.','training','30% 60%'),
+('bnk','Bank &amp; ATM Security','Vigilant, verified personnel for branches and ATMs.','operations','55% 35%')]
+tabs=panels=mega=chips=''
+for k,(ic,h,p,im,pos) in enumerate(SV):
+    on=' on' if k==0 else ''
+    alt=h.replace('&amp;','and')
+    tabs+=f'<button class="tb{on}" data-k="{k}" role="tab"><span class="ti">{IC[ic]}</span><span class="tt">{h}</span><span class="ar">→</span></button>'
+    media=(f'<div class="pm cut"><div class="bgc"></div><img src="img/parakram-hero-guard.webp" alt="{alt}" loading="lazy"></div>' if im=='hero'
+      else f'<div class="pm"><img src="img/parakram-{im}.webp" alt="{alt}" style="object-position:{pos}" loading="lazy"></div>')
+    panels+=f'<article class="pn{on}" data-k="{k}">{media}<div class="pb"><div class="num">0{k+1}<small>/ 08</small></div><h3>{h}</h3><p>{p}</p><ul><li>Trained &amp; verified personnel</li><li>Available 24/7</li><li>Customized to your site</li></ul><a class="btn btn-g" href="#planner">Plan this service →</a></div></article>'
+    mega+=f'<a href="#services" data-go="{k}"><i>{IC[ic]}</i>{h}</a>'
+    chips+=f'<label class="chp"><input type="checkbox" value="{alt}"><span>{IC[ic]}{h}</span></label>'
+
+html=r'''<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -251,7 +282,7 @@ section{padding:76px 0}.wrap{padding:0 20px}.sec-h{margin-bottom:38px}.sec-h p{f
 <a class="brand" href="#top"><img src="logo.png" alt="Parakram shield logo"><div><b>PARAKRAM</b><small>SECURITY INDIA PVT. LTD.</small></div></a>
 <nav id="nav"><ul>
 <li><a href="#about">About</a></li>
-<li class="dd"><a href="#services">Services ▾</a><div class="menu"><div class="mg"><a href="#services" data-go="0"><i><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M4 21c0-4.5 3.6-7 8-7s8 2.5 8 7"/></svg></i>Manned Security</a><a href="#services" data-go="1"><i><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></i>Armed Security</a><a href="#services" data-go="2"><i><svg viewBox="0 0 24 24"><path d="M3 21V9l6 4V9l6 4V5h6v16z"/></svg></i>Industrial Security</a><a href="#services" data-go="3"><i><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18"/><path d="M8 7h2M14 7h2M8 11h2M14 11h2M8 15h2M14 15h2"/></svg></i>Commercial Security</a><a href="#services" data-go="4"><i><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"/><path d="M5 10v11h14V10"/></svg></i>Residential Security</a><a href="#services" data-go="5"><i><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 7v10M7 12h10"/></svg></i>Hospital Security</a><a href="#services" data-go="6"><i><svg viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/></svg></i>Educational Security</a><a href="#services" data-go="7"><i><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="1"/><circle cx="12" cy="12" r="3"/></svg></i>Bank &amp; ATM Security</a></div><div class="mp"><img src="img/parakram-operations.webp" alt="" loading="lazy"><b>Customized security solutions for every environment</b><a href="#planner">Plan your security →</a></div></div></li>
+<li class="dd"><a href="#services">Services ▾</a><div class="menu"><div class="mg">@@MEGA@@</div><div class="mp"><img src="img/parakram-operations.webp" alt="" loading="lazy"><b>Customized security solutions for every environment</b><a href="#planner">Plan your security →</a></div></div></li>
 <li><a href="#industries">Industries</a></li><li><a href="#planner">Security Planner</a></li><li><a href="#why">Why Parakram</a></li><li><a href="#careers">Careers</a></li><li><a href="#faq">FAQ</a></li></ul></nav>
 <a class="btn btn-n" href="#contact" style="padding:13px 24px">Get Started</a><button class="burger" id="bg" aria-label="Menu" aria-expanded="false"><i></i></button>
 </div></header>
@@ -283,7 +314,7 @@ section{padding:76px 0}.wrap{padding:0 20px}.sec-h{margin-bottom:38px}.sec-h p{f
 <div class="stat"><b data-n="8">0</b><span>Security Services</span></div>
 </div></div></div>
 
-<div class="mq" aria-hidden="true"><div class="mt"><span>Trained &amp; Verified Personnel</span><span>Customized Solutions</span><span>24/7 Availability</span><span>Multi-Site Support</span><span>Professionalism</span><span>Integrity</span><span>Courtesy</span><span>Your Safety Is Our Mission</span><span>Trained &amp; Verified Personnel</span><span>Customized Solutions</span><span>24/7 Availability</span><span>Multi-Site Support</span><span>Professionalism</span><span>Integrity</span><span>Courtesy</span><span>Your Safety Is Our Mission</span></div></div>
+<div class="mq" aria-hidden="true"><div class="mt">@@MARQUEE@@</div></div>
 
 <section id="about"><div class="wrap two">
 <div class="abt rv"><div class="eyebrow dk">About Parakram</div><h2 class="h2">Protecting people, property &amp; <em>operations.</em></h2>
@@ -296,7 +327,7 @@ section{padding:76px 0}.wrap{padding:0 20px}.sec-h{margin-bottom:38px}.sec-h p{f
 
 <section id="services" class="bg"><div class="wrap">
 <div class="sec-h rv"><div class="eyebrow dk">Security Services</div><h2 class="h2">Eight services. One standard of <em>excellence.</em></h2><p>Customized security solutions for every environment.</p></div>
-<div class="sx rv"><div class="tl" role="tablist"><button class="tb on" data-k="0" role="tab"><span class="ti"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M4 21c0-4.5 3.6-7 8-7s8 2.5 8 7"/></svg></span><span class="tt">Manned Security</span><span class="ar">→</span></button><button class="tb" data-k="1" role="tab"><span class="ti"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span><span class="tt">Armed Security</span><span class="ar">→</span></button><button class="tb" data-k="2" role="tab"><span class="ti"><svg viewBox="0 0 24 24"><path d="M3 21V9l6 4V9l6 4V5h6v16z"/></svg></span><span class="tt">Industrial Security</span><span class="ar">→</span></button><button class="tb" data-k="3" role="tab"><span class="ti"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18"/><path d="M8 7h2M14 7h2M8 11h2M14 11h2M8 15h2M14 15h2"/></svg></span><span class="tt">Commercial Security</span><span class="ar">→</span></button><button class="tb" data-k="4" role="tab"><span class="ti"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"/><path d="M5 10v11h14V10"/></svg></span><span class="tt">Residential Security</span><span class="ar">→</span></button><button class="tb" data-k="5" role="tab"><span class="ti"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 7v10M7 12h10"/></svg></span><span class="tt">Hospital Security</span><span class="ar">→</span></button><button class="tb" data-k="6" role="tab"><span class="ti"><svg viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/></svg></span><span class="tt">Educational Security</span><span class="ar">→</span></button><button class="tb" data-k="7" role="tab"><span class="ti"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="1"/><circle cx="12" cy="12" r="3"/></svg></span><span class="tt">Bank &amp; ATM Security</span><span class="ar">→</span></button></div><div class="pw"><article class="pn on" data-k="0"><div class="pm"><img src="img/parakram-operations.webp" alt="Manned Security" style="object-position:30% 40%" loading="lazy"></div><div class="pb"><div class="num">01<small>/ 08</small></div><h3>Manned Security</h3><p>Trained, verified guards for round-the-clock protection of your premises.</p><ul><li>Trained &amp; verified personnel</li><li>Available 24/7</li><li>Customized to your site</li></ul><a class="btn btn-g" href="#planner">Plan this service →</a></div></article><article class="pn" data-k="1"><div class="pm cut"><div class="bgc"></div><img src="img/parakram-hero-guard.webp" alt="Armed Security" loading="lazy"></div><div class="pb"><div class="num">02<small>/ 08</small></div><h3>Armed Security</h3><p>Disciplined armed personnel for high-security requirements.</p><ul><li>Trained &amp; verified personnel</li><li>Available 24/7</li><li>Customized to your site</li></ul><a class="btn btn-g" href="#planner">Plan this service →</a></div></article><article class="pn" data-k="2"><div class="pm"><img src="img/parakram-training.webp" alt="Industrial Security" style="object-position:60% 50%" loading="lazy"></div><div class="pb"><div class="num">03<small>/ 08</small></div><h3>Industrial Security</h3><p>Protection for plants, warehouses and industrial campuses.</p><ul><li>Trained &amp; verified personnel</li><li>Available 24/7</li><li>Customized to your site</li></ul><a class="btn btn-g" href="#planner">Plan this service →</a></div></article><article class="pn" data-k="3"><div class="pm"><img src="img/parakram-operations.webp" alt="Commercial Security" style="object-position:80% 40%" loading="lazy"></div><div class="pb"><div class="num">04<small>/ 08</small></div><h3>Commercial Security</h3><p>Professional guards for offices and business premises.</p><ul><li>Trained &amp; verified personnel</li><li>Available 24/7</li><li>Customized to your site</li></ul><a class="btn btn-g" href="#planner">Plan this service →</a></div></article><article class="pn" data-k="4"><div class="pm"><img src="img/parakram-about.webp" alt="Residential Security" style="object-position:40% 50%" loading="lazy"></div><div class="pb"><div class="num">05<small>/ 08</small></div><h3>Residential Security</h3><p>Courteous, reliable security for homes and societies.</p><ul><li>Trained &amp; verified personnel</li><li>Available 24/7</li><li>Customized to your site</li></ul><a class="btn btn-g" href="#planner">Plan this service →</a></div></article><article class="pn" data-k="5"><div class="pm"><img src="img/parakram-about.webp" alt="Hospital Security" style="object-position:70% 30%" loading="lazy"></div><div class="pb"><div class="num">06<small>/ 08</small></div><h3>Hospital Security</h3><p>Calm, courteous security for hospitals and healthcare facilities.</p><ul><li>Trained &amp; verified personnel</li><li>Available 24/7</li><li>Customized to your site</li></ul><a class="btn btn-g" href="#planner">Plan this service →</a></div></article><article class="pn" data-k="6"><div class="pm"><img src="img/parakram-training.webp" alt="Educational Security" style="object-position:30% 60%" loading="lazy"></div><div class="pb"><div class="num">07<small>/ 08</small></div><h3>Educational Security</h3><p>Safe, well-supervised campuses for schools and institutions.</p><ul><li>Trained &amp; verified personnel</li><li>Available 24/7</li><li>Customized to your site</li></ul><a class="btn btn-g" href="#planner">Plan this service →</a></div></article><article class="pn" data-k="7"><div class="pm"><img src="img/parakram-operations.webp" alt="Bank and ATM Security" style="object-position:55% 35%" loading="lazy"></div><div class="pb"><div class="num">08<small>/ 08</small></div><h3>Bank &amp; ATM Security</h3><p>Vigilant, verified personnel for branches and ATMs.</p><ul><li>Trained &amp; verified personnel</li><li>Available 24/7</li><li>Customized to your site</li></ul><a class="btn btn-g" href="#planner">Plan this service →</a></div></article></div></div>
+<div class="sx rv"><div class="tl" role="tablist">@@TABS@@</div><div class="pw">@@PANELS@@</div></div>
 </div></section>
 
 <section id="planner" class="plan"><div class="wrap">
@@ -305,7 +336,7 @@ section{padding:76px 0}.wrap{padding:0 20px}.sec-h{margin-bottom:38px}.sec-h p{f
 <ul><li>Customized security solutions</li><li>Trained &amp; verified personnel</li><li>Multi-site support</li><li>Available 24/7</li></ul></div>
 <div class="wz rv" id="wz">
 <div class="st"><i class="on"></i><i></i><i></i><i></i></div>
-<div class="step on"><h3>Which services do you need?</h3><p class="sub">Select one or more.</p><div class="chips"><label class="chp"><input type="checkbox" value="Manned Security"><span><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M4 21c0-4.5 3.6-7 8-7s8 2.5 8 7"/></svg>Manned Security</span></label><label class="chp"><input type="checkbox" value="Armed Security"><span><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Armed Security</span></label><label class="chp"><input type="checkbox" value="Industrial Security"><span><svg viewBox="0 0 24 24"><path d="M3 21V9l6 4V9l6 4V5h6v16z"/></svg>Industrial Security</span></label><label class="chp"><input type="checkbox" value="Commercial Security"><span><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18"/><path d="M8 7h2M14 7h2M8 11h2M14 11h2M8 15h2M14 15h2"/></svg>Commercial Security</span></label><label class="chp"><input type="checkbox" value="Residential Security"><span><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"/><path d="M5 10v11h14V10"/></svg>Residential Security</span></label><label class="chp"><input type="checkbox" value="Hospital Security"><span><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 7v10M7 12h10"/></svg>Hospital Security</span></label><label class="chp"><input type="checkbox" value="Educational Security"><span><svg viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/></svg>Educational Security</span></label><label class="chp"><input type="checkbox" value="Bank and ATM Security"><span><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="1"/><circle cx="12" cy="12" r="3"/></svg>Bank &amp; ATM Security</span></label></div><div class="nav2"><span></span><button class="btn btn-n" data-nx>Continue →</button></div></div>
+<div class="step on"><h3>Which services do you need?</h3><p class="sub">Select one or more.</p><div class="chips">@@CHIPS@@</div><div class="nav2"><span></span><button class="btn btn-n" data-nx>Continue →</button></div></div>
 <div class="step"><h3>What type of site?</h3><p class="sub">Choose the closest match.</p><div class="chips" id="sites">
 <label class="chp"><input type="radio" name="site" value="Industrial"><span>Industrial</span></label><label class="chp"><input type="radio" name="site" value="Corporate / Commercial"><span>Corporate / Commercial</span></label><label class="chp"><input type="radio" name="site" value="Healthcare"><span>Healthcare</span></label><label class="chp"><input type="radio" name="site" value="Banking / ATM"><span>Banking / ATM</span></label><label class="chp"><input type="radio" name="site" value="Residential"><span>Residential</span></label><label class="chp"><input type="radio" name="site" value="Educational"><span>Educational</span></label></div>
 <div class="nav2"><button class="bk" data-bk>← Back</button><button class="btn btn-n" data-nx>Continue →</button></div></div>
@@ -366,7 +397,7 @@ section{padding:76px 0}.wrap{padding:0 20px}.sec-h{margin-bottom:38px}.sec-h p{f
 <p><b>Phone</b><a href="tel:+919105909006">+91 91059 09006</a> · <a href="tel:+918937000489">+91 89370 00489</a> · <a href="tel:+919105909000">+91 91059 09000</a></p>
 <p><b>Email</b><a href="mailto:info@parakramindia.org">info@parakramindia.org</a></p></div>
 <form id="cf"><input required id="cn" placeholder="Full name"><input required id="cp" type="tel" placeholder="Phone"><input class="full" id="ce" type="email" placeholder="Email">
-<select class="full" id="cs"><option value="">Service required</option><option>Manned Security</option><option>Armed Security</option><option>Industrial Security</option><option>Commercial Security</option><option>Residential Security</option><option>Hospital Security</option><option>Educational Security</option><option>Bank &amp; ATM Security</option></select>
+<select class="full" id="cs"><option value="">Service required</option>@@OPTS@@</select>
 <textarea class="full" id="cm" placeholder="Tell us about your site and requirements"></textarea>
 <button class="btn btn-n full" style="justify-content:center">Get Started →</button></form></div></div></section>
 </main>
@@ -416,4 +447,10 @@ const m=`Hello Parakram Security, I'd like a security plan.%0A%0A*Services:* ${s
 /* contact form -> WhatsApp */
 cf.onsubmit=e=>{e.preventDefault();const m=`Hello Parakram Security,%0A*Name:* ${cn.value}%0A*Phone:* ${cp.value}%0A*Email:* ${ce.value}%0A*Service:* ${cs.value||'Not specified'}%0A*Details:* ${cm.value}`;open(`https://wa.me/${PH}?text=${m}`,'_blank')};
 </script>
-</body></html>
+</body></html>'''
+mq=['Trained &amp; Verified Personnel','Customized Solutions','24/7 Availability','Multi-Site Support','Professionalism','Integrity','Courtesy','Your Safety Is Our Mission']
+html=(html.replace('@@MEGA@@',mega).replace('@@TABS@@',tabs).replace('@@PANELS@@',panels).replace('@@CHIPS@@',chips)
+ .replace('@@MARQUEE@@',''.join(f'<span>{x}</span>' for x in mq*2))
+ .replace('@@OPTS@@',''.join(f'<option>{h}</option>' for _,h,*_ in SV)))
+open(os.path.join(H,'..','index.html'),'w').write(html)
+print(len(html))
