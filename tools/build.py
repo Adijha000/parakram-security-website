@@ -591,6 +591,21 @@ footer .brand{gap:14px}footer .brand b{font-size:20px!important}footer .brand sm
 .steps .fl{left:26px;top:0;width:2px;height:100%;transform-origin:top;transform:scaleY(0)}
 }
 @media(prefers-reduced-motion:reduce){.jm:not(.on),.sp:not(.on){opacity:1}}
+
+/* ===== stats on mobile: clean 2x2 + full width row, uniform dividers ===== */
+@media(max-width:980px){
+body .stats .grid{display:grid!important;grid-template-columns:1fr 1fr!important;gap:1px!important;background:var(--line)!important;border:0!important;border-radius:0!important}
+body .stat{grid-column:auto!important;background:#fff!important;border:0!important;padding:24px 10px 20px!important;display:flex!important;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center}
+body .stat b{font-size:42px!important;line-height:1}
+body .stat span{font-size:11.5px!important;letter-spacing:.11em!important;line-height:1.35;margin-top:8px!important;min-height:2.7em;display:block}
+body .stat:last-child{grid-column:1/-1!important;flex-direction:row;justify-content:center;align-items:center;gap:16px;padding:18px 10px!important}
+body .stat:last-child span{margin:0!important;min-height:0}
+body .stat:last-child b{font-size:38px!important}
+.stats{border-top:3px solid var(--gold)}
+}
+/* section numbers: editorial structure while scrolling */
+.eyebrow .no{font:700 12px Inter;color:#a87c00;letter-spacing:.12em;margin-right:2px}
+.plan .eyebrow .no{color:#a87c00}
 </style>
 </head>
 <body>
@@ -836,6 +851,9 @@ const stop=()=>{stopped=true;clearTimeout(t);sx.classList.remove('auto')};
 new IntersectionObserver(es=>es.forEach(e=>{vis=e.isIntersecting&&e.intersectionRatio>.35;if(vis&&!stopped)start();else{clearTimeout(t);sx.classList.remove('auto')}}),{threshold:[0,.35,.6]}).observe(sx)})();
 /* spotlight follow */
 if(!mq('(pointer:coarse)'))$('.stat,.vals div,.covt li').forEach(c=>c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')}));
+
+/* number the section labels 01, 02, 03 */
+(()=>{let n=0;['about','services','planner','industries','why','journey','coverage','faq','contact'].forEach(id=>{const sec=document.getElementById(id);if(!sec)return;const e=sec.querySelector('.eyebrow');if(!e)return;n++;const sp=document.createElement('span');sp.className='no';sp.textContent=(n<10?'0':'')+n+' /';e.insertBefore(sp,e.firstChild)})})();
 /* planner wizard */
 (()=>{const w=document.getElementById('wz'),st=$('#wz .step'),bars=$('#wz .st i');let s=0;const show=n=>{s=n;st.forEach((e,k)=>e.classList.toggle('on',k==n));bars.forEach((e,k)=>e.classList.toggle('on',k<=n))};
 $('#wz [data-nx]').forEach(b=>b.onclick=()=>show(Math.min(s+1,3)));$('#wz [data-bk]').forEach(b=>b.onclick=()=>show(Math.max(s-1,0)));
