@@ -1,5 +1,5 @@
 # Generates ../index.html  (run: python3 tools/build.py)
-import os
+import os,json
 H=os.path.dirname(os.path.abspath(__file__))
 IC={
 'man':'<svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M4 21c0-4.5 3.6-7 8-7s8 2.5 8 7"/></svg>',
@@ -278,6 +278,19 @@ section+section:not(.bg):not(.plan):not(.band):not(.tm){border-top:0}
 @media(max-width:1180px){.sidetab{display:none}}
 @media(max-width:980px){#toast{bottom:150px}}
 @media(prefers-reduced-motion:reduce){#pre{display:none}.h2 .w>span{transform:none}.h2 em{background-size:100% 38%}}
+
+/* india map */
+.map{aspect-ratio:auto!important;display:flex;flex-direction:column;padding:26px 26px 0;background:var(--navy);border-radius:24px;overflow:hidden;position:relative}
+.map:before{-webkit-mask-image:none;mask-image:none;opacity:.5}
+#imap{width:100%;height:auto;max-height:600px;position:relative;z-index:1;filter:drop-shadow(0 20px 40px rgba(0,0,0,.4))}
+.st{fill:rgba(255,255,255,.1);stroke:rgba(255,255,255,.4);stroke-width:1.1;stroke-linejoin:round;cursor:pointer;transition:fill .25s,transform .25s;transform-box:fill-box;transform-origin:center}
+.st:hover{fill:rgba(255,196,0,.55)}.st.hq{fill:rgba(255,196,0,.9);stroke:#fff}.st.sel:not(.hq){fill:rgba(255,196,0,.4);stroke:var(--gold)}
+.pinG{pointer-events:none}.pd{fill:#fff;stroke:var(--navy);stroke-width:4}.rd{fill:none;stroke:var(--gold);stroke-width:3;transform-box:fill-box;transform-origin:center;animation:mrd 2.6s ease-out infinite}.rd.r2{animation-delay:1.3s}
+@keyframes mrd{0%{transform:scale(.4);opacity:1}100%{transform:scale(4.2);opacity:0}}
+.mtip{position:absolute;z-index:5;pointer-events:none;background:#fff;color:var(--navy);font-weight:700;font-size:13px;padding:8px 14px;border-radius:8px;box-shadow:0 12px 30px rgba(0,0,0,.35);opacity:0;transform:translate(-50%,-130%);transition:opacity .15s;white-space:nowrap}.mtip.on{opacity:1}
+.map .mc{position:relative;left:auto;right:auto;bottom:auto;margin:0 -26px;border-radius:0;padding:22px 26px;z-index:2}
+.mhint{position:absolute;top:18px;left:24px;z-index:3;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6);font-weight:700}
+@media(max-width:980px){.map{padding:34px 16px 0}.map .mc{margin:0 -16px;padding:18px 16px}.mhint{left:16px;top:14px}}
 /* ===== responsive ===== */
 @media(max-width:1180px){
 .util{display:none}.nav{height:68px}.brand img{height:44px}.brand b{font-size:19px}
@@ -422,8 +435,8 @@ section{padding:76px 0}.wrap{padding:0 20px}.sec-h{margin-bottom:38px}.sec-h p{f
 </div></section>
 
 <section id="coverage"><div class="wrap cov">
-<div class="map rv"><div class="pin"><i></i><i></i><i></i><b></b></div><div class="mc"><div><b>Haridwar, Uttarakhand</b><span>6-A Sandesh Nagar, Kankhal – 249408</span></div><a class="btn btn-n" style="padding:12px 20px" href="#contact">Contact Us</a></div></div>
-<div class="covt rv"><div class="eyebrow dk">Coverage</div><h2 class="h2">Local roots. <em>Multi-site</em> reach.</h2>
+<div class="map rv" id="map">@@MAP@@<div class="mtip" id="mtip"></div><div class="mc"><div><b id="mn">Uttarakhand</b><span id="ms">Headquarters · 6-A Sandesh Nagar, Kankhal, Haridwar – 249408</span></div><a class="btn btn-n" id="mb" style="padding:12px 20px" href="#contact">Contact Us</a></div><div class="mhint">Hover or tap a state</div></div>
+<div class="covt rv"><div class="eyebrow dk">Coverage</div><h2 class="h2">Local roots. <em>Multi-site</em> reach across India.</h2>
 <ul><li><i>◎</i><div><b>Headquartered in Haridwar</b><span>Registered office in Kankhal, Haridwar, Uttarakhand.</span></div></li><li><i>⇄</i><div><b>Multi-site support</b><span>One partner across all your locations.</span></div></li><li><i>24</i><div><b>Always available</b><span>Services available 24/7.</span></div></li></ul></div>
 </div></section>
 
@@ -512,6 +525,14 @@ if(!mq('(pointer:coarse)'))$('.btn-g,.btn-n').forEach(b=>{b.addEventListener('mo
 addEventListener('scroll',()=>{if(scrollY<900){const y=scrollY;$('.hxg .tx').forEach(t=>{t.style.transform=`translateY(${y*.12}px)`;t.style.opacity=Math.max(0,1-y/650)})}},{passive:true})})();
 /* parallax on about image + band */
 addEventListener('scroll',()=>{const im=document.querySelector('.imgc .im img');if(im){const r=im.getBoundingClientRect();if(r.top<innerHeight&&r.bottom>0)im.style.objectPosition=`50% ${50+(r.top/innerHeight-.5)*18}%`}},{passive:true});
+
+/* india map */
+(()=>{const m=document.getElementById('map'),tip=document.getElementById('mtip'),mn=document.getElementById('mn'),ms=document.getElementById('ms'),mb=document.getElementById('mb'),sts=$('.st');
+const pick=p=>{const n=p.dataset.n;sts.forEach(x=>x.classList.toggle('sel',x===p));mn.textContent=n;
+if(n==='Uttarakhand'){ms.textContent='Headquarters · 6-A Sandesh Nagar, Kankhal, Haridwar – 249408';mb.textContent='Contact Us';mb.href='#contact';mb.onclick=null}
+else{ms.textContent='Multi-site support — tell us about your site in '+n+'.';mb.textContent='Enquire for '+n+' →';mb.href='#planner';mb.onclick=()=>{const f=document.getElementById('pc');if(f)f.value=n}}};
+sts.forEach(p=>{p.addEventListener('mousemove',e=>{const r=m.getBoundingClientRect();tip.textContent=p.dataset.n+(p.classList.contains('hq')?' · HQ':'');tip.style.left=(e.clientX-r.left)+'px';tip.style.top=(e.clientY-r.top)+'px';tip.classList.add('on')});p.addEventListener('mouseleave',()=>tip.classList.remove('on'));p.addEventListener('click',()=>pick(p));p.setAttribute('tabindex','0');p.setAttribute('role','button');p.setAttribute('aria-label',p.dataset.n);p.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();pick(p)}})});
+pick(document.querySelector('.st.hq'))})();
 /* planner wizard */
 (()=>{const w=document.getElementById('wz'),st=$('#wz .step'),bars=$('#wz .st i');let s=0;const show=n=>{s=n;st.forEach((e,k)=>e.classList.toggle('on',k==n));bars.forEach((e,k)=>e.classList.toggle('on',k<=n))};
 $('#wz [data-nx]').forEach(b=>b.onclick=()=>show(Math.min(s+1,3)));$('#wz [data-bk]').forEach(b=>b.onclick=()=>show(Math.max(s-1,0)));
@@ -522,7 +543,9 @@ cf.onsubmit=e=>{e.preventDefault();const m=`Hello Parakram Security,%0A*Name:* $
 </script>
 </body></html>'''
 mq=['Trained &amp; Verified Personnel','Customized Solutions','24/7 Availability','Multi-Site Support','Professionalism','Integrity','Courtesy','Your Safety Is Our Mission']
-html=(html.replace('@@MEGA@@',mega).replace('@@TABS@@',tabs).replace('@@PANELS@@',panels).replace('@@CHIPS@@',chips)
+M=json.load(open(os.path.join(H,'india_paths.json')))
+mapsvg=f'<svg id="imap" viewBox="0 0 {M["w"]} {M["h"]}" role="img" aria-label="Interactive map of India"><g>'+''.join(f'<path class="st{" hq" if x["n"]=="Uttarakhand" else ""}" data-n="{x["n"].replace("&","&amp;")}" d="{x["d"]}"/>' for x in M['states'])+f'</g><g class="pinG" transform="translate({M["pin"][0]} {M["pin"][1]})"><circle class="rd" r="14"/><circle class="rd r2" r="14"/><circle class="pd" r="9"/></g></svg>'
+html=(html.replace('@@MAP@@',mapsvg).replace('@@MEGA@@',mega).replace('@@TABS@@',tabs).replace('@@PANELS@@',panels).replace('@@CHIPS@@',chips)
  .replace('@@MARQUEE@@',''.join(f'<span>{x}</span>' for x in mq*2))
  .replace('@@OPTS@@',''.join(f'<option>{h}</option>' for _,h,*_ in SV)))
 open(os.path.join(H,'..','index.html'),'w').write(html)
