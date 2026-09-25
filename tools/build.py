@@ -37,11 +37,11 @@ html=r'''<!DOCTYPE html>
 <title>Parakram Security India | Your Safety Is Our Mission</title>
 <meta name="description" content="Parakram Security India Pvt. Ltd. — manned, armed, industrial, commercial, residential, hospital, educational and bank &amp; ATM security. 9+ years, 1,500+ trained professionals, 24/7. Haridwar, Uttarakhand.">
 <meta name="theme-color" content="#050d3a">
-<meta property="og:title" content="Parakram Security India | Your Safety Is Our Mission"><meta property="og:description" content="Professionally managed private security — trained, verified personnel, customized solutions, 24/7."><meta property="og:type" content="website"><meta property="og:image" content="img/parakram-operations.webp">
+<link rel="canonical" href="https://parakram-website.vercel.app/"><meta property="og:site_name" content="Parakram Security India"><meta property="og:title" content="Parakram Security India | Your Safety Is Our Mission"><meta property="og:description" content="Professionally managed private security — trained, verified personnel, customized solutions, 24/7."><meta property="og:type" content="website"><meta property="og:url" content="https://parakram-website.vercel.app/"><meta property="og:image" content="https://parakram-website.vercel.app/og-image.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Parakram Security India | Your Safety Is Our Mission"><meta name="twitter:description" content="Manned, armed, industrial, commercial, residential, hospital, educational and bank &amp; ATM security. 24/7."><meta name="twitter:image" content="https://parakram-website.vercel.app/og-image.jpg">
 <link rel="icon" href="favicon.png" type="image/png"><link rel="apple-touch-icon" href="logo.png"><link rel="preload" as="image" href="img/parakram-hero-guard.webp" type="image/webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SecurityService","name":"Parakram Security India Pvt. Ltd.","url":"https://parakram-website.vercel.app","logo":"logo.png","email":"info@parakramindia.org","telephone":"+919105909006","foundingDate":"2017","address":{"@type":"PostalAddress","streetAddress":"6-A Sandesh Nagar, Kankhal","addressLocality":"Haridwar","addressRegion":"Uttarakhand","postalCode":"249408","addressCountry":"IN"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1200"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SecurityService","name":"Parakram Security India Pvt. Ltd.","url":"https://parakram-website.vercel.app","logo":"https://parakram-website.vercel.app/logo.png","image":"https://parakram-website.vercel.app/og-image.jpg","email":"info@parakramindia.org","telephone":"+919105909006","foundingDate":"2017","address":{"@type":"PostalAddress","streetAddress":"6-A Sandesh Nagar, Kankhal","addressLocality":"Haridwar","addressRegion":"Uttarakhand","postalCode":"249408","addressCountry":"IN"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1200"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What types of security services do you provide?","acceptedAnswer":{"@type":"Answer","text":"Manned, Armed, Industrial, Commercial, Residential, Hospital, Educational, and Bank & ATM security."}},{"@type":"Question","name":"Is your service available 24/7?","acceptedAnswer":{"@type":"Answer","text":"Yes, our services are available 24/7."}},{"@type":"Question","name":"Can solutions be customized to my site?","acceptedAnswer":{"@type":"Answer","text":"Yes — we design customized security solutions around your needs, including multi-site support."}}]}</script>
 <style>
 :root{--navy:#050d3a;--navy2:#0a1660;--navy3:#0e1d78;--gold:#ffc400;--gold2:#ffd84d;--ink:#0b1020;--mut:#5a6180;--bg:#f4f5fb;--line:#e3e6f2;--r:14px;--ease:cubic-bezier(.2,.7,.2,1)}
@@ -248,7 +248,7 @@ summary:after{content:"+";width:32px;height:32px;border-radius:50%;background:va
 .ctab{background:var(--gold);color:var(--navy);padding:60px 0}.ctab .wrap{display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap}.ctab h2{font-size:clamp(30px,4vw,52px)}.ctab p{font-weight:600;margin-top:6px}.ctab .btn-g{background:var(--navy);color:#fff;box-shadow:none}.ctab .btn-g:hover{background:#fff;color:var(--navy)}.ctab .btn-o{border-color:var(--navy);color:var(--navy)}.ctab .btn-o:hover{background:var(--navy);color:#fff}.cta2{display:flex;gap:12px;flex-wrap:wrap}
 footer{background:#030826;color:#aab0d6;padding:90px 0 0}.fg{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.3fr;gap:50px;padding-bottom:64px}
 footer h4{font-size:16px;color:#fff;letter-spacing:.02em;margin-bottom:20px}footer li{list-style:none;margin-bottom:11px;font-size:14.5px}footer a:hover{color:var(--gold)}
-.fb{border-top:1px solid rgba(255,255,255,.1);padding:26px 0;display:flex;justify-content:space-between;font-size:13px;flex-wrap:wrap;gap:10px}
+.fl{display:flex;gap:22px;flex-wrap:wrap}.fb{border-top:1px solid rgba(255,255,255,.1);padding:26px 0;display:flex;justify-content:space-between;font-size:13px;flex-wrap:wrap;gap:10px}
 .wa{position:fixed;right:22px;bottom:22px;z-index:70;background:#25d366;color:#fff;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;box-shadow:0 12px 30px rgba(0,0,0,.3);transition:.25s}.wa svg{width:30px;height:30px;fill:#fff}.wa:hover{transform:scale(1.1)}
 .top{position:fixed;right:22px;bottom:92px;z-index:70;width:46px;height:46px;border-radius:50%;background:var(--navy);color:var(--gold);border:0;cursor:pointer;opacity:0;visibility:hidden;transition:.3s;font-size:18px;box-shadow:0 10px 26px rgba(0,0,0,.3)}.top.v{opacity:1;visibility:visible}
 .mbar{display:none}
@@ -336,14 +336,13 @@ section{padding:76px 0}.wrap{padding:0 20px}.sec-h{margin-bottom:38px}.sec-h p{f
 </style>
 </head>
 <body>
-<a class="skip" href="#top">Skip to content</a>
-<div id="pre" aria-hidden="true"><img src="logo.png" alt=""><i></i></div>
+<a class="skip" href="#main">Skip to content</a>
 <div id="pg"></div>
 <div id="toast" role="status" aria-live="polite"></div>
 <a class="sidetab" href="#contact">Get in Touch</a>
 <div class="util"><div class="wrap"><div class="l"><span class="pulse"></span>Control room online · 24/7 <span class="ist" id="ist"></span></div><div class="r"><a href="tel:+919105909006">+91 91059 09006</a><a href="mailto:info@parakramindia.org">info@parakramindia.org</a><a href="#careers">Careers</a></div></div></div>
 <header id="hd"><div class="wrap nav">
-<a class="brand" href="#top"><img src="logo.png" alt="Parakram shield logo" width="56" height="56"><div><b>PARAKRAM</b><small>SECURITY INDIA PVT. LTD.</small></div></a>
+<a class="brand" href="/"><img src="logo.png" alt="Parakram shield logo" width="56" height="56"><div><b>PARAKRAM</b><small>SECURITY INDIA PVT. LTD.</small></div></a>
 <nav id="nav"><ul>
 <li><a href="#about">About</a></li>
 <li class="dd"><a href="#services">Services ▾</a><div class="menu"><div class="mg">@@MEGA@@</div><div class="mp"><img src="img/parakram-operations.webp" alt="" loading="lazy"><b>Customized security solutions for every environment</b><a href="#planner">Plan your security →</a></div></div></li>
@@ -351,9 +350,9 @@ section{padding:76px 0}.wrap{padding:0 20px}.sec-h{margin-bottom:38px}.sec-h p{f
 <a class="btn btn-n" href="#contact" style="padding:13px 24px">Get Started</a><button class="burger" id="bg" aria-label="Menu" aria-expanded="false"><i></i></button>
 </div></header>
 
-<main id="top">
+<main id="main">
 <section class="hx" id="hero" style="padding:0" aria-roledescription="carousel">
-<div class="hglow" id="hglow"></div><div class="slide on"><div class="bgc"></div>
+<div class="slide on"><div class="bgc"></div>
 <div class="fig" id="fig"><div class="halo"></div><img src="img/parakram-hero-guard.webp" alt="Parakram security officer" width="800" height="1000" fetchpriority="high" decoding="async"></div>
 <div class="wrap hxg"><div class="tx"><div class="eyebrow">Your Safety Is Our Mission</div>
 <h1><span class="ln"><span>A life with</span></span><span class="ln"><span><em>full protection.</em></span></span></h1>
@@ -474,13 +473,17 @@ section{padding:76px 0}.wrap{padding:0 20px}.sec-h{margin-bottom:38px}.sec-h p{f
 <div><div class="brand" style="margin-bottom:18px"><img src="logo.png" alt="" style="height:64px"><div><b style="color:#fff">PARAKRAM</b><small style="color:#aab0d6">SECURITY INDIA PVT. LTD.</small></div></div><p style="font-size:14.5px;max-width:320px">We aim to provide you with a life with full protection.</p></div>
 <div><h4>Company</h4><ul><li><a href="#about">About</a></li><li><a href="#why">Why Parakram</a></li><li><a href="#coverage">Coverage</a></li><li><a href="#careers">Careers</a></li><li><a href="#faq">FAQ</a></li></ul></div>
 <div><h4>Services</h4><ul><li><a href="#services">Manned</a></li><li><a href="#services">Armed</a></li><li><a href="#services">Industrial</a></li><li><a href="#services">Commercial</a></li><li><a href="#services">Bank &amp; ATM</a></li></ul></div>
-<div><h4>Contact</h4><ul><li>6-A Sandesh Nagar, Kankhal, Haridwar 249408</li><li><a href="tel:+919105909006">+91 91059 09006</a></li><li><a href="mailto:info@parakramindia.org">info@parakramindia.org</a></li></ul></div></div>
-<div class="fb"><span>© 2026 Parakram Security India Pvt. Ltd. All rights reserved.</span><span>Website by AIBOOTSTRAPPER</span></div></div></footer>
+<div><h4>Contact</h4><ul><li>Parakram Security India Pvt. Ltd.<br>6-A Sandesh Nagar, Kankhal,<br>Haridwar – 249408, Uttarakhand</li><li><a href="tel:+918937000489">+91 89370 00489</a></li><li><a href="tel:+919105909006">+91 91059 09006</a></li><li><a href="mailto:info@parakramindia.org">info@parakramindia.org</a></li></ul></div></div>
+<div class="fb"><span>© 2026 Parakram Security India Pvt. Ltd. All rights reserved.</span><span class="fl"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a><span>Website by AIBOOTSTRAPPER</span></span></div></div></footer>
 <div class="mbar"><a href="tel:+919105909006">Call Now</a><a href="#planner">Get Started</a></div>
 <button class="top" id="top2" aria-label="Back to top">↑</button>
 <a class="wa" href="https://wa.me/919105909006" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.2-1.4A10 10 0 1 0 12 2zm5.4 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.2-.7-2.7-1.1-4.4-3.8-4.5-4-.1-.1-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.4-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.1 1.5 1.8 1 .9 1.900 1.200 2.200 1.300.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.900.9c.3.1.5.2.6.3.1.2.1.8-.1 1.400z"/></svg></a>
 <script>
 const $=s=>[...document.querySelectorAll(s)],mq=q=>matchMedia(q).matches,PH='919105909006';
+/* clean URLs: smooth-scroll to anchors without leaving #hash in the address bar */
+document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]');if(!a)return;const id=a.getAttribute('href').slice(1);const t=id&&document.getElementById(id);if(!t&&id)return;e.preventDefault();(t||document.body).scrollIntoView({behavior:'smooth'});if(location.hash)history.replaceState(null,'',location.pathname+location.search)});
+document.querySelector('.brand').addEventListener('click',e=>{e.preventDefault();scrollTo({top:0,behavior:'smooth'});if(location.hash)history.replaceState(null,'',location.pathname)});
+if(location.hash){const t=document.getElementById(location.hash.slice(1));if(t)setTimeout(()=>{t.scrollIntoView();history.replaceState(null,'',location.pathname)},60)}
 /* header/progress/back-to-top */
 const hd=document.getElementById('hd'),pg=document.getElementById('pg'),t2=document.getElementById('top2');
 addEventListener('scroll',()=>{hd.classList.toggle('sh',scrollY>10);pg.style.width=(scrollY/(document.documentElement.scrollHeight-innerHeight)*100)+'%';t2.classList.toggle('v',scrollY>900)},{passive:true});
@@ -509,20 +512,19 @@ $('.pl').forEach(c=>c.addEventListener('mousemove',e=>{const r=c.getBoundingClie
 (()=>{const q=$('.q'),d=$('.qd button');let i=0,t;const go=n=>{i=n%q.length;q.forEach((e,k)=>e.classList.toggle('on',k==i));d.forEach((e,k)=>e.classList.toggle('on',k==i));clearTimeout(t);t=setTimeout(()=>go(i+1),5500)};d.forEach((b,k)=>b.onclick=()=>go(k));t=setTimeout(()=>go(1),5500)})();
 
 /* --- enhancement JS --- */
-const pre=document.getElementById('pre');addEventListener('DOMContentLoaded',()=>setTimeout(()=>pre.classList.add('off'),250));setTimeout(()=>pre.classList.add('off'),1200);
+
 const toast=m=>{const t=document.getElementById('toast');t.textContent=m;t.classList.add('on');clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove('on'),3200)};
 /* split headings */
 $('.h2').forEach(h=>{let i=0;const wrap=n=>{[...n.childNodes].forEach(c=>{if(c.nodeType===3){const f=document.createDocumentFragment();c.textContent.split(/(\s+)/).forEach(t=>{if(!t)return;if(/^\s+$/.test(t)){f.appendChild(document.createTextNode(' '));return}const w=document.createElement('span');w.className='w';const b=document.createElement('span');b.textContent=t;b.style.setProperty('--i',i++);w.appendChild(b);f.appendChild(w)});c.replaceWith(f)}else if(c.nodeType===1)wrap(c)})};wrap(h);h.setAttribute('aria-label',h.textContent);io2.observe(h)});
 /* scrollspy */
 const spy=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){$('nav>ul>li>a').forEach(a=>a.classList.toggle('act',a.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-45% 0px -50% 0px'});
 $('main section[id]').forEach(x=>spy.observe(x));
-/* tilt cards */
-if(!mq('(pointer:coarse)'))$('.ic').forEach(c=>{c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform=`perspective(1000px) translateY(-8px) rotateX(${-y*7}deg) rotateY(${x*9}deg)`});c.addEventListener('mouseleave',()=>c.style.transform='')});
-/* magnetic buttons */
-if(!mq('(pointer:coarse)'))$('.btn-g,.btn-n').forEach(b=>{b.addEventListener('mousemove',e=>{const r=b.getBoundingClientRect();b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.18}px,${(e.clientY-r.top-r.height/2)*.28}px)`});b.addEventListener('mouseleave',()=>b.style.transform='')});
+/* tilt cards (disabled for a calmer enterprise feel) */
+if(false)$('.ic').forEach(c=>{c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform=`perspective(1000px) translateY(-8px) rotateX(${-y*7}deg) rotateY(${x*9}deg)`});c.addEventListener('mouseleave',()=>c.style.transform='')});
+/* magnetic buttons (disabled) */
+if(false)$('.btn-g,.btn-n').forEach(b=>{b.addEventListener('mousemove',e=>{const r=b.getBoundingClientRect();b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.18}px,${(e.clientY-r.top-r.height/2)*.28}px)`});b.addEventListener('mouseleave',()=>b.style.transform='')});
 /* hero glow + scroll fade */
-(()=>{const hx=document.getElementById('hero'),g=document.getElementById('hglow');if(!mq('(pointer:coarse)'))hx.addEventListener('mousemove',e=>{const r=hx.getBoundingClientRect();g.style.left=(e.clientX-r.left)+'px';g.style.top=(e.clientY-r.top)+'px'});
-addEventListener('scroll',()=>{if(scrollY<900){const y=scrollY;$('.hxg .tx').forEach(t=>{t.style.transform=`translateY(${y*.12}px)`;t.style.opacity=Math.max(0,1-y/650)})}},{passive:true})})();
+(()=>{addEventListener('scroll',()=>{if(scrollY<900){const y=scrollY;$('.hxg .tx').forEach(t=>{t.style.transform=`translateY(${y*.12}px)`;t.style.opacity=Math.max(0,1-y/650)})}},{passive:true})})();
 /* parallax on about image + band */
 addEventListener('scroll',()=>{const im=document.querySelector('.imgc .im img');if(im){const r=im.getBoundingClientRect();if(r.top<innerHeight&&r.bottom>0)im.style.objectPosition=`50% ${50+(r.top/innerHeight-.5)*18}%`}},{passive:true});
 
