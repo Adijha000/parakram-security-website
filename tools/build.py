@@ -494,6 +494,11 @@ details{transition:border-color .4s,box-shadow .4s,background .4s}details p{anim
 .hx .lead,.hx .cta,.hx .eyebrow{transition:opacity 1s var(--ease) .4s,transform 1s var(--ease) .4s}
 @media(max-width:980px){.rv{transform:translateY(18px);transition-duration:.8s}.imgc .im{clip-path:inset(0 0 100% 0)}.rv .eyebrow:before{width:0}.rv.in .eyebrow:before{width:26px}header.hide{transform:none}}
 @media(prefers-reduced-motion:reduce){.rv,.imgc .im,.pb>*{opacity:1!important;transform:none!important;clip-path:none!important}header.hide{transform:none}}
+
+/* about photo: fixed frame so the picture can never blow up */
+.imgc .im{position:relative;aspect-ratio:4/3.4;height:auto}
+.imgc .im img{position:absolute;inset:0;width:100%;height:100%!important;aspect-ratio:auto!important;object-fit:cover;object-position:50% 30%}
+@media(max-width:980px){.imgc .im{aspect-ratio:16/9!important;max-height:220px}.imgc .im img{object-position:50% 22%}}
 </style>
 </head>
 <body>
