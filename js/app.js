@@ -179,11 +179,6 @@ chips.forEach(b=>b.onclick=()=>{cat=b.dataset.c;chips.forEach(x=>x.classList.tog
 
 }catch(e){}
 try{
-/* careers form */
-(()=>{const f=document.getElementById('cvf');if(!f)return;f.onsubmit=e=>{e.preventDefault();const g=i=>document.getElementById(i).value;const m=`Hello Parakram Security, I would like to apply.%0A*Name:* ${g('vn')}%0A*Phone:* ${g('vp')}%0A*City:* ${g('vc')}%0A*Role of interest:* ${g('vr')}%0A*About me:* ${g('vm')}`;open(`https://wa.me/${PH}?text=${m}`,'_blank');toast('Opening WhatsApp with your application...')}})();
-
-}catch(e){}
-try{
 /* subnav highlight */
 (()=>{const links=$('.subnav .snv a');if(!links.length)return;const io4=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-40% 0px -55% 0px'});links.forEach(a=>{const t=document.querySelector(a.getAttribute('href'));if(t)io4.observe(t)})})();
 
@@ -191,6 +186,38 @@ try{
 try{
 /* inner page banner entrance */
 (()=>{const b=document.querySelector('.pbn');if(b)setTimeout(()=>b.classList.add('in'),80)})();
+
+
+}catch(e){}
+try{
+/* coverage options (24 hour bar) */
+(()=>{const box=document.getElementById('cov24');if(!box)return;const bar=box.querySelector('.bar24'),spans=[...bar.children],cap=document.getElementById('cap24'),tabs=$('#cov24 .ctabs button');
+const M={day:{h:h=>h>=6&&h<18,t:'Day shift: guards on duty from morning to evening. A good fit for offices, campuses and sites that are busiest during the day.'},night:{h:h=>h>=18||h<6,t:'Night shift: guards on duty through the night. A good fit for warehouses, residential societies and sites that need protection after hours.'},full:{h:()=>true,t:'24/7 coverage: guards on duty at every hour of every day, with planned handovers so there is never a gap.'}};
+const set=k=>{tabs.forEach(b=>b.classList.toggle('on',b.dataset.m===k));spans.forEach((s,i)=>{setTimeout(()=>s.classList.toggle('on',M[k].h(i)),i*14)});cap.textContent=M[k].t};
+tabs.forEach(b=>b.onclick=()=>set(b.dataset.m));set('full')})();
+
+}catch(e){}
+try{
+/* quick enquiry cards */
+$('.qc form').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();const g=n=>f.querySelector('[name='+n+']').value.trim();if(!g('p')){toast('Please enter your phone number.');return}const m=`Hello Parakram Security, I am interested in ${f.dataset.s}.%0A*Name:* ${g('n')}%0A*Phone:* ${g('p')}`;open(`https://wa.me/${PH}?text=${m}`,'_blank');toast('Opening WhatsApp...')}));
+
+}catch(e){}
+try{
+/* resume upload */
+(()=>{const f=document.getElementById('cvf');if(!f)return;f.onsubmit=null;const fi=document.getElementById('vf'),drop=document.getElementById('drop'),ok=document.getElementById('fileok'),st=document.getElementById('cvst'),btn=document.getElementById('cvb');let file=null;const MAX=3*1024*1024;
+const say=(c,h)=>{st.className='cvst '+c;st.innerHTML=h};
+const pick=fl=>{if(!fl)return;const okT=/\.(pdf|doc|docx)$/i.test(fl.name);if(!okT){say('err','Please choose a PDF or Word file (.pdf, .doc or .docx).');fi.value='';return}if(fl.size>MAX){say('err','That file is larger than 3 MB. Please choose a smaller file or email it to <a href="mailto:info@parakramindia.org">info@parakramindia.org</a>.');fi.value='';return}file=fl;st.className='cvst';ok.classList.add('on');ok.querySelector('span').textContent=fl.name+' ('+Math.max(1,Math.round(fl.size/1024))+' KB)'};
+fi.addEventListener('change',()=>pick(fi.files[0]));
+['dragenter','dragover'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.add('dr')}));['dragleave','drop'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.remove('dr')}));drop.addEventListener('drop',e=>{if(e.dataTransfer.files[0])pick(e.dataTransfer.files[0])});
+ok.querySelector('button').onclick=()=>{file=null;fi.value='';ok.classList.remove('on')};
+const g=i=>document.getElementById(i).value.trim();
+const fallback=()=>{const sub=encodeURIComponent('Career application: '+g('vn'));const body=encodeURIComponent('Name: '+g('vn')+'\nPhone: '+g('vp')+'\nCity: '+g('vc')+'\nRole: '+g('vr')+'\n\n'+g('vm')+'\n\n(Please attach your resume to this email.)');const wa='https://wa.me/'+PH+'?text='+encodeURIComponent('Hello Parakram Security, I would like to apply. Name: '+g('vn')+', Phone: '+g('vp')+', City: '+g('vc')+', Role: '+g('vr'));say('err','We could not upload your resume online right now. Please <a href="mailto:info@parakramindia.org?subject='+sub+'&body='+body+'">email your application</a> or <a href="'+wa+'" target="_blank" rel="noopener">send it on WhatsApp</a>.')};
+f.addEventListener('submit',async e=>{e.preventDefault();if(document.getElementById('vh').value)return;btn.disabled=true;btn.textContent='Sending...';say('wait','Sending your application...');
+try{let b64='';if(file){b64=await new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(String(r.result).split(',')[1]||'');r.onerror=rej;r.readAsDataURL(file)})}
+const r=await fetch('/api/apply',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:g('vn'),phone:g('vp'),email:g('ve'),city:g('vc'),role:g('vr'),message:g('vm'),fileName:file?file.name:'',fileType:file?file.type:'',fileBase64:b64})});
+const j=await r.json().catch(()=>({}));if(r.ok&&j.ok){f.innerHTML='<div class="full" style="grid-column:1/-1;text-align:center;padding:30px 10px"><div style="width:64px;height:64px;border-radius:50%;background:var(--gold);display:grid;place-items:center;margin:0 auto 16px;font-size:30px">✓</div><h3 style="font-size:24px;color:var(--navy)">Application received</h3><p style="color:#4a5070;margin-top:8px">Thank you. Our team will review your details and contact you.</p></div>';return}
+if(j.code==='too_large')say('err','That file is larger than 3 MB. Please choose a smaller file.');else if(j.code==='invalid')say('err','Please enter your name and a valid phone number.');else fallback()}catch(err){fallback()}
+btn.disabled=false;btn.textContent='Submit application'})})();
 
 }catch(e){}
 try{

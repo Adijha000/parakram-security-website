@@ -751,6 +751,94 @@ summary{font-size:14.5px!important;padding:15px 16px!important}details p{font-si
 .mbar a{font-size:12px!important;padding:13px 6px!important}
 body{padding-bottom:46px!important}
 }
+
+/* ===== inner pages v2: richer components ===== */
+.tbar{background:#fff;border-bottom:1px solid var(--line)}.tbar .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.tbi{display:flex;align-items:center;gap:14px;padding:20px 18px;border-right:1px solid var(--line)}.tbi:first-child{padding-left:0}.tbi:last-child{border:0}
+.tbi i{width:42px;height:42px;border-radius:10px;background:var(--bg);display:grid;place-items:center;flex:none;transition:.4s}.tbi:hover i{background:var(--navy)}.tbi:hover svg{stroke:var(--gold)}
+.tbi svg{width:22px;height:22px;stroke:var(--navy3);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:.4s}
+.tbi b{display:block;font-family:Manrope;color:var(--navy);font-size:15px;line-height:1.2}.tbi span{font-size:12.5px;color:#6a7090}
+.glance{position:absolute;right:max(28px,calc((100% - 1280px)/2 + 28px));bottom:34px;z-index:4;background:rgba(255,255,255,.97);border-radius:14px;box-shadow:0 30px 70px rgba(0,0,0,.35);padding:20px 26px;display:grid;grid-template-columns:repeat(3,auto);gap:30px}
+.glance div b{display:block;font:700 32px/1 'Barlow Condensed';color:var(--navy)}.glance div span{font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6a7090}
+.svl{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:56px;align-items:start}
+.svm>.blk{padding:64px 0 0}.svm>.blk:first-child{padding-top:56px}.svm .sec-h{margin-bottom:28px}.svm .sec-h p{font-size:17px}
+.svm .fc{grid-template-columns:1fr 1fr}.svm .sp2{grid-template-columns:1fr;gap:26px}
+.svm .steps{grid-template-columns:repeat(5,1fr)}
+.sva{position:sticky;top:150px;padding-top:56px}
+.qc{background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:12px;padding:26px;box-shadow:0 24px 64px rgba(5,13,58,.12)}
+.qc h3{font-size:21px;color:var(--navy);margin-bottom:6px;letter-spacing:-.02em}.qc p.s{color:#4a5070;font-size:14.5px;margin-bottom:16px}
+.qc input{width:100%;padding:13px 14px;border:1.5px solid var(--line);border-radius:10px;font:inherit;margin-bottom:10px;background:var(--bg)}.qc input:focus{outline:none;border-color:var(--navy3);background:#fff}
+.qc .btn{width:100%;justify-content:center}
+.qc .ln{display:flex;gap:12px;align-items:center;padding:13px 0;border-top:1px solid var(--line);color:var(--navy);font-weight:600;font-size:14.5px}.qc .ln:first-of-type{margin-top:18px}.qc .ln svg{width:18px;height:18px;stroke:var(--navy3);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}.qc .ln:hover{color:#a87c00}
+.qc .fine{font-size:12px;color:#7a80a0;margin-top:8px}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.tile{display:flex;gap:12px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:10px;padding:15px 16px;font-weight:600;color:var(--navy);font-size:14.5px;transition:.4s var(--ease);line-height:1.35}.tile:hover{border-color:var(--gold);transform:translateY(-3px);box-shadow:0 12px 30px rgba(5,13,58,.08)}.tile:before{content:"";width:9px;height:9px;border-radius:50%;background:var(--gold);flex:none;box-shadow:0 0 0 4px rgba(255,196,0,.22)}
+.cov24{background:#fff;border:1px solid var(--line);border-radius:12px;padding:26px}
+.ctabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}.ctabs button{border:1px solid var(--line);background:#fff;padding:10px 18px;border-radius:999px;font:600 14px Inter;cursor:pointer;color:var(--navy);transition:.3s}.ctabs button.on,.ctabs button:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+.bar24{display:grid;grid-template-columns:repeat(24,1fr);gap:3px}.bar24 span{height:52px;border-radius:5px;background:#e7eaf5;transition:background .6s var(--ease),transform .6s var(--ease);position:relative}.bar24 span.on{background:linear-gradient(180deg,#ffd84d,#e0a800);transform:translateY(-4px)}
+.lab24{display:grid;grid-template-columns:repeat(4,1fr);font-size:11.5px;font-weight:700;color:#6a7090;margin-top:10px}
+#cap24{margin-top:16px;color:#4a5070;font-size:15.5px;min-height:3.2em}
+.xp{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.xp:before{content:"";position:absolute;inset:0;background:radial-gradient(700px 400px at 90% 0,rgba(255,196,0,.16),transparent 60%),linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:auto,56px 56px,56px 56px;mask-image:linear-gradient(#000,transparent 90%)}
+.xp>.wrap{position:relative}.xp .h2{color:#fff}.xp .h2 em{color:var(--gold);background:none!important}.xp .sec-h p{color:#c9cef0}.xp .eyebrow.dk{color:var(--gold)}.xp .eyebrow .no{color:var(--gold)}
+.xpg{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.14);border-radius:12px;overflow:hidden}
+.xpc{background:#0a1470;padding:30px 26px;transition:.4s}.xpc:hover{background:#0e1d78}.xpc .k{font:800 44px/1 'Barlow Condensed';color:var(--gold);display:block;margin-bottom:12px}.xpc b{display:block;font-family:Manrope;font-size:18px;margin-bottom:8px;letter-spacing:-.01em}.xpc p{color:#c9cef0;font-size:14.5px}
+.xpn{display:grid;grid-template-columns:repeat(4,1fr);margin-top:34px;gap:20px}.xpn div{text-align:center}.xpn b{display:block;font:700 56px/1 'Barlow Condensed'}.xpn b sup{color:var(--gold);font-size:.5em;top:-.7em}.xpn span{font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#aab0d6}
+.paths{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.pth{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:24px 10px 20px;transition:.5s var(--ease);font-weight:700;color:var(--navy);font-family:Manrope;font-size:15px;line-height:1.25}
+.pth i{width:58px;height:58px;border-radius:14px;background:var(--navy);display:grid;place-items:center;color:var(--gold);transition:.5s var(--ease)}.pth svg{width:28px;height:28px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.pth span{font:500 12.5px Inter;color:#6a7090}.pth:hover{transform:translateY(-6px);box-shadow:0 20px 44px rgba(5,13,58,.12);border-color:var(--gold)}.pth:hover i{background:var(--gold);color:var(--navy);transform:rotate(-6deg) scale(1.06)}
+.mos{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:210px 210px;gap:14px}.mos div{border-radius:12px;overflow:hidden;position:relative;background:var(--navy)}.mos img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}.mos div:hover img{transform:scale(1.06)}.mos .big{grid-row:1/3}.mos div:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 45%,rgba(5,13,58,.7))}.mos b{position:absolute;left:16px;bottom:14px;color:#fff;z-index:2;font-family:Manrope;font-size:15px}
+.drop{border:2px dashed #c4cbe4;border-radius:12px;padding:22px;text-align:center;background:var(--bg);cursor:pointer;transition:.3s;position:relative}.drop:hover,.drop.dr{border-color:var(--gold);background:#fffbe8}
+.drop input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}.drop svg{width:30px;height:30px;stroke:var(--navy3);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;margin-bottom:6px}.drop b{display:block;color:var(--navy);font-family:Manrope;font-size:15px}.drop span{font-size:12.5px;color:#6a7090}
+.fileok{display:none;align-items:center;justify-content:space-between;gap:10px;background:#f0f9f2;border:1px solid #bfe3c8;border-radius:10px;padding:12px 14px;font-size:14px;font-weight:600;color:#1f6b35}.fileok.on{display:flex}.fileok button{background:none;border:0;color:#8a2a1c;font-weight:700;cursor:pointer;font-size:13px}
+.cvst{display:none;padding:12px 14px;border-radius:10px;font-size:14px;line-height:1.5}.cvst a{color:var(--navy3);font-weight:700;text-decoration:underline}.cvst.err{display:block;background:#fff2f0;border:1px solid #f3c1ba;color:#8a2a1c}.cvst.ok{display:block;background:#f0f9f2;border:1px solid #bfe3c8;color:#1f6b35}.cvst.wait{display:block;background:var(--bg);color:var(--navy)}
+.hp{position:absolute;left:-9999px;opacity:0;height:0;width:0}
+@media(max-width:1100px){.glance{display:none}.svl{grid-template-columns:1fr;gap:0}.sva{position:static;padding:40px 0 0}.svm .steps{grid-template-columns:1fr}.paths{grid-template-columns:repeat(3,1fr)}.xpg{grid-template-columns:1fr 1fr}}
+@media(max-width:980px){
+.tbar .wrap{grid-template-columns:1fr 1fr}.tbi{padding:14px 12px;border-bottom:1px solid var(--line)}.tbi:nth-child(2n){border-right:0}.tbi:nth-child(-n+2){border-bottom:1px solid var(--line)}.tbi:last-child,.tbi:nth-last-child(2){border-bottom:0}.tbi:first-child{padding-left:12px}.tbi i{width:36px;height:36px}.tbi b{font-size:13px}.tbi span{display:none}
+.svm>.blk{padding:40px 0 0}.svm>.blk:first-child{padding-top:34px}.svm .fc{grid-template-columns:1fr}.tiles{grid-template-columns:1fr 1fr;gap:8px}.tile{padding:12px;font-size:13px}
+.cov24{padding:18px 14px}.bar24 span{height:38px}.ctabs button{padding:8px 13px;font-size:13px}#cap24{font-size:14px}
+.xpg{grid-template-columns:1fr}.xpc{padding:20px 18px}.xpc .k{font-size:34px;margin-bottom:6px}.xpn{grid-template-columns:1fr 1fr;gap:18px}.xpn b{font-size:40px}
+.paths{grid-template-columns:1fr 1fr;gap:10px}.pth{padding:16px 8px 14px;font-size:13.5px}.pth i{width:46px;height:46px}.pth svg{width:23px;height:23px}
+.mos{grid-template-columns:1fr 1fr;grid-template-rows:150px 150px 150px;gap:10px}.mos .big{grid-column:1/3;grid-row:1}
+.sva{padding-top:30px}.qc{padding:20px 16px}
+}
+
+/* ===== device matrix: small phones, tablets, large screens ===== */
+@media(max-width:380px){
+.wrap{padding:0 14px!important}
+.brand small{display:none!important}.brand b{font-size:14.5px!important}.brand img{height:30px!important;width:30px!important}
+.hx{min-height:520px!important}.hx h1,.hx .hh{font-size:25px!important}.hx .lead{font-size:13px!important}
+.hx .cta{gap:8px}.hx .cta .btn{padding:9px 10px!important;font-size:11px!important;min-height:40px!important}
+.h2{font-size:22px!important}.pbn h1{font-size:25px!important}.pbn .lead{font-size:14px!important}
+body .stat b{font-size:28px!important}body .stat span{font-size:9.5px!important;letter-spacing:.06em!important}
+.mbar a{font-size:10.5px!important;gap:5px!important}.mbar .mw svg{width:15px!important;height:15px!important}
+.subnav .snv a{padding:6px 9px!important;font-size:12px!important}
+.tbi b{font-size:12px!important}.paths{gap:8px}.pth{font-size:12.5px!important;padding:12px 6px!important}
+.btn{padding:10px 16px!important;font-size:12.5px!important}
+.cta2b h2{font-size:22px!important}.ls{font-size:16px!important}
+}
+@media(min-width:600px) and (max-width:980px){
+.fc,.fc.c4{grid-template-columns:1fr 1fr!important}.svm .fc{grid-template-columns:1fr 1fr!important}
+.tiles{grid-template-columns:repeat(3,1fr)!important}.paths{grid-template-columns:repeat(3,1fr)!important}
+.rel{grid-template-columns:repeat(2,1fr)!important}.rcard span{display:block!important}
+.xpg{grid-template-columns:1fr 1fr!important}.tbar .wrap{grid-template-columns:repeat(4,1fr)!important}.tbi span{display:none}.tbi{flex-direction:column;text-align:center;gap:8px;border-bottom:0!important;padding:14px 6px!important}.tbi:nth-child(2n){border-right:1px solid var(--line)!important}.tbi:last-child{border:0!important}
+.nums{grid-template-columns:repeat(4,1fr)!important}.nums div{border-bottom:0!important}
+.cc{grid-template-columns:repeat(3,1fr)!important}
+.pbn h1{font-size:40px!important}.pbn .lead{font-size:17px!important}.h2{font-size:32px!important}
+.hx{max-height:760px!important}.hx h1,.hx .hh{font-size:44px!important}.hx .lead{font-size:16px!important;max-width:520px}
+.wrap{padding:0 28px!important}
+body{font-size:16px!important}
+.ind{grid-template-columns:repeat(4,1fr)!important}.ic{aspect-ratio:3/4!important}
+.mos{grid-template-columns:2fr 1fr 1fr!important;grid-template-rows:170px 170px!important}.mos .big{grid-column:auto!important;grid-row:1/3!important}
+}
+@media(min-width:1600px){
+.wrap{max-width:1440px}.hx{max-height:980px}.hx h1,.hx .hh{font-size:84px}.pbn h1{font-size:68px}.pbn .lead{font-size:21px}.h2{font-size:52px}
+.sec-h{max-width:900px}.sva{top:160px}
+}
+@media(min-width:2200px){.wrap{max-width:1680px}html{font-size:110%}}
+
+html{overflow-x:clip}body{overflow-x:clip}
 </style>
 </head>
 <body>
@@ -806,6 +894,16 @@ body{padding-bottom:46px!important}
 </div></div></div>
 
 <section class="lead-s" id="statement"><div class="wrap"><p class="ls rv">Parakram Security India provides <b>manned, armed, industrial, commercial, residential, hospital, educational and bank &amp; ATM security</b>, professionally managed since 2017 and combining disciplined manpower, rigorous training and deeply rooted Indian values to protect people, property and operations.</p><a class="kn" href="#about">Know more</a></div></section>
+
+<section class="blk" id="paths" style="padding-bottom:0"><div class="wrap"><div class="sec-h rv" style="margin-bottom:28px"><div class="eyebrow dk">Find your solution</div><h2 class="h2">What do you need to <em>protect?</em></h2></div>
+<div class="paths">
+<a class="pth rv" href="/industries#industrial"><i>@@I_ind@@</i>Factory or warehouse<span>Industrial security</span></a>
+<a class="pth rv" href="/industries#corporate"><i>@@I_com@@</i>Office or business<span>Corporate security</span></a>
+<a class="pth rv" href="/industries#healthcare"><i>@@I_hos@@</i>Hospital or clinic<span>Healthcare security</span></a>
+<a class="pth rv" href="/services/banking"><i>@@I_bnk@@</i>Bank or ATM<span>Banking security</span></a>
+<a class="pth rv" href="/services/residential"><i>@@I_res@@</i>Home or society<span>Residential security</span></a>
+<a class="pth rv" href="/services/educational"><i>@@I_edu@@</i>School or college<span>Educational security</span></a>
+</div></div></section>
 
 <section id="about"><div class="wrap two">
 <div class="abt rv"><div class="eyebrow dk">About Parakram</div><h2 class="h2">Protecting people, property &amp; <em>operations.</em></h2>
@@ -1021,12 +1119,33 @@ setTimeout(end,2500);I.addEventListener('click',end);addEventListener('keydown',
 (()=>{const box=document.getElementById('faqf');if(!box)return;const chips=$('#faqf .fchips button'),items=$('#faqf details'),inp=document.getElementById('faqs'),none=document.getElementById('fnone');let cat='all';
 const run=()=>{const q=(inp.value||'').toLowerCase().trim();let n=0;items.forEach(d=>{const ok=(cat==='all'||d.dataset.c===cat)&&(!q||d.textContent.toLowerCase().includes(q));d.style.display=ok?'':'none';if(ok)n++});none.style.display=n?'none':'block'};
 chips.forEach(b=>b.onclick=()=>{cat=b.dataset.c;chips.forEach(x=>x.classList.toggle('on',x===b));run()});inp.addEventListener('input',run)})();
-/* careers form */
-(()=>{const f=document.getElementById('cvf');if(!f)return;f.onsubmit=e=>{e.preventDefault();const g=i=>document.getElementById(i).value;const m=`Hello Parakram Security, I would like to apply.%0A*Name:* ${g('vn')}%0A*Phone:* ${g('vp')}%0A*City:* ${g('vc')}%0A*Role of interest:* ${g('vr')}%0A*About me:* ${g('vm')}`;open(`https://wa.me/${PH}?text=${m}`,'_blank');toast('Opening WhatsApp with your application...')}})();
 /* subnav highlight */
 (()=>{const links=$('.subnav .snv a');if(!links.length)return;const io4=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-40% 0px -55% 0px'});links.forEach(a=>{const t=document.querySelector(a.getAttribute('href'));if(t)io4.observe(t)})})();
 /* inner page banner entrance */
 (()=>{const b=document.querySelector('.pbn');if(b)setTimeout(()=>b.classList.add('in'),80)})();
+
+/* coverage options (24 hour bar) */
+(()=>{const box=document.getElementById('cov24');if(!box)return;const bar=box.querySelector('.bar24'),spans=[...bar.children],cap=document.getElementById('cap24'),tabs=$('#cov24 .ctabs button');
+const M={day:{h:h=>h>=6&&h<18,t:'Day shift: guards on duty from morning to evening. A good fit for offices, campuses and sites that are busiest during the day.'},night:{h:h=>h>=18||h<6,t:'Night shift: guards on duty through the night. A good fit for warehouses, residential societies and sites that need protection after hours.'},full:{h:()=>true,t:'24/7 coverage: guards on duty at every hour of every day, with planned handovers so there is never a gap.'}};
+const set=k=>{tabs.forEach(b=>b.classList.toggle('on',b.dataset.m===k));spans.forEach((s,i)=>{setTimeout(()=>s.classList.toggle('on',M[k].h(i)),i*14)});cap.textContent=M[k].t};
+tabs.forEach(b=>b.onclick=()=>set(b.dataset.m));set('full')})();
+/* quick enquiry cards */
+$('.qc form').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();const g=n=>f.querySelector('[name='+n+']').value.trim();if(!g('p')){toast('Please enter your phone number.');return}const m=`Hello Parakram Security, I am interested in ${f.dataset.s}.%0A*Name:* ${g('n')}%0A*Phone:* ${g('p')}`;open(`https://wa.me/${PH}?text=${m}`,'_blank');toast('Opening WhatsApp...')}));
+/* resume upload */
+(()=>{const f=document.getElementById('cvf');if(!f)return;f.onsubmit=null;const fi=document.getElementById('vf'),drop=document.getElementById('drop'),ok=document.getElementById('fileok'),st=document.getElementById('cvst'),btn=document.getElementById('cvb');let file=null;const MAX=3*1024*1024;
+const say=(c,h)=>{st.className='cvst '+c;st.innerHTML=h};
+const pick=fl=>{if(!fl)return;const okT=/\.(pdf|doc|docx)$/i.test(fl.name);if(!okT){say('err','Please choose a PDF or Word file (.pdf, .doc or .docx).');fi.value='';return}if(fl.size>MAX){say('err','That file is larger than 3 MB. Please choose a smaller file or email it to <a href="mailto:info@parakramindia.org">info@parakramindia.org</a>.');fi.value='';return}file=fl;st.className='cvst';ok.classList.add('on');ok.querySelector('span').textContent=fl.name+' ('+Math.max(1,Math.round(fl.size/1024))+' KB)'};
+fi.addEventListener('change',()=>pick(fi.files[0]));
+['dragenter','dragover'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.add('dr')}));['dragleave','drop'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.remove('dr')}));drop.addEventListener('drop',e=>{if(e.dataTransfer.files[0])pick(e.dataTransfer.files[0])});
+ok.querySelector('button').onclick=()=>{file=null;fi.value='';ok.classList.remove('on')};
+const g=i=>document.getElementById(i).value.trim();
+const fallback=()=>{const sub=encodeURIComponent('Career application: '+g('vn'));const body=encodeURIComponent('Name: '+g('vn')+'\nPhone: '+g('vp')+'\nCity: '+g('vc')+'\nRole: '+g('vr')+'\n\n'+g('vm')+'\n\n(Please attach your resume to this email.)');const wa='https://wa.me/'+PH+'?text='+encodeURIComponent('Hello Parakram Security, I would like to apply. Name: '+g('vn')+', Phone: '+g('vp')+', City: '+g('vc')+', Role: '+g('vr'));say('err','We could not upload your resume online right now. Please <a href="mailto:info@parakramindia.org?subject='+sub+'&body='+body+'">email your application</a> or <a href="'+wa+'" target="_blank" rel="noopener">send it on WhatsApp</a>.')};
+f.addEventListener('submit',async e=>{e.preventDefault();if(document.getElementById('vh').value)return;btn.disabled=true;btn.textContent='Sending...';say('wait','Sending your application...');
+try{let b64='';if(file){b64=await new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(String(r.result).split(',')[1]||'');r.onerror=rej;r.readAsDataURL(file)})}
+const r=await fetch('/api/apply',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:g('vn'),phone:g('vp'),email:g('ve'),city:g('vc'),role:g('vr'),message:g('vm'),fileName:file?file.name:'',fileType:file?file.type:'',fileBase64:b64})});
+const j=await r.json().catch(()=>({}));if(r.ok&&j.ok){f.innerHTML='<div class="full" style="grid-column:1/-1;text-align:center;padding:30px 10px"><div style="width:64px;height:64px;border-radius:50%;background:var(--gold);display:grid;place-items:center;margin:0 auto 16px;font-size:30px">✓</div><h3 style="font-size:24px;color:var(--navy)">Application received</h3><p style="color:#4a5070;margin-top:8px">Thank you. Our team will review your details and contact you.</p></div>';return}
+if(j.code==='too_large')say('err','That file is larger than 3 MB. Please choose a smaller file.');else if(j.code==='invalid')say('err','Please enter your name and a valid phone number.');else fallback()}catch(err){fallback()}
+btn.disabled=false;btn.textContent='Submit application'})})();
 /* planner wizard */
 (()=>{const w=document.getElementById('wz'),st=$('#wz .step'),bars=$('#wz .st i');let s=0;const show=n=>{s=n;st.forEach((e,k)=>e.classList.toggle('on',k==n));bars.forEach((e,k)=>e.classList.toggle('on',k<=n))};
 $('#wz [data-nx]').forEach(b=>b.onclick=()=>show(Math.min(s+1,3)));$('#wz [data-bk]').forEach(b=>b.onclick=()=>show(Math.max(s-1,0)));
@@ -1039,6 +1158,8 @@ cf.onsubmit=e=>{e.preventDefault();const m=`Hello Parakram Security,%0A*Name:* $
 mq=['Trained &amp; Verified Personnel','Customized Solutions','24/7 Availability','Support for Multiple Sites','Professionalism','Integrity','Courtesy','Your Safety Is Our Mission']
 M=json.load(open(os.path.join(H,'india_paths.json')))
 mapsvg=f'<svg id="imap" viewBox="0 0 {M["w"]} {M["h"]}" role="img" aria-label="Interactive map of India"><g>'+''.join(f'<path class="st{" hq" if x["n"]=="Uttarakhand" else ""}" data-n="{x["n"].replace("&","&amp;")}" d="{x["d"]}"/>' for x in M['states'])+f'</g><g class="pinG" transform="translate({M["pin"][0]} {M["pin"][1]})"><circle class="rd" r="14"/><circle class="rd r2" r="14"/><circle class="pd" r="9"/></g></svg>'
+for _k in ['ind','com','hos','bnk','res','edu']:
+    html=html.replace('@@I_'+_k+'@@',IC[{'ind':'ind','com':'com','hos':'hos','bnk':'bnk','res':'res','edu':'edu'}[_k]])
 html=(html.replace('@@MAP@@',mapsvg).replace('@@MEGA@@',mega).replace('@@TABS@@',tabs).replace('@@PANELS@@',panels).replace('@@CHIPS@@',chips)
  .replace('@@MARQUEE@@',''.join(f'<span>{x}</span>' for x in mq*2))
  .replace('@@OPTS@@',''.join(f'<option>{h}</option>' for _,h,*_ in SV)))
