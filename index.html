@@ -501,6 +501,28 @@ details{transition:border-color .4s,box-shadow .4s,background .4s}details p{anim
 @media(min-width:1360px){.rail{display:flex}}
 .stat span,.d,.vals span{font-size:max(11.5px,1em)}
 body .stat span{font-size:11.5px}.d{font-size:11.5px}
+
+/* ===== mobile banner v2: full bleed photos like SIS, text on a gradient ===== */
+.phm{display:none}
+@media(max-width:980px){
+.hx{height:calc(100svh - 60px)!important;min-height:600px!important;max-height:720px!important}
+.phm{display:block}
+.hx .fig{display:none!important}
+.hx .ph{top:0!important;bottom:0!important;height:100%!important;width:100%!important;right:0!important;-webkit-mask-image:none!important;mask-image:none!important;background-position:50% 8%!important;transform:none!important}
+.hx .slide:nth-child(3) .ph{background-position:62% 10%!important}
+.hx .ph:after{background:linear-gradient(180deg,rgba(5,13,58,.10) 0%,rgba(5,13,58,.18) 30%,rgba(5,13,58,.78) 58%,#050d3a 80%)!important}
+.hx .hxg,.hx .hxg.one{align-items:flex-end!important;padding-top:0!important;padding-bottom:78px!important}
+.hx .hxg .tx{padding-bottom:0!important;align-self:flex-end!important}
+.hx .slide>.hxg{height:100%!important}
+.hx .lead{-webkit-line-clamp:3!important}
+.hxc{padding-bottom:26px!important}
+}
+/* footer logo: never distorted */
+footer .brand img{width:auto!important;height:60px!important;aspect-ratio:1/1;object-fit:contain}
+@media(max-width:980px){
+footer .brand{gap:14px}footer .brand b{font-size:20px!important}footer .brand small{font-size:9px!important}
+.fg>div:first-child p{max-width:none!important}
+}
 </style>
 </head>
 <body>
@@ -521,7 +543,7 @@ body .stat span{font-size:11.5px}.d{font-size:11.5px}
 
 <main id="main">
 <section class="hx" id="hero" style="padding:0" aria-roledescription="carousel">
-<div class="slide on"><div class="bgc"></div>
+<div class="slide on"><div class="bgc"></div><div class="ph phm" style="--bg:url(img/parakram-about.webp)"></div>
 <div class="fig" id="fig"><div class="halo"></div><img src="img/parakram-hero-portrait.webp" alt="Parakram security officer" width="800" height="620" fetchpriority="high" decoding="async"></div>
 <div class="wrap hxg"><div class="tx"><div class="eyebrow">Your Safety Is Our Mission</div>
 <h1><span class="ln"><span>A life with</span></span><span class="ln"><span><em>full protection.</em></span></span></h1>
