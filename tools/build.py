@@ -404,6 +404,49 @@ footer{padding-top:56px}footer h4{margin-bottom:14px}footer li{margin-bottom:9px
 header.sh .nav{height:56px}header.sh nav{top:56px}
 }
 @media(max-width:480px){body .fg{grid-template-columns:1fr 1fr}}
+
+/* ===== CLARITY PASS: calm, editorial, SIS-level readability (last, wins) ===== */
+body{color:#1c2140;font-size:17px;line-height:1.7}
+h1,h2,h3,h4{font-weight:700}
+.h2{font-size:clamp(30px,3.5vw,46px);font-weight:700;letter-spacing:-.025em;line-height:1.12;color:var(--navy)}
+.h2 em,.h2.in em{background:none!important;color:#a87c00}
+.band h2 em,.contact .h2 em{color:var(--gold)}
+.h2 .w>span{transform:none!important;transition:none!important}
+.sec-h{max-width:820px;margin-bottom:48px}.sec-h p{font-size:19px;color:#4a5070}
+.eyebrow{font-size:12px;font-weight:700}
+.btn{border-radius:6px;letter-spacing:.03em}
+.pw,.wz,.map,.contact,.careers,.req,.pl,details,.ic,.imgc .im,.stats .grid,.vals div,.sx{border-radius:10px}
+.imgc:before{border-radius:10px}
+.rv{transform:translateY(14px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.mq{display:none}
+/* statement */
+.lead-s{padding:96px 0 24px}.ls{font-size:clamp(22px,2.5vw,33px);line-height:1.5;font-weight:500;letter-spacing:-.012em;color:#1c2140;max-width:1040px}.ls b{color:var(--navy3);font-weight:700}
+.kn{display:inline-block;margin-top:26px;font-weight:700;color:var(--navy);border-bottom:2px solid var(--gold);padding-bottom:3px;transition:.2s}.kn:hover{color:#a87c00}
+/* flat stats bar directly under banner */
+.stats{margin-top:0;background:#fff;border-bottom:1px solid var(--line)}.stats .grid{box-shadow:none;border-top:0;border-radius:0;max-width:none}
+.stats .wrap{padding:0 28px}.stat{padding:34px 20px}.stat b{font-weight:700;font-size:54px}
+.hxc{padding-bottom:36px}.hxg,.hxg.one{padding-bottom:96px}
+/* light planner + testimonials (fewer dark blocks) */
+.plan{background:var(--bg)}.plan:before{display:none}.plan .h2{color:var(--navy)}.plan .h2 em{color:#a87c00}.plan p.s{color:#4a5070}.plan li{color:#1c2140}.plan .eyebrow{color:var(--navy3)}.plan .eyebrow:before{background:var(--gold)}
+.wz{border:1px solid var(--line);box-shadow:0 12px 40px rgba(5,13,58,.07)}
+.tm{background:#fff;color:var(--navy)}.tm:before{color:rgba(5,13,58,.045)}.tm .h2{color:var(--navy)}.tm .h2 em{color:#a87c00}.tm .rate{background:var(--bg);border-color:var(--line);color:var(--navy)}.q cite{color:#a87c00}.qd button{background:#d7dbee}.qd button.on{background:var(--gold)}.q .st{color:#e0a800}
+/* services explorer: light list */
+.sx{box-shadow:0 12px 40px rgba(5,13,58,.07)}
+@media(min-width:981px){
+.tl{background:#fff;border-right:1px solid var(--line)}.tb{color:#4a5070;border-bottom:1px solid var(--line)}.tb .ti svg{stroke:var(--navy3)}.tb:hover,.tb.on{background:var(--bg);color:var(--navy)}.tb .ar{color:var(--navy)}
+section{padding:96px 0}
+}
+.sx .pb h3{font-weight:700}.num{font-weight:700}
+.pl{box-shadow:none}.pl:hover{box-shadow:0 14px 40px rgba(5,13,58,.08)}
+.band{padding:130px 0}
+header{box-shadow:0 1px 0 var(--line)}
+@media(max-width:980px){
+.lead-s{padding:56px 0 8px}.ls{font-size:20px;line-height:1.5}
+body .stats{margin-top:0}body .stats .grid{border-radius:0}.stats .wrap{padding:0}
+body .stat{padding:18px 4px}body .stat b{font-size:32px}
+.hxc{padding-bottom:26px}.hx .hxg,.hx .hxg.one{padding-bottom:100px}
+.sec-h p{font-size:16px}.h2{font-size:clamp(27px,7.8vw,34px)}
+}
 </style>
 </head>
 <body>
@@ -451,7 +494,7 @@ header.sh .nav{height:56px}header.sh nav{top:56px}
 <div class="stat"><b data-n="8">0</b><span>Security Services</span></div>
 </div></div></div>
 
-<div class="mq" aria-hidden="true"><div class="mt">@@MARQUEE@@</div></div>
+<section class="lead-s" id="intro"><div class="wrap"><p class="ls rv">Parakram Security India provides <b>manned, armed, industrial, commercial, residential, hospital, educational and bank &amp; ATM security</b> — professionally managed since 2017, combining disciplined manpower, rigorous training and deep-rooted Indian values to protect people, property and operations.</p><a class="kn" href="#about">Know more</a></div></section>
 
 <section id="about"><div class="wrap two">
 <div class="abt rv"><div class="eyebrow dk">About Parakram</div><h2 class="h2">Protecting people, property &amp; <em>operations.</em></h2>
