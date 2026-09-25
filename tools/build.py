@@ -38,10 +38,11 @@ html=r'''<!DOCTYPE html>
 <meta name="description" content="Parakram Security India Pvt. Ltd. — manned, armed, industrial, commercial, residential, hospital, educational and bank &amp; ATM security. 9+ years, 1,500+ trained professionals, 24/7. Haridwar, Uttarakhand.">
 <meta name="theme-color" content="#050d3a">
 <meta property="og:title" content="Parakram Security India | Your Safety Is Our Mission"><meta property="og:description" content="Professionally managed private security — trained, verified personnel, customized solutions, 24/7."><meta property="og:type" content="website"><meta property="og:image" content="img/parakram-operations.webp">
-<link rel="icon" href="logo.png">
+<link rel="icon" href="favicon.png" type="image/png"><link rel="apple-touch-icon" href="logo.png"><link rel="preload" as="image" href="img/parakram-hero-guard.webp" type="image/webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SecurityService","name":"Parakram Security India Pvt. Ltd.","url":"https://parakram-website.vercel.app","logo":"logo.png","email":"info@parakramindia.org","telephone":"+919105909006","foundingDate":"2017","address":{"@type":"PostalAddress","streetAddress":"6-A Sandesh Nagar, Kankhal","addressLocality":"Haridwar","addressRegion":"Uttarakhand","postalCode":"249408","addressCountry":"IN"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1200"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What types of security services do you provide?","acceptedAnswer":{"@type":"Answer","text":"Manned, Armed, Industrial, Commercial, Residential, Hospital, Educational, and Bank & ATM security."}},{"@type":"Question","name":"Is your service available 24/7?","acceptedAnswer":{"@type":"Answer","text":"Yes, our services are available 24/7."}},{"@type":"Question","name":"Can solutions be customized to my site?","acceptedAnswer":{"@type":"Answer","text":"Yes — we design customized security solutions around your needs, including multi-site support."}}]}</script>
 <style>
 :root{--navy:#050d3a;--navy2:#0a1660;--navy3:#0e1d78;--gold:#ffc400;--gold2:#ffd84d;--ink:#0b1020;--mut:#5a6180;--bg:#f4f5fb;--line:#e3e6f2;--r:14px;--ease:cubic-bezier(.2,.7,.2,1)}
 *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;scroll-padding-top:90px}
@@ -97,9 +98,9 @@ nav>ul>li:hover>a:after,nav>ul>li>a.act:after{transform:scaleX(1)}
 .hxg{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:end;height:100%;padding-top:50px;padding-bottom:110px}
 .hxg.one{grid-template-columns:1fr;align-items:center}.hxg.one .tx{max-width:820px}
 .hxg .tx{align-self:center;padding-bottom:96px}
-.hx h1{font-size:clamp(42px,5.2vw,80px);font-weight:800;line-height:1;letter-spacing:-.04em}.hx h1 em{font-style:normal;color:var(--gold);display:block}
-.hx h1 .ln{display:block;overflow:hidden;padding-bottom:.08em}.hx h1 .ln>span{display:block;transform:translateY(110%);transition:transform 1s var(--ease)}
-.slide.on h1 .ln>span{transform:none}.slide.on h1 .ln:nth-child(2)>span{transition-delay:.12s}.slide.on h1 .ln:nth-child(3)>span{transition-delay:.24s}
+.hx h1,.hx .hh{font-size:clamp(42px,5.2vw,80px);font-weight:800;line-height:1;letter-spacing:-.04em}.hx h1 em,.hx .hh em{font-style:normal;color:var(--gold);display:block}
+.hx h1 .ln,.hx .hh .ln{display:block;overflow:hidden;padding-bottom:.08em}.hx h1 .ln>span,.hx .hh .ln>span{display:block;transform:translateY(110%);transition:transform 1s var(--ease)}
+.slide.on h1 .ln>span,.slide.on .hh .ln>span{transform:none}.slide.on h1 .ln:nth-child(2)>span,.slide.on .hh .ln:nth-child(2)>span{transition-delay:.12s}.slide.on h1 .ln:nth-child(3)>span{transition-delay:.24s}
 .hx .lead,.hx .cta,.hx .eyebrow{opacity:0;transform:translateY(24px);transition:all .9s var(--ease) .35s}.slide.on .lead,.slide.on .cta,.slide.on .eyebrow{opacity:1;transform:none}.slide.on .cta{transition-delay:.55s}
 .hx .lead{font-size:19px;color:#c9cef0;max-width:580px;margin:26px 0 38px}.hx .cta{display:flex;flex-wrap:wrap;gap:14px}
 .fig{position:relative;height:100%;display:flex;align-items:flex-end;justify-content:center;transition:transform .2s}
@@ -125,13 +126,13 @@ nav>ul>li:hover>a:after,nav>ul>li>a.act:after{transform:scaleX(1)}
 .pfi:after{content:"";position:absolute;inset:0;border-radius:26px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18);background:linear-gradient(transparent 60%,rgba(5,13,58,.5))}
 .pf:before{content:"";position:absolute;right:-18px;top:-18px;width:60%;height:60%;border:3px solid var(--gold);border-radius:30px;opacity:.8}
 .pfb{position:absolute;left:-26px;bottom:36px;background:var(--gold);color:var(--navy);padding:18px 26px;border-radius:16px;box-shadow:0 24px 50px rgba(0,0,0,.4);z-index:2}.pfb b{display:block;font:800 44px/1 'Barlow Condensed'}.pfb span{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
-@media(max-width:980px){.ghost{font-size:34vw;top:30%}.pf{order:-1;padding:0;margin:0 0 20px;max-width:none}.pfi{aspect-ratio:16/9;border-radius:18px}.pfb{display:none}.hx h1{font-size:clamp(34px,9.6vw,50px)}.hx .lead{-webkit-line-clamp:3;margin:12px 0 20px}.hxg{padding-bottom:130px}.hxc{padding-bottom:92px}.pf:before{display:none}.pfb{left:12px;bottom:-14px;padding:12px 18px}.pfb b{font-size:32px}.hxg .tx{padding-bottom:0}.tagc{display:none}}
+@media(max-width:980px){.ghost{font-size:34vw;top:30%}.pf{order:-1;padding:0;margin:0 0 20px;max-width:none}.pfi{aspect-ratio:16/9;border-radius:18px}.pfb{display:none}.hx h1,.hx .hh{font-size:clamp(34px,9.6vw,50px)}.hx .lead{-webkit-line-clamp:3;margin:12px 0 20px}.hxg{padding-bottom:130px}.hxc{padding-bottom:92px}.pf:before{display:none}.pfb{left:12px;bottom:-14px;padding:12px 18px}.pfb b{font-size:32px}.hxg .tx{padding-bottom:0}.tagc{display:none}}
 
 /* ===== hero v3: consistent SIS-style banner ===== */
 .ghost,.tagc,.pf,.scrollcue{display:none!important}
 .hxg,.hxg.one{display:flex;align-items:center;grid-template-columns:none;height:100%;padding-top:0;padding-bottom:130px}
 .slide>.wrap.hxg{width:100%}.hxg .tx{align-self:center;padding:0;max-width:640px;width:100%}
-.hx h1{font-size:clamp(40px,4.7vw,68px);line-height:1.04;letter-spacing:-.035em}
+.hx h1,.hx .hh{font-size:clamp(40px,4.7vw,68px);line-height:1.04;letter-spacing:-.035em}
 .hx .lead{max-width:520px;font-size:18px;margin:22px 0 34px}
 .ph{position:absolute;top:0;bottom:0;right:0;width:64%;background:var(--bg) 60% center/cover;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 38%);mask-image:linear-gradient(90deg,transparent 0,#000 38%);transform:scale(1.08);transform-origin:right center;transition:transform 8s linear}
 .slide.on .ph{transform:scale(1)}.ph:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(3,8,38,.7),transparent 35%)}
@@ -144,7 +145,7 @@ nav>ul>li:hover>a:after,nav>ul>li>a.act:after{transform:scaleX(1)}
 .hx .hxg,.hx .hxg.one{align-items:flex-start;padding-top:290px;padding-bottom:120px}.hx .cta .btn{white-space:nowrap;font-size:13px}
 .ph{width:100%;height:270px;bottom:auto;-webkit-mask-image:linear-gradient(180deg,#000 55%,transparent);mask-image:linear-gradient(180deg,#000 55%,transparent);background-position:60% 40%}
 .fig{right:0;left:0;top:14px;bottom:auto;height:260px;display:flex!important;justify-content:center}.fig img{height:100%}.halo{width:300px;height:300px;top:20px;bottom:auto}
-.hx h1{font-size:clamp(34px,9.4vw,48px)}.hx .lead{font-size:15.5px;margin:12px 0 20px;-webkit-line-clamp:3}.hx .eyebrow{margin-bottom:10px}
+.hx h1,.hx .hh{font-size:clamp(34px,9.4vw,48px)}.hx .lead{font-size:15.5px;margin:12px 0 20px;-webkit-line-clamp:3}.hx .eyebrow{margin-bottom:10px}
 .hx .cta .btn{padding:14px 16px}
 .hxc{padding-bottom:90px}
 }
@@ -258,7 +259,7 @@ footer h4{font-size:16px;color:#fff;letter-spacing:.02em;margin-bottom:20px}foot
 /* ===== enhancement pass ===== */
 .skip{position:fixed;left:12px;top:-60px;background:var(--gold);color:var(--navy);padding:12px 18px;font-weight:700;z-index:300;border-radius:8px;transition:top .2s}.skip:focus{top:12px}
 :focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
-#pre{position:fixed;inset:0;background:var(--navy);z-index:400;display:grid;place-content:center;justify-items:center;gap:22px;transition:opacity .6s .1s,visibility .6s .1s;animation:preout .01s 3.5s forwards}
+#pre{position:fixed;inset:0;background:var(--navy);z-index:400;display:grid;place-content:center;justify-items:center;gap:22px;transition:opacity .6s .1s,visibility .6s .1s;animation:preout .01s 2s forwards}
 #pre img{height:96px;animation:pz 1.2s ease-in-out infinite}#pre i{width:140px;height:3px;background:rgba(255,255,255,.15);position:relative;overflow:hidden;border-radius:3px}#pre i:after{content:"";position:absolute;inset:0;background:var(--gold);transform:translateX(-100%);animation:ld 1.1s var(--ease) infinite}
 @keyframes pz{50%{transform:scale(1.08)}}@keyframes ld{to{transform:translateX(100%)}}@keyframes preout{to{opacity:0;visibility:hidden}}
 #pre.off{opacity:0;visibility:hidden}
@@ -303,7 +304,7 @@ nav>ul{flex-direction:column}nav>ul>li>a{padding:18px 2px;font-size:19px;border-
 @media(max-width:980px){
 section{padding:76px 0}.wrap{padding:0 20px}.sec-h{margin-bottom:38px}.sec-h p{font-size:16px}
 .hxg,.hxg.one{grid-template-columns:1fr;align-items:start;align-content:start;padding-top:22px;padding-bottom:150px;gap:0}.hxg.one{padding-top:70px}
-.hxg .tx{padding-bottom:10px}.hx h1{font-size:clamp(40px,11.5vw,62px)}.hx .lead{font-size:16px;margin:16px 0 24px;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}.hx .eyebrow{font-size:10.5px;margin-bottom:12px}
+.hxg .tx{padding-bottom:10px}.hx h1,.hx .hh{font-size:clamp(40px,11.5vw,62px)}.hx .lead{font-size:16px;margin:16px 0 24px;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}.hx .eyebrow{font-size:10.5px;margin-bottom:12px}
 .fig{order:-1;height:250px;margin:0 0 16px}.fig img{height:100%}.tagc{display:none}.halo{width:320px;height:320px}
 .hx .cta .btn{padding:14px 18px;font-size:13px;flex:1;justify-content:center}
 .hxc{padding-bottom:100px}.d{width:38px;font-size:0}.d span{display:none}.dots{gap:8px}.arrows{display:none}
@@ -342,7 +343,7 @@ section{padding:76px 0}.wrap{padding:0 20px}.sec-h{margin-bottom:38px}.sec-h p{f
 <a class="sidetab" href="#contact">Get in Touch</a>
 <div class="util"><div class="wrap"><div class="l"><span class="pulse"></span>Control room online · 24/7 <span class="ist" id="ist"></span></div><div class="r"><a href="tel:+919105909006">+91 91059 09006</a><a href="mailto:info@parakramindia.org">info@parakramindia.org</a><a href="#careers">Careers</a></div></div></div>
 <header id="hd"><div class="wrap nav">
-<a class="brand" href="#top"><img src="logo.png" alt="Parakram shield logo"><div><b>PARAKRAM</b><small>SECURITY INDIA PVT. LTD.</small></div></a>
+<a class="brand" href="#top"><img src="logo.png" alt="Parakram shield logo" width="56" height="56"><div><b>PARAKRAM</b><small>SECURITY INDIA PVT. LTD.</small></div></a>
 <nav id="nav"><ul>
 <li><a href="#about">About</a></li>
 <li class="dd"><a href="#services">Services ▾</a><div class="menu"><div class="mg">@@MEGA@@</div><div class="mp"><img src="img/parakram-operations.webp" alt="" loading="lazy"><b>Customized security solutions for every environment</b><a href="#planner">Plan your security →</a></div></div></li>
@@ -353,19 +354,19 @@ section{padding:76px 0}.wrap{padding:0 20px}.sec-h{margin-bottom:38px}.sec-h p{f
 <main id="top">
 <section class="hx" id="hero" style="padding:0" aria-roledescription="carousel">
 <div class="hglow" id="hglow"></div><div class="slide on"><div class="bgc"></div>
-<div class="fig" id="fig"><div class="halo"></div><img src="img/parakram-hero-guard.webp" alt="Parakram security officer" fetchpriority="high"></div>
+<div class="fig" id="fig"><div class="halo"></div><img src="img/parakram-hero-guard.webp" alt="Parakram security officer" width="800" height="1000" fetchpriority="high" decoding="async"></div>
 <div class="wrap hxg"><div class="tx"><div class="eyebrow">Your Safety Is Our Mission</div>
 <h1><span class="ln"><span>A life with</span></span><span class="ln"><span><em>full protection.</em></span></span></h1>
 <p class="lead">Professionally managed private security since 2017 — disciplined manpower, rigorous training and deep-rooted Indian values to protect people, property and operations.</p>
 <div class="cta"><a class="btn btn-g" href="#planner">Plan Your Security →</a><a class="btn btn-o" href="#services">Our Services</a></div></div></div></div>
 <div class="slide"><div class="bgc"></div><div class="ph" style="--bg:url(img/parakram-operations.webp)"></div>
 <div class="wrap hxg"><div class="tx"><div class="eyebrow">Corporate &amp; Commercial</div>
-<h1><span class="ln"><span>Protection for</span></span><span class="ln"><span><em>every premises.</em></span></span></h1>
+<h2 class="hh"><span class="ln"><span>Protection for</span></span><span class="ln"><span><em>every premises.</em></span></span></h2>
 <p class="lead">Trained, verified guards with excellent site coordination — for offices, campuses and business environments.</p>
 <div class="cta"><a class="btn btn-g" href="#contact">Get Started →</a><a class="btn btn-o" href="#industries">Industries We Protect</a></div></div></div></div>
 <div class="slide"><div class="bgc"></div><div class="ph" style="--bg:url(img/parakram-training.webp)"></div>
 <div class="wrap hxg"><div class="tx"><div class="eyebrow">Trained &amp; Verified Personnel</div>
-<h1><span class="ln"><span>Trained. Verified.</span></span><span class="ln"><span><em>Ready to serve.</em></span></span></h1>
+<h2 class="hh"><span class="ln"><span>Trained. Verified.</span></span><span class="ln"><span><em>Ready to serve.</em></span></span></h2>
 <p class="lead">Disciplined recruitment and rigorous training ensure professionalism, integrity and courtesy at every site.</p>
 <div class="cta"><a class="btn btn-g" href="#why">Why Parakram →</a><a class="btn btn-o" href="#contact">Talk to Us</a></div></div></div></div>
 <div class="hxc"><div class="wrap"><div class="dots"><button class="d on" aria-label="Slide 1"><i></i><span>01 · Protection</span></button><button class="d" aria-label="Slide 2"><i></i><span>02 · Corporate</span></button><button class="d" aria-label="Slide 3"><i></i><span>03 · Training</span></button></div>
@@ -388,7 +389,7 @@ section{padding:76px 0}.wrap{padding:0 20px}.sec-h{margin-bottom:38px}.sec-h p{f
 <p>We combine disciplined manpower, rigorous training and deep-rooted Indian values to protect people, property and operations — with personnel known for professionalism, integrity and courtesy.</p>
 <div class="vals"><div><b>Professionalism</b><span>Disciplined, trained personnel</span></div><div><b>Integrity</b><span>Verified, trustworthy teams</span></div><div><b>Courtesy</b><span>Respectful service, always</span></div></div>
 <a class="btn btn-n" href="#contact">Get Started →</a></div>
-<div class="imgc rv"><div class="im"><img src="img/parakram-about.webp" alt="Parakram security team" loading="lazy"></div><div class="bd"><b>2017</b><span>Established · Haridwar</span></div></div>
+<div class="imgc rv"><div class="im"><img src="img/parakram-about.webp" alt="Parakram security team" width="1200" height="896" loading="lazy" decoding="async"></div><div class="bd"><b>2017</b><span>Established · Haridwar</span></div></div>
 </div></section>
 
 <section id="services" class="bg"><div class="wrap">
@@ -508,8 +509,7 @@ $('.pl').forEach(c=>c.addEventListener('mousemove',e=>{const r=c.getBoundingClie
 (()=>{const q=$('.q'),d=$('.qd button');let i=0,t;const go=n=>{i=n%q.length;q.forEach((e,k)=>e.classList.toggle('on',k==i));d.forEach((e,k)=>e.classList.toggle('on',k==i));clearTimeout(t);t=setTimeout(()=>go(i+1),5500)};d.forEach((b,k)=>b.onclick=()=>go(k));t=setTimeout(()=>go(1),5500)})();
 
 /* --- enhancement JS --- */
-addEventListener('load',()=>setTimeout(()=>document.getElementById('pre').classList.add('off'),450));
-setTimeout(()=>document.getElementById('pre').classList.add('off'),2600);
+const pre=document.getElementById('pre');addEventListener('DOMContentLoaded',()=>setTimeout(()=>pre.classList.add('off'),250));setTimeout(()=>pre.classList.add('off'),1200);
 const toast=m=>{const t=document.getElementById('toast');t.textContent=m;t.classList.add('on');clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove('on'),3200)};
 /* split headings */
 $('.h2').forEach(h=>{let i=0;const wrap=n=>{[...n.childNodes].forEach(c=>{if(c.nodeType===3){const f=document.createDocumentFragment();c.textContent.split(/(\s+)/).forEach(t=>{if(!t)return;if(/^\s+$/.test(t)){f.appendChild(document.createTextNode(' '));return}const w=document.createElement('span');w.className='w';const b=document.createElement('span');b.textContent=t;b.style.setProperty('--i',i++);w.appendChild(b);f.appendChild(w)});c.replaceWith(f)}else if(c.nodeType===1)wrap(c)})};wrap(h);h.setAttribute('aria-label',h.textContent);io2.observe(h)});
