@@ -126,6 +126,28 @@ nav>ul>li:hover>a:after,nav>ul>li>a.act:after{transform:scaleX(1)}
 .pf:before{content:"";position:absolute;right:-18px;top:-18px;width:60%;height:60%;border:3px solid var(--gold);border-radius:30px;opacity:.8}
 .pfb{position:absolute;left:-26px;bottom:36px;background:var(--gold);color:var(--navy);padding:18px 26px;border-radius:16px;box-shadow:0 24px 50px rgba(0,0,0,.4);z-index:2}.pfb b{display:block;font:800 44px/1 'Barlow Condensed'}.pfb span{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
 @media(max-width:980px){.ghost{font-size:34vw;top:30%}.pf{order:-1;padding:0;margin:0 0 20px;max-width:none}.pfi{aspect-ratio:16/9;border-radius:18px}.pfb{display:none}.hx h1{font-size:clamp(34px,9.6vw,50px)}.hx .lead{-webkit-line-clamp:3;margin:12px 0 20px}.hxg{padding-bottom:130px}.hxc{padding-bottom:92px}.pf:before{display:none}.pfb{left:12px;bottom:-14px;padding:12px 18px}.pfb b{font-size:32px}.hxg .tx{padding-bottom:0}.tagc{display:none}}
+
+/* ===== hero v3: consistent SIS-style banner ===== */
+.ghost,.tagc,.pf,.scrollcue{display:none!important}
+.hxg,.hxg.one{display:flex;align-items:center;grid-template-columns:none;height:100%;padding-top:0;padding-bottom:130px}
+.slide>.wrap.hxg{width:100%}.hxg .tx{align-self:center;padding:0;max-width:640px;width:100%}
+.hx h1{font-size:clamp(40px,4.7vw,68px);line-height:1.04;letter-spacing:-.035em}
+.hx .lead{max-width:520px;font-size:18px;margin:22px 0 34px}
+.ph{position:absolute;top:0;bottom:0;right:0;width:64%;background:var(--bg) 60% center/cover;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 38%);mask-image:linear-gradient(90deg,transparent 0,#000 38%);transform:scale(1.08);transform-origin:right center;transition:transform 8s linear}
+.slide.on .ph{transform:scale(1)}.ph:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(3,8,38,.7),transparent 35%)}
+.fig{position:absolute;right:max(4%,calc((100% - 1280px)/2 + 20px));bottom:0;top:auto;height:96%;width:auto;display:block;z-index:1}
+.fig img{height:100%;width:auto;-webkit-mask-image:linear-gradient(#000 88%,transparent);mask-image:linear-gradient(#000 88%,transparent)}
+.halo{left:50%;transform:translateX(-50%)}
+.hxc{padding-bottom:100px}
+.dots{gap:22px}.d{width:150px}
+@media(max-width:980px){
+.hx .hxg,.hx .hxg.one{align-items:flex-start;padding-top:290px;padding-bottom:120px}.hx .cta .btn{white-space:nowrap;font-size:13px}
+.ph{width:100%;height:270px;bottom:auto;-webkit-mask-image:linear-gradient(180deg,#000 55%,transparent);mask-image:linear-gradient(180deg,#000 55%,transparent);background-position:60% 40%}
+.fig{right:0;left:0;top:14px;bottom:auto;height:260px;display:flex!important;justify-content:center}.fig img{height:100%}.halo{width:300px;height:300px;top:20px;bottom:auto}
+.hx h1{font-size:clamp(34px,9.4vw,48px)}.hx .lead{font-size:15.5px;margin:12px 0 20px;-webkit-line-clamp:3}.hx .eyebrow{margin-bottom:10px}
+.hx .cta .btn{padding:14px 16px}
+.hxc{padding-bottom:90px}
+}
 /* stats */
 .stats{position:relative;z-index:6;margin-top:-84px}.stats .grid{display:grid;grid-template-columns:repeat(5,1fr);background:#fff;border-radius:18px;box-shadow:0 40px 90px rgba(5,13,58,.25);overflow:hidden;border-top:5px solid var(--gold)}
 .stat{padding:36px 24px;text-align:center;border-right:1px solid var(--line);transition:.3s}.stat:hover{background:var(--bg)}.stat:last-child{border:0}
@@ -172,7 +194,7 @@ nav>ul>li:hover>a:after,nav>ul>li>a.act:after{transform:scaleX(1)}
 /* industries */
 .ind{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .ic{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:3/4;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:28px;background:var(--navy) center/cover;transition:transform .5s var(--ease),box-shadow .5s;isolation:isolate}
-.ic:before{content:"";position:absolute;inset:0;background:var(--bg2) center/cover;transition:transform .8s var(--ease);z-index:-2}.ic:hover:before{transform:scale(1.1)}
+.ic:before{content:"";position:absolute;inset:0;background:var(--bg2) var(--pos,center)/cover;transition:transform .8s var(--ease);z-index:-2}.ic:hover:before{transform:scale(1.1)}
 .ic:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,13,58,.15),rgba(5,13,58,.95));z-index:-1}
 .ic:hover{transform:translateY(-8px);box-shadow:0 40px 80px rgba(5,13,58,.3)}
 .ic .n{position:absolute;top:24px;left:28px;font-family:'Barlow Condensed';font-size:20px;letter-spacing:.14em;color:var(--gold);font-weight:700}
@@ -289,19 +311,22 @@ section{padding:76px 0}.wrap{padding:0 20px}.sec-h{margin-bottom:38px}.sec-h p{f
 
 <main id="top">
 <section class="hx" id="hero" style="padding:0" aria-roledescription="carousel">
-<div class="slide on"><div class="bgc"></div><div class="ghost">PARAKRAM</div>
+<div class="slide on"><div class="bgc"></div>
+<div class="fig" id="fig"><div class="halo"></div><img src="img/parakram-hero-guard.webp" alt="Parakram security officer" fetchpriority="high"></div>
 <div class="wrap hxg"><div class="tx"><div class="eyebrow">Your Safety Is Our Mission</div>
 <h1><span class="ln"><span>A life with</span></span><span class="ln"><span><em>full protection.</em></span></span></h1>
 <p class="lead">Professionally managed private security since 2017 — disciplined manpower, rigorous training and deep-rooted Indian values to protect people, property and operations.</p>
-<div class="cta"><a class="btn btn-g" href="#planner">Plan Your Security →</a><a class="btn btn-o" href="#services">Our Services</a></div></div>
-<div class="fig" id="fig"><div class="halo"></div><img src="img/parakram-hero-guard.webp" alt="Parakram security officer" fetchpriority="high"><div class="tagc t1"><i></i>Trained &amp; Verified</div><div class="tagc t2"><i></i>Available 24/7</div></div></div></div>
-<div class="slide"><div class="bgc"></div><div class="ghost">CORPORATE</div>
-<div class="wrap hxg"><div class="tx"><div class="eyebrow">Corporate &amp; Commercial</div><h1><span class="ln"><span>Professional protection</span></span><span class="ln"><span><em>for every premises.</em></span></span></h1><p class="lead">Trained, verified guards with excellent site coordination — for offices, campuses and business environments.</p><div class="cta"><a class="btn btn-g" href="#contact">Get Started →</a><a class="btn btn-o" href="#industries">Industries We Protect</a></div></div>
-<div class="pf"><div class="pfi"><img src="img/parakram-operations.webp" alt="Parakram guard at a corporate entrance"></div><div class="pfb"><b>24/7</b><span>Corporate &amp; commercial</span></div></div></div></div>
-<div class="slide"><div class="bgc"></div><div class="ghost">TRAINED</div>
-<div class="wrap hxg"><div class="tx"><div class="eyebrow">Trained &amp; Verified Personnel</div><h1><span class="ln"><span>Rigorous training.</span></span><span class="ln"><span><em>Uncompromising discipline.</em></span></span></h1><p class="lead">Disciplined recruitment and rigorous training ensure professionalism, integrity and courtesy at every site.</p><div class="cta"><a class="btn btn-g" href="#why">Why Parakram →</a><a class="btn btn-o" href="#contact">Talk to Us</a></div></div>
-<div class="pf"><div class="pfi"><img src="img/parakram-training.webp" alt="Parakram personnel in training"></div><div class="pfb"><b>1,500+</b><span>Trained professionals</span></div></div></div></div>
-<div class="scrollcue">Scroll</div>
+<div class="cta"><a class="btn btn-g" href="#planner">Plan Your Security →</a><a class="btn btn-o" href="#services">Our Services</a></div></div></div></div>
+<div class="slide"><div class="bgc"></div><div class="ph" style="--bg:url(img/parakram-operations.webp)"></div>
+<div class="wrap hxg"><div class="tx"><div class="eyebrow">Corporate &amp; Commercial</div>
+<h1><span class="ln"><span>Protection for</span></span><span class="ln"><span><em>every premises.</em></span></span></h1>
+<p class="lead">Trained, verified guards with excellent site coordination — for offices, campuses and business environments.</p>
+<div class="cta"><a class="btn btn-g" href="#contact">Get Started →</a><a class="btn btn-o" href="#industries">Industries We Protect</a></div></div></div></div>
+<div class="slide"><div class="bgc"></div><div class="ph" style="--bg:url(img/parakram-training.webp)"></div>
+<div class="wrap hxg"><div class="tx"><div class="eyebrow">Trained &amp; Verified Personnel</div>
+<h1><span class="ln"><span>Trained. Verified.</span></span><span class="ln"><span><em>Ready to serve.</em></span></span></h1>
+<p class="lead">Disciplined recruitment and rigorous training ensure professionalism, integrity and courtesy at every site.</p>
+<div class="cta"><a class="btn btn-g" href="#why">Why Parakram →</a><a class="btn btn-o" href="#contact">Talk to Us</a></div></div></div></div>
 <div class="hxc"><div class="wrap"><div class="dots"><button class="d on" aria-label="Slide 1"><i></i><span>01 · Protection</span></button><button class="d" aria-label="Slide 2"><i></i><span>02 · Corporate</span></button><button class="d" aria-label="Slide 3"><i></i><span>03 · Training</span></button></div>
 <div class="arrows"><button id="pv" aria-label="Previous">←</button><button id="nx" aria-label="Next">→</button></div></div></div>
 </section>
@@ -353,7 +378,7 @@ section{padding:76px 0}.wrap{padding:0 20px}.sec-h{margin-bottom:38px}.sec-h p{f
 <a class="ic rv" style="--bg2:url(img/parakram-training.webp)" href="#planner"><span class="n">01</span><span class="go">→</span><h3>Industrial</h3><span>Plants · Warehouses</span></a>
 <a class="ic rv" style="--bg2:url(img/parakram-operations.webp)" href="#planner"><span class="n">02</span><span class="go">→</span><h3>Corporate</h3><span>Offices · Business premises</span></a>
 <a class="ic rv" style="--bg2:url(img/parakram-about.webp)" href="#planner"><span class="n">03</span><span class="go">→</span><h3>Healthcare</h3><span>Hospitals · Clinics</span></a>
-<a class="ic rv nb" href="#planner"><span class="n">04</span><span class="go">→</span><h3>Banking</h3><span>Branches · ATMs</span></a>
+<a class="ic rv" style="--bg2:url(img/parakram-operations.webp);--pos:85% 50%" href="#planner"><span class="n">04</span><span class="go">→</span><h3>Banking</h3><span>Branches · ATMs</span></a>
 </div></div></section>
 
 <section class="band" style="background-image:url(img/parakram-operations.webp)"><div class="wrap rv"><div class="eyebrow" style="justify-content:center">Trusted Protection</div><h2>Professionalism. Integrity. <em>Courtesy.</em></h2><p>Personnel who protect people, property and operations — 24/7.</p><a class="btn btn-g" href="#contact">Get Started →</a></div></section>
