@@ -223,6 +223,30 @@ footer h4{font-size:16px;color:#fff;letter-spacing:.02em;margin-bottom:20px}foot
 /* reveal */
 .rv{opacity:0;transform:translateY(40px);transition:opacity 1s var(--ease),transform 1s var(--ease)}.rv.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition-duration:.01ms!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+
+/* ===== enhancement pass ===== */
+.skip{position:fixed;left:12px;top:-60px;background:var(--gold);color:var(--navy);padding:12px 18px;font-weight:700;z-index:300;border-radius:8px;transition:top .2s}.skip:focus{top:12px}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+#pre{position:fixed;inset:0;background:var(--navy);z-index:400;display:grid;place-content:center;justify-items:center;gap:22px;transition:opacity .6s .1s,visibility .6s .1s;animation:preout .01s 3.5s forwards}
+#pre img{height:96px;animation:pz 1.2s ease-in-out infinite}#pre i{width:140px;height:3px;background:rgba(255,255,255,.15);position:relative;overflow:hidden;border-radius:3px}#pre i:after{content:"";position:absolute;inset:0;background:var(--gold);transform:translateX(-100%);animation:ld 1.1s var(--ease) infinite}
+@keyframes pz{50%{transform:scale(1.08)}}@keyframes ld{to{transform:translateX(100%)}}@keyframes preout{to{opacity:0;visibility:hidden}}
+#pre.off{opacity:0;visibility:hidden}
+#toast{position:fixed;left:50%;bottom:90px;transform:translate(-50%,30px);background:var(--navy);color:#fff;padding:14px 22px;border-radius:999px;font-weight:600;font-size:14px;z-index:300;opacity:0;visibility:hidden;transition:.4s var(--ease);box-shadow:0 18px 50px rgba(0,0,0,.35);border:1px solid rgba(255,196,0,.5);max-width:90vw;text-align:center}#toast.on{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.sidetab{position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:65;writing-mode:vertical-rl;background:var(--gold);color:var(--navy);font-weight:800;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;padding:22px 11px;border-radius:12px 0 0 12px;box-shadow:-8px 10px 30px rgba(0,0,0,.25);transition:.3s}.sidetab:hover{padding-right:18px;background:#fff}
+.hglow{position:absolute;z-index:1;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(255,196,0,.16),transparent 65%);left:0;top:0;pointer-events:none;transform:translate(-50%,-50%);opacity:0;transition:opacity .4s}.hx:hover .hglow{opacity:1}
+nav>ul>li>a.act{color:var(--navy3)}
+.h2 .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.12em;margin-bottom:-.12em}.h2 .w>span{display:inline-block;transform:translateY(112%);transition:transform .9s var(--ease);transition-delay:calc(var(--i)*45ms)}.h2.in .w>span{transform:none}
+.h2 em{background-size:0 100%;background-repeat:no-repeat;background-image:linear-gradient(rgba(255,196,0,.55),rgba(255,196,0,.55));background-position:0 92%;background-size:0% 38%;transition:background-size 1s var(--ease) .6s}.h2.in em{background-size:100% 38%}
+.plan .h2 em,.tm .h2 em,.band h2 em{background-image:none}
+.big sup{font-size:.5em;top:-.7em;color:var(--navy3)}
+.btn{will-change:transform}
+.ic,.pl{transform-style:preserve-3d;transition:transform .35s var(--ease),box-shadow .5s,border-color .3s}
+.sec-h .eyebrow,.abt .eyebrow,.covt .eyebrow{position:relative}
+section+section:not(.bg):not(.plan):not(.band):not(.tm){border-top:0}
+.cur{display:none}
+@media(max-width:1180px){.sidetab{display:none}}
+@media(max-width:980px){#toast{bottom:150px}}
+@media(prefers-reduced-motion:reduce){#pre{display:none}.h2 .w>span{transform:none}.h2 em{background-size:100% 38%}}
 /* ===== responsive ===== */
 @media(max-width:1180px){
 .util{display:none}.nav{height:68px}.brand img{height:44px}.brand b{font-size:19px}
@@ -267,7 +291,11 @@ section{padding:76px 0}.wrap{padding:0 20px}.sec-h{margin-bottom:38px}.sec-h p{f
 </style>
 </head>
 <body>
+<a class="skip" href="#top">Skip to content</a>
+<div id="pre" aria-hidden="true"><img src="logo.png" alt=""><i></i></div>
 <div id="pg"></div>
+<div id="toast" role="status" aria-live="polite"></div>
+<a class="sidetab" href="#contact">Get in Touch</a>
 <div class="util"><div class="wrap"><div class="l"><span class="pulse"></span>Available 24/7 · Your Safety Is Our Mission</div><div class="r"><a href="tel:+919105909006">+91 91059 09006</a><a href="mailto:info@parakramindia.org">info@parakramindia.org</a><a href="#careers">Careers</a></div></div></div>
 <header id="hd"><div class="wrap nav">
 <a class="brand" href="#top"><img src="logo.png" alt="Parakram shield logo"><div><b>PARAKRAM</b><small>SECURITY INDIA PVT. LTD.</small></div></a>
@@ -280,7 +308,7 @@ section{padding:76px 0}.wrap{padding:0 20px}.sec-h{margin-bottom:38px}.sec-h p{f
 
 <main id="top">
 <section class="hx" id="hero" style="padding:0" aria-roledescription="carousel">
-<div class="slide on"><div class="bgc"></div>
+<div class="hglow" id="hglow"></div><div class="slide on"><div class="bgc"></div>
 <div class="fig" id="fig"><div class="halo"></div><img src="img/parakram-hero-guard.webp" alt="Parakram security officer" fetchpriority="high"></div>
 <div class="wrap hxg"><div class="tx"><div class="eyebrow">Your Safety Is Our Mission</div>
 <h1><span class="ln"><span>A life with</span></span><span class="ln"><span><em>full protection.</em></span></span></h1>
@@ -355,9 +383,9 @@ section{padding:76px 0}.wrap{padding:0 20px}.sec-h{margin-bottom:38px}.sec-h p{f
 <section id="why" class="bg"><div class="wrap">
 <div class="sec-h rv"><div class="eyebrow dk">Why Us</div><h2 class="h2">Why leaders choose <em>Parakram.</em></h2></div>
 <div class="pil">
-<div class="pl rv"><div class="big">9+</div><h3>Years of Experience</h3><p>A professionally managed security company operating since 2017.</p></div>
-<div class="pl rv"><div class="big">1,500+</div><h3>Trained &amp; Verified Personnel</h3><p>Disciplined recruitment and rigorous training for every guard.</p></div>
-<div class="pl rv"><div class="big">100%</div><h3>Customized Solutions</h3><p>Services designed around your site, your risk and your operations.</p></div></div>
+<div class="pl rv"><div class="big" data-n="9" data-s="+">0</div><h3>Years of Experience</h3><p>A professionally managed security company operating since 2017.</p></div>
+<div class="pl rv"><div class="big" data-n="1500" data-s="+">0</div><h3>Trained &amp; Verified Personnel</h3><p>Disciplined recruitment and rigorous training for every guard.</p></div>
+<div class="pl rv"><div class="big" data-n="100" data-s="%">0</div><h3>Customized Solutions</h3><p>Services designed around your site, your risk and your operations.</p></div></div>
 <div class="proc"><h3 class="h2 rv">How we get you protected.</h3>
 <div class="steps rv"><div class="sp"><i>1</i><div><b>Consult</b><span>Tell us your needs</span></div></div><div class="sp"><i>2</i><div><b>Assess</b><span>We study your site</span></div></div><div class="sp"><i>3</i><div><b>Customize</b><span>A tailored security plan</span></div></div><div class="sp"><i>4</i><div><b>Deploy</b><span>Trained, verified personnel</span></div></div><div class="sp"><i>5</i><div><b>Supervise</b><span>Ongoing quality checks</span></div></div></div></div>
 </div></section>
@@ -418,6 +446,7 @@ bg.onclick=()=>{const o=nav.classList.toggle('open');bg.classList.toggle('x',o);
 $('nav a').forEach(a=>a.addEventListener('click',e=>{if(a.parentNode.classList.contains('dd')&&mq('(max-width:1180px)')&&e.target===a){e.preventDefault();a.parentNode.classList.toggle('o');return}nav.classList.remove('open');bg.classList.remove('x');document.body.style.overflow=''}));
 /* reveal */
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+const io2=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io2.unobserve(e.target)}}),{threshold:.3});
 $('.rv').forEach((e,i)=>{e.style.transitionDelay=(i%4)*80+'ms';io.observe(e)});
 /* counters */
 const co=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,n=+el.dataset.n,d=+el.dataset.d||0,s=el.dataset.s||'';let t0=null;const f=t=>{t0=t0||t;const p=Math.min((t-t0)/1800,1),v=n*(1-Math.pow(1-p,4));el.innerHTML=(d?v.toFixed(d):Math.round(v).toLocaleString('en-IN'))+(s?'<sup>'+s+'</sup>':'');if(p<1)requestAnimationFrame(f)};requestAnimationFrame(f);co.unobserve(el)}),{threshold:.5});
@@ -433,12 +462,31 @@ tb.forEach((b,k)=>{b.onclick=()=>sel(k);b.onmouseenter=()=>{if(!mq('(max-width:9
 $('.pl').forEach(c=>c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')}));
 /* testimonials */
 (()=>{const q=$('.q'),d=$('.qd button');let i=0,t;const go=n=>{i=n%q.length;q.forEach((e,k)=>e.classList.toggle('on',k==i));d.forEach((e,k)=>e.classList.toggle('on',k==i));clearTimeout(t);t=setTimeout(()=>go(i+1),5500)};d.forEach((b,k)=>b.onclick=()=>go(k));t=setTimeout(()=>go(1),5500)})();
+
+/* --- enhancement JS --- */
+addEventListener('load',()=>setTimeout(()=>document.getElementById('pre').classList.add('off'),450));
+setTimeout(()=>document.getElementById('pre').classList.add('off'),2600);
+const toast=m=>{const t=document.getElementById('toast');t.textContent=m;t.classList.add('on');clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove('on'),3200)};
+/* split headings */
+$('.h2').forEach(h=>{let i=0;const wrap=n=>{[...n.childNodes].forEach(c=>{if(c.nodeType===3){const f=document.createDocumentFragment();c.textContent.split(/(\s+)/).forEach(t=>{if(!t)return;if(/^\s+$/.test(t)){f.appendChild(document.createTextNode(' '));return}const w=document.createElement('span');w.className='w';const b=document.createElement('span');b.textContent=t;b.style.setProperty('--i',i++);w.appendChild(b);f.appendChild(w)});c.replaceWith(f)}else if(c.nodeType===1)wrap(c)})};wrap(h);h.setAttribute('aria-label',h.textContent);io2.observe(h)});
+/* scrollspy */
+const spy=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){$('nav>ul>li>a').forEach(a=>a.classList.toggle('act',a.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-45% 0px -50% 0px'});
+$('main section[id]').forEach(x=>spy.observe(x));
+/* tilt cards */
+if(!mq('(pointer:coarse)'))$('.ic').forEach(c=>{c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform=`perspective(1000px) translateY(-8px) rotateX(${-y*7}deg) rotateY(${x*9}deg)`});c.addEventListener('mouseleave',()=>c.style.transform='')});
+/* magnetic buttons */
+if(!mq('(pointer:coarse)'))$('.btn-g,.btn-n').forEach(b=>{b.addEventListener('mousemove',e=>{const r=b.getBoundingClientRect();b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.18}px,${(e.clientY-r.top-r.height/2)*.28}px)`});b.addEventListener('mouseleave',()=>b.style.transform='')});
+/* hero glow + scroll fade */
+(()=>{const hx=document.getElementById('hero'),g=document.getElementById('hglow');if(!mq('(pointer:coarse)'))hx.addEventListener('mousemove',e=>{const r=hx.getBoundingClientRect();g.style.left=(e.clientX-r.left)+'px';g.style.top=(e.clientY-r.top)+'px'});
+addEventListener('scroll',()=>{if(scrollY<900){const y=scrollY;$('.hxg .tx').forEach(t=>{t.style.transform=`translateY(${y*.12}px)`;t.style.opacity=Math.max(0,1-y/650)})}},{passive:true})})();
+/* parallax on about image + band */
+addEventListener('scroll',()=>{const im=document.querySelector('.imgc .im img');if(im){const r=im.getBoundingClientRect();if(r.top<innerHeight&&r.bottom>0)im.style.objectPosition=`50% ${50+(r.top/innerHeight-.5)*18}%`}},{passive:true});
 /* planner wizard */
 (()=>{const w=document.getElementById('wz'),st=$('#wz .step'),bars=$('#wz .st i');let s=0;const show=n=>{s=n;st.forEach((e,k)=>e.classList.toggle('on',k==n));bars.forEach((e,k)=>e.classList.toggle('on',k<=n))};
 $('#wz [data-nx]').forEach(b=>b.onclick=()=>show(Math.min(s+1,3)));$('#wz [data-bk]').forEach(b=>b.onclick=()=>show(Math.max(s-1,0)));
 document.getElementById('send').onclick=()=>{const sv=$('#wz .step:first-of-type input:checked').map(i=>i.value).join(', ')||'Not specified';const v=n=>(document.querySelector(`#wz input[name=${n}]:checked`)||{}).value||'Not specified';
-const m=`Hello Parakram Security, I'd like a security plan.%0A%0A*Services:* ${sv}%0A*Site type:* ${v('site')}%0A*Team size:* ${v('g')}%0A*Coverage:* ${v('sh')}%0A*Name:* ${pn.value}%0A*Phone:* ${pp.value}%0A*Location:* ${pc.value}`;open(`https://wa.me/${PH}?text=${m}`,'_blank')}})();
+const m=`Hello Parakram Security, I'd like a security plan.%0A%0A*Services:* ${sv}%0A*Site type:* ${v('site')}%0A*Team size:* ${v('g')}%0A*Coverage:* ${v('sh')}%0A*Name:* ${pn.value}%0A*Phone:* ${pp.value}%0A*Location:* ${pc.value}`;if(!pp.value.trim()){toast('Please enter your phone number.');pp.focus();return}open(`https://wa.me/${PH}?text=${m}`,'_blank');toast('Opening WhatsApp with your plan…')}})();
 /* contact form -> WhatsApp */
-cf.onsubmit=e=>{e.preventDefault();const m=`Hello Parakram Security,%0A*Name:* ${cn.value}%0A*Phone:* ${cp.value}%0A*Email:* ${ce.value}%0A*Service:* ${cs.value||'Not specified'}%0A*Details:* ${cm.value}`;open(`https://wa.me/${PH}?text=${m}`,'_blank')};
+cf.onsubmit=e=>{e.preventDefault();const m=`Hello Parakram Security,%0A*Name:* ${cn.value}%0A*Phone:* ${cp.value}%0A*Email:* ${ce.value}%0A*Service:* ${cs.value||'Not specified'}%0A*Details:* ${cm.value}`;open(`https://wa.me/${PH}?text=${m}`,'_blank');toast('Opening WhatsApp…')};
 </script>
 </body></html>
