@@ -23,7 +23,7 @@ for k,(ic,h,p,im,pos) in enumerate(SV):
     on=' on' if k==0 else ''
     alt=h.replace('&amp;','and')
     tabs+=f'<button class="tb{on}" data-k="{k}" role="tab"><span class="ti">{IC[ic]}</span><span class="tt">{h}</span><span class="ar">→</span></button>'
-    media=(f'<div class="pm cut"><div class="bgc"></div><img src="img/parakram-hero-guard.webp" alt="{alt}" loading="lazy"></div>' if im=='hero'
+    media=(f'<div class="pm cut"><div class="bgc"></div><img src="img/parakram-hero-portrait.webp" alt="{alt}" width="800" height="620" loading="lazy"></div>' if im=='hero'
       else f'<div class="pm"><img src="img/parakram-{im}.webp" alt="{alt}" style="object-position:{pos}" loading="lazy"></div>')
     panels+=f'<article class="pn{on}" data-k="{k}">{media}<div class="pb"><div class="num">0{k+1}<small>/ 08</small></div><h3>{h}</h3><p>{p}</p><ul><li>Trained &amp; verified personnel</li><li>Available 24/7</li><li>Customized to your site</li></ul><a class="btn btn-g" href="#planner">Plan this service →</a></div></article>'
     mega+=f'<a href="#services" data-go="{k}"><i>{IC[ic]}</i>{h}</a>'
@@ -510,6 +510,16 @@ details{transition:border-color .4s,box-shadow .4s,background .4s}details p{anim
 .hx .fig{-webkit-mask-image:linear-gradient(#000 74%,transparent);mask-image:linear-gradient(#000 74%,transparent)}
 .ph{height:250px!important}
 .hx .hxg,.hx .hxg.one{padding-top:274px!important}
+}
+
+/* ===== service photos: keep faces in frame ===== */
+.pm img{object-position:50% 6%!important}
+.pm.cut img{object-fit:contain!important;object-position:50% 50%!important;width:100%!important;height:auto!important;position:relative;z-index:2;align-self:center}
+.pm.cut{align-items:center!important}
+@media(max-width:980px){
+.pm{height:210px!important}.pm.cut{height:210px!important}
+.pm.cut img{object-fit:cover!important;object-position:50% 0!important;height:100%!important}
+.pm img{object-position:50% 4%!important}
 }
 </style>
 </head>
