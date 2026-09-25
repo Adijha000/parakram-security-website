@@ -293,6 +293,28 @@ section+section:not(.bg):not(.plan):not(.band):not(.tm){border-top:0}
 .mhint{position:absolute;top:18px;left:24px;z-index:3;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6);font-weight:700}
 @media(max-width:980px){.map{padding:34px 16px 0}.map .mc{margin:0 -16px;padding:18px 16px}.mhint{left:16px;top:14px}}
 .mcta{display:none}body.no .mbar,body.no .wa,body.no .sidetab,body.no .top{display:none}
+
+html{scroll-padding-top:0}main section[id]{scroll-margin-top:-16px}.sx{scroll-margin-top:96px}
+.ddt{display:none}
+@media(max-width:1180px){
+main section[id]{scroll-margin-top:28px}.sx{scroll-margin-top:84px}
+.dd{display:flex;flex-wrap:wrap;align-items:stretch}.dd>a{flex:1}.dd .cv{display:none}
+.ddt{display:block;width:60px;background:none;border:0;border-bottom:1px solid var(--line);cursor:pointer;position:relative}
+.ddt:after{content:"";position:absolute;left:50%;top:50%;width:9px;height:9px;border:solid var(--navy);border-width:0 2px 2px 0;transform:translate(-50%,-70%) rotate(45deg);transition:.25s}.dd.o .ddt:after{transform:translate(-50%,-30%) rotate(-135deg)}
+.dd .menu{width:100%;flex:0 0 100%}
+}
+@media(max-width:980px){
+section{padding:60px 0}.tl{scroll-padding-left:20px}
+}
+
+@media(max-width:980px){
+body .mbar{grid-template-columns:.8fr 1.2fr 1.2fr}body .mbar a{display:flex;align-items:center;justify-content:center;gap:8px;padding:15px 8px;font-size:13px}
+.mbar .mw{background:#25d366;color:#fff}.mbar .mw svg{width:18px;height:18px;fill:#fff}.mbar a:last-child{background:var(--gold);color:var(--navy)}.mbar a:first-child{background:var(--navy);color:#fff}
+.wa{display:none}
+body .pl{display:block;padding:22px 20px}body .pl .big{font-size:46px;line-height:1}body .pl h3{margin:8px 0 6px;font-size:20px}body .pl p{font-size:14.5px}
+.imgc img{aspect-ratio:16/11}.vals{grid-template-columns:repeat(3,1fr);gap:8px;margin:24px 0}.vals div{padding:14px 10px}.vals b{font-size:13.5px}.vals span{font-size:11.5px;line-height:1.35;display:block;margin-top:2px}
+.abt p{font-size:16px}.pil{gap:12px}
+}
 /* ===== responsive ===== */
 @media(max-width:1180px){
 .util{display:none}.nav{height:68px}.brand img{height:44px}.brand b{font-size:19px}
@@ -346,7 +368,7 @@ section{padding:76px 0}.wrap{padding:0 20px}.sec-h{margin-bottom:38px}.sec-h p{f
 <a class="brand" href="/"><img src="logo.png" alt="Parakram shield logo" width="56" height="56"><div><b>PARAKRAM</b><small>SECURITY INDIA PVT. LTD.</small></div></a>
 <nav id="nav"><ul>
 <li><a href="#about">About</a></li>
-<li class="dd"><a href="#services">Services ▾</a><div class="menu"><div class="mg">@@MEGA@@</div><div class="mp"><img src="img/parakram-operations.webp" alt="" loading="lazy"><b>Customized security solutions for every environment</b><a href="#planner">Plan your security →</a></div></div></li>
+<li class="dd"><a href="#services">Services<span class="cv"> ▾</span></a><button class="ddt" aria-label="Show services" aria-expanded="false"></button><div class="menu"><div class="mg">@@MEGA@@</div><div class="mp"><img src="img/parakram-operations.webp" alt="" loading="lazy"><b>Customized security solutions for every environment</b><a href="#planner">Plan your security →</a></div></div></li>
 <li><a href="#industries">Industries</a></li><li><a href="#planner">Security Planner</a></li><li><a href="#why">Why Parakram</a></li><li><a href="#careers">Careers</a></li><li><a href="#faq">FAQ</a></li><li class="mcta"><a class="btn btn-g" href="#planner">Plan Your Security →</a><a class="btn btn-n" href="tel:+919105909006">Call +91 91059 09006</a></li></ul></nav>
 <a class="btn btn-n" href="#contact" style="padding:13px 24px">Get Started</a><button class="burger" id="bg" aria-label="Menu" aria-expanded="false"><i></i></button>
 </div></header>
@@ -476,13 +498,13 @@ section{padding:76px 0}.wrap{padding:0 20px}.sec-h{margin-bottom:38px}.sec-h p{f
 <div><h4>Services</h4><ul><li><a href="#services">Manned</a></li><li><a href="#services">Armed</a></li><li><a href="#services">Industrial</a></li><li><a href="#services">Commercial</a></li><li><a href="#services">Bank &amp; ATM</a></li></ul></div>
 <div><h4>Contact</h4><ul><li>Parakram Security India Pvt. Ltd.<br>6-A Sandesh Nagar, Kankhal,<br>Haridwar – 249408, Uttarakhand</li><li><a href="tel:+918937000489">+91 89370 00489</a></li><li><a href="tel:+919105909006">+91 91059 09006</a></li><li><a href="mailto:info@parakramindia.org">info@parakramindia.org</a></li></ul></div></div>
 <div class="fb"><span>© 2026 Parakram Security India Pvt. Ltd. All rights reserved.</span><span class="fl"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a><span>Website by AIBOOTSTRAPPER</span></span></div></div></footer>
-<div class="mbar"><a href="tel:+919105909006">Call Now</a><a href="#planner">Get Started</a></div>
+<div class="mbar"><a href="tel:+919105909006">Call</a><a class="mw" href="https://wa.me/919105909006" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.2-1.4A10 10 0 1 0 12 2zm5.4 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.2-.7-2.7-1.1-4.4-3.8-4.5-4-.1-.1-1.100-1.500-1.100-2.800s.7-2 1-2.300c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.4-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.100 1.500 1.800 1 .9 1.900 1.200 2.200 1.300.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.900.9c.3.1.5.2.6.3.1.2.1.8-.1 1.400z"/></svg>WhatsApp</a><a href="#planner">Get Started</a></div>
 <button class="top" id="top2" aria-label="Back to top">↑</button>
 <a class="wa" href="https://wa.me/919105909006" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.2-1.4A10 10 0 1 0 12 2zm5.4 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.2-.7-2.7-1.1-4.4-3.8-4.5-4-.1-.1-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.4-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.1 1.5 1.8 1 .9 1.900 1.200 2.200 1.300.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.900.9c.3.1.5.2.6.3.1.2.1.8-.1 1.400z"/></svg></a>
 <script>
 const $=s=>[...document.querySelectorAll(s)],mq=q=>matchMedia(q).matches,PH='919105909006';
 /* clean URLs: smooth-scroll to anchors without leaving #hash in the address bar */
-document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]');if(!a)return;const id=a.getAttribute('href').slice(1);const t=id&&document.getElementById(id);if(!t&&id)return;e.preventDefault();(t||document.body).scrollIntoView({behavior:'smooth'});if(location.hash)history.replaceState(null,'',location.pathname+location.search)});
+document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]');if(!a)return;const id=a.getAttribute('href').slice(1);const t=a.dataset.go!==undefined?document.querySelector('.sx'):(id&&document.getElementById(id));if(!t&&id)return;e.preventDefault();setTimeout(()=>(t||document.body).scrollIntoView({behavior:'smooth'}),a.closest('nav')?60:0);if(location.hash)history.replaceState(null,'',location.pathname+location.search)});
 document.querySelector('.brand').addEventListener('click',e=>{e.preventDefault();scrollTo({top:0,behavior:'smooth'});if(location.hash)history.replaceState(null,'',location.pathname)});
 if(location.hash){const t=document.getElementById(location.hash.slice(1));if(t)setTimeout(()=>{t.scrollIntoView();history.replaceState(null,'',location.pathname)},60)}
 /* header/progress/back-to-top */
@@ -492,7 +514,8 @@ t2.onclick=()=>scrollTo({top:0,behavior:'smooth'});
 /* mobile nav */
 const nav=document.getElementById('nav'),bg=document.getElementById('bg');
 bg.onclick=()=>{const o=nav.classList.toggle('open');document.body.classList.toggle('no',o);bg.classList.toggle('x',o);bg.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':''};
-$('nav a').forEach(a=>a.addEventListener('click',e=>{if(a.parentNode.classList.contains('dd')&&mq('(max-width:1180px)')&&e.target===a){e.preventDefault();a.parentNode.classList.toggle('o');return}nav.classList.remove('open');document.body.classList.remove('no');bg.classList.remove('x');document.body.style.overflow=''}));
+$('nav a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');document.body.classList.remove('no');bg.classList.remove('x');bg.setAttribute('aria-expanded','false');document.body.style.overflow=''}));
+$('.ddt').forEach(b=>b.addEventListener('click',()=>{const o=b.parentNode.classList.toggle('o');b.setAttribute('aria-expanded',o)}));
 /* reveal */
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
 const io2=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io2.unobserve(e.target)}}),{threshold:.3});
@@ -505,7 +528,7 @@ $('[data-n]').forEach(e=>co.observe(e));
 ds.forEach((d,k)=>d.onclick=()=>go(k));document.getElementById('pv').onclick=()=>go(i-1);document.getElementById('nx').onclick=()=>go(i+1);t=setTimeout(()=>go(1),6500);
 const fig=document.getElementById('fig'),hx=document.getElementById('hero');if(!mq('(pointer:coarse)'))hx.addEventListener('mousemove',e=>{const x=(e.clientX/innerWidth-.5)*16,y=(e.clientY/innerHeight-.5)*10;fig.style.transform=`translate(${x}px,${y}px)`})})();
 /* services */
-(()=>{const tb=$('.tb'),pn=$('.pn');const sel=k=>{tb.forEach((e,i)=>e.classList.toggle('on',i==k));pn.forEach((e,i)=>e.classList.toggle('on',i==k));if(mq('(max-width:980px)'))tb[k].scrollIntoView({inline:'center',block:'nearest',behavior:'smooth'})};
+(()=>{const tb=$('.tb'),pn=$('.pn');const sel=k=>{tb.forEach((e,i)=>e.classList.toggle('on',i==k));pn.forEach((e,i)=>e.classList.toggle('on',i==k));if(mq('(max-width:980px)')){const tl=tb[k].parentNode;tl.scrollTo({left:tb[k].offsetLeft-(tl.clientWidth-tb[k].offsetWidth)/2,behavior:'smooth'})}};
 tb.forEach((b,k)=>{b.onclick=()=>sel(k);b.onmouseenter=()=>{if(!mq('(max-width:980px)'))sel(k)}});$('[data-go]').forEach(a=>a.addEventListener('click',()=>sel(+a.dataset.go)))})();
 /* spotlight cards */
 $('.pl').forEach(c=>c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')}));
