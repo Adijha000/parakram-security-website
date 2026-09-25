@@ -10,13 +10,13 @@ IC={
 'hos':'<svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 7v10M7 12h10"/></svg>',
 'edu':'<svg viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/></svg>',
 'bnk':'<svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="1"/><circle cx="12" cy="12" r="3"/></svg>'}
-SV=[('man','Manned Security','Trained, verified guards for round-the-clock protection of your premises.','operations','30% 40%'),
-('arm','Armed Security','Disciplined armed personnel for high-security requirements.','hero','' ),
+SV=[('man','Manned Security','Trained, verified guards for around the clock protection of your premises.','operations','30% 40%'),
+('arm','Armed Security','Disciplined armed personnel for high security requirements.','hero','' ),
 ('ind','Industrial Security','Protection for plants, warehouses and industrial campuses.','training','60% 50%'),
 ('com','Commercial Security','Professional guards for offices and business premises.','operations','80% 40%'),
 ('res','Residential Security','Courteous, reliable security for homes and societies.','about','40% 50%'),
 ('hos','Hospital Security','Calm, courteous security for hospitals and healthcare facilities.','about','70% 30%'),
-('edu','Educational Security','Safe, well-supervised campuses for schools and institutions.','training','30% 60%'),
+('edu','Educational Security','Safe, closely supervised campuses for schools and institutions.','training','30% 60%'),
 ('bnk','Bank &amp; ATM Security','Vigilant, verified personnel for branches and ATMs.','operations','55% 35%')]
 tabs=panels=mega=chips=''
 for k,(ic,h,p,im,pos) in enumerate(SV):
@@ -35,14 +35,14 @@ html=r'''<!DOCTYPE html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Parakram Security India | Your Safety Is Our Mission</title>
-<meta name="description" content="Parakram Security India Pvt. Ltd. — manned, armed, industrial, commercial, residential, hospital, educational and bank &amp; ATM security. 9+ years, 1,500+ trained professionals, 24/7. Haridwar, Uttarakhand.">
+<meta name="description" content="Parakram Security India Pvt. Ltd. Manned, armed, industrial, commercial, residential, hospital, educational and bank &amp; ATM security. 9+ years, 1,500+ trained professionals, 24/7. Haridwar, Uttarakhand.">
 <meta name="theme-color" content="#050d3a">
-<link rel="canonical" href="https://parakram-website.vercel.app/"><meta property="og:site_name" content="Parakram Security India"><meta property="og:title" content="Parakram Security India | Your Safety Is Our Mission"><meta property="og:description" content="Professionally managed private security — trained, verified personnel, customized solutions, 24/7."><meta property="og:type" content="website"><meta property="og:url" content="https://parakram-website.vercel.app/"><meta property="og:image" content="https://parakram-website.vercel.app/og-image.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Parakram Security India | Your Safety Is Our Mission"><meta name="twitter:description" content="Manned, armed, industrial, commercial, residential, hospital, educational and bank &amp; ATM security. 24/7."><meta name="twitter:image" content="https://parakram-website.vercel.app/og-image.jpg">
+<link rel="canonical" href="https://parakram-website.vercel.app/"><meta property="og:site_name" content="Parakram Security India"><meta property="og:title" content="Parakram Security India | Your Safety Is Our Mission"><meta property="og:description" content="Professionally managed private security with trained, verified personnel, customized solutions, 24/7."><meta property="og:type" content="website"><meta property="og:url" content="https://parakram-website.vercel.app/"><meta property="og:image" content="https://parakram-website.vercel.app/og-image.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Parakram Security India | Your Safety Is Our Mission"><meta name="twitter:description" content="Manned, armed, industrial, commercial, residential, hospital, educational and bank &amp; ATM security. 24/7."><meta name="twitter:image" content="https://parakram-website.vercel.app/og-image.jpg">
 <link rel="icon" href="favicon.png" type="image/png"><link rel="apple-touch-icon" href="logo.png"><link rel="preload" as="image" href="img/parakram-hero-guard.webp" type="image/webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SecurityService","name":"Parakram Security India Pvt. Ltd.","url":"https://parakram-website.vercel.app","logo":"https://parakram-website.vercel.app/logo.png","image":"https://parakram-website.vercel.app/og-image.jpg","email":"info@parakramindia.org","telephone":"+919105909006","foundingDate":"2017","address":{"@type":"PostalAddress","streetAddress":"6-A Sandesh Nagar, Kankhal","addressLocality":"Haridwar","addressRegion":"Uttarakhand","postalCode":"249408","addressCountry":"IN"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1200"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What types of security services do you provide?","acceptedAnswer":{"@type":"Answer","text":"Manned, Armed, Industrial, Commercial, Residential, Hospital, Educational, and Bank & ATM security."}},{"@type":"Question","name":"Is your service available 24/7?","acceptedAnswer":{"@type":"Answer","text":"Yes, our services are available 24/7."}},{"@type":"Question","name":"Can solutions be customized to my site?","acceptedAnswer":{"@type":"Answer","text":"Yes — we design customized security solutions around your needs, including multi-site support."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SecurityService","name":"Parakram Security India Pvt. Ltd.","url":"https://parakram-website.vercel.app","logo":"https://parakram-website.vercel.app/logo.png","image":"https://parakram-website.vercel.app/og-image.jpg","email":"info@parakramindia.org","telephone":"+919105909006","foundingDate":"2017","address":{"@type":"PostalAddress","streetAddress":"6A Sandesh Nagar, Kankhal","addressLocality":"Haridwar","addressRegion":"Uttarakhand","postalCode":"249408","addressCountry":"IN"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1200"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What types of security services do you provide?","acceptedAnswer":{"@type":"Answer","text":"Manned, Armed, Industrial, Commercial, Residential, Hospital, Educational, and Bank & ATM security."}},{"@type":"Question","name":"Is your service available 24/7?","acceptedAnswer":{"@type":"Answer","text":"Yes, our services are available 24/7."}},{"@type":"Question","name":"Can solutions be customized to my site?","acceptedAnswer":{"@type":"Answer","text":"Yes. We design customized security solutions around your needs, including support for multiple sites."}}]}</script>
 <style>
 :root{--navy:#050d3a;--navy2:#0a1660;--navy3:#0e1d78;--gold:#ffc400;--gold2:#ffd84d;--ink:#0b1020;--mut:#5a6180;--bg:#f4f5fb;--line:#e3e6f2;--r:14px;--ease:cubic-bezier(.2,.7,.2,1)}
 *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;scroll-padding-top:90px}
@@ -447,6 +447,53 @@ body .stat{padding:18px 4px}body .stat b{font-size:32px}
 .hxc{padding-bottom:26px}.hx .hxg,.hx .hxg.one{padding-bottom:100px}
 .sec-h p{font-size:16px}.h2{font-size:clamp(27px,7.8vw,34px)}
 }
+
+/* ===== MOBILE FINAL: smaller imagery, tighter rhythm ===== */
+@media(max-width:980px){
+.hx{height:600px!important;min-height:0!important;max-height:none!important}
+.hx .hxg,.hx .hxg.one{padding-top:226px!important;padding-bottom:84px!important}
+.ph{height:206px!important}.fig{height:206px!important;top:10px!important}.halo{width:240px!important;height:240px!important}
+.hx h1,.hx .hh{font-size:clamp(30px,8.6vw,38px)!important}.hx .lead{font-size:15px!important;-webkit-line-clamp:3!important;margin:10px 0 16px!important}
+.hx .cta .btn{min-height:46px!important;padding:12px 14px!important;font-size:12.5px!important}
+.hxc{padding-bottom:22px!important}
+.imgc img{aspect-ratio:16/9!important}.imgc .bd{padding:10px 14px!important;left:10px!important;bottom:10px!important}.bd b{font-size:28px!important}.bd span{font-size:10px!important}
+.vals{grid-template-columns:repeat(3,1fr)!important;gap:8px!important}.vals div{padding:12px 8px!important}.vals b{font-size:12.5px!important}.vals span{font-size:10.5px!important}
+.pm{height:150px!important}.pm.cut{height:190px!important}.pb{padding:20px 18px 22px!important}.num{font-size:40px!important}.pb h3{font-size:26px!important;margin:6px 0!important}.pb ul{margin:14px 0 18px!important;gap:8px!important}
+.ic{aspect-ratio:1/1!important}.ic h3{font-size:19px!important}.ic span:not(.n):not(.go){font-size:11px!important}
+.chips{grid-template-columns:1fr 1fr!important;gap:8px!important}.chp span{padding:12px 10px!important;font-size:12.5px!important;gap:8px!important}.chp svg{width:16px!important;height:16px!important}
+.wz h3{font-size:21px!important}
+.band{padding:60px 0!important}.band h2{font-size:28px!important}.band p{font-size:15px!important}
+#imap{max-height:300px!important}.map{padding-top:30px!important}
+section{padding:48px 0!important}.lead-s{padding:44px 0 4px!important}
+.pl{padding:18px!important}.sec-h{margin-bottom:22px!important}
+.ctab{padding:34px 0!important}
+}
+
+/* ===== SMOOTH MOTION SYSTEM (last) ===== */
+html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!important}
+html.lenis{scroll-behavior:auto}
+header{transition:transform .5s var(--ease),box-shadow .3s}header.hide{transform:translateY(-102%)}
+.rv{opacity:0;transform:translateY(26px);transition:opacity 1s var(--ease),transform 1s var(--ease);transition-delay:var(--d,0ms)}.rv.in{opacity:1;transform:none}
+.imgc.rv{opacity:1;transform:none}
+.imgc .im{clip-path:inset(0 0 100% 0);transition:clip-path 1.4s var(--ease)}.imgc.in .im{clip-path:inset(0 0 0 0)}
+.imgc.in img{transform:scale(1)}.imgc .bd{opacity:0;transform:translateY(20px);transition:all .9s var(--ease) .9s}.imgc.in .bd{opacity:1;transform:none}
+.rv .eyebrow:before{width:0;transition:width 1s var(--ease) .25s}.rv.in .eyebrow:before{width:36px}
+.ic,.pl,.card,.vals div,.tb,.chp span,details,.btn,.st{transition-timing-function:cubic-bezier(.22,.8,.24,1)}
+.ic{transition:transform .6s cubic-bezier(.22,.8,.24,1),box-shadow .6s}.ic:before{transition:transform 1.1s cubic-bezier(.22,.8,.24,1)}
+.pm img{transition:transform 1.2s cubic-bezier(.22,.8,.24,1)}.pn.on .pm img{animation:kb 9s ease-out both}@keyframes kb{from{transform:scale(1.08)}to{transform:scale(1)}}
+.pn{transition:opacity .6s var(--ease),transform .7s var(--ease),visibility .6s}
+.pb>*{opacity:0;transform:translateY(14px);transition:opacity .6s var(--ease),transform .6s var(--ease)}.pn.on .pb>*{opacity:1;transform:none}.pn.on .pb>*:nth-child(1){transition-delay:.15s}.pn.on .pb>*:nth-child(2){transition-delay:.22s}.pn.on .pb>*:nth-child(3){transition-delay:.29s}.pn.on .pb>*:nth-child(4){transition-delay:.36s}.pn.on .pb>*:nth-child(5){transition-delay:.43s}
+.btn{transition:transform .4s cubic-bezier(.22,.8,.24,1),background .3s,color .3s,box-shadow .4s}.btn:hover{transform:translateY(-2px)}.btn:active{transform:translateY(0) scale(.98)}
+.kn:after{content:" →";display:inline-block;transition:transform .35s var(--ease)}.kn:hover:after{transform:translateX(5px)}
+nav>ul>li>a:after{transition:transform .5s var(--ease)}
+.map .st{transition:fill .35s ease}
+.q{transition:opacity .9s var(--ease),transform .9s var(--ease),visibility .9s}
+details{transition:border-color .4s,box-shadow .4s,background .4s}details p{animation:dd .5s var(--ease)}@keyframes dd{from{opacity:0;transform:translateY(-6px)}}
+.stat b{transition:color .3s}.stat:hover b{color:var(--navy3)}
+.slide{transition:opacity 1.3s cubic-bezier(.4,0,.2,1),visibility 1.3s}
+.hx .lead,.hx .cta,.hx .eyebrow{transition:opacity 1s var(--ease) .4s,transform 1s var(--ease) .4s}
+@media(max-width:980px){.rv{transform:translateY(18px);transition-duration:.8s}.imgc .im{clip-path:inset(0 0 100% 0)}.rv .eyebrow:before{width:0}.rv.in .eyebrow:before{width:26px}header.hide{transform:none}}
+@media(prefers-reduced-motion:reduce){.rv,.imgc .im,.pb>*{opacity:1!important;transform:none!important;clip-path:none!important}header.hide{transform:none}}
 </style>
 </head>
 <body>
@@ -460,7 +507,7 @@ body .stat{padding:18px 4px}body .stat b{font-size:32px}
 <nav id="nav"><ul>
 <li><a href="#about">About</a></li>
 <li class="dd"><a href="#services">Services<span class="cv"> ▾</span></a><button class="ddt" aria-label="Show services" aria-expanded="false"></button><div class="menu"><div class="mg">@@MEGA@@</div><div class="mp"><img src="img/parakram-operations.webp" alt="" loading="lazy"><b>Customized security solutions for every environment</b><a href="#planner">Plan your security →</a></div></div></li>
-<li><a href="#industries">Industries</a></li><li><a href="#planner">Security Planner</a></li><li><a href="#why">Why Parakram</a></li><li><a href="#careers">Careers</a></li><li><a href="#faq">FAQ</a></li><li class="mcta"><a class="btn btn-g" href="#planner">Plan Your Security →</a><a class="btn btn-n" href="tel:+919105909006">Call +91 91059 09006</a></li><li class="mfoot"><b>Parakram Security India Pvt. Ltd.</b><span>6-A Sandesh Nagar, Kankhal, Haridwar – 249408</span><a href="mailto:info@parakramindia.org">info@parakramindia.org</a></li></ul></nav>
+<li><a href="#industries">Industries</a></li><li><a href="#planner">Security Planner</a></li><li><a href="#why">Why Parakram</a></li><li><a href="#careers">Careers</a></li><li><a href="#faq">FAQ</a></li><li class="mcta"><a class="btn btn-g" href="#planner">Plan Your Security →</a><a class="btn btn-n" href="tel:+919105909006">Call +91 91059 09006</a></li><li class="mfoot"><b>Parakram Security India Pvt. Ltd.</b><span>6A Sandesh Nagar, Kankhal, Haridwar 249408</span><a href="mailto:info@parakramindia.org">info@parakramindia.org</a></li></ul></nav>
 <a class="btn btn-n" href="#contact" style="padding:13px 24px">Get Started</a><button class="burger" id="bg" aria-label="Menu" aria-expanded="false"><i></i></button>
 </div></header>
 
@@ -470,12 +517,12 @@ body .stat{padding:18px 4px}body .stat b{font-size:32px}
 <div class="fig" id="fig"><div class="halo"></div><img src="img/parakram-hero-guard.webp" alt="Parakram security officer" width="800" height="1000" fetchpriority="high" decoding="async"></div>
 <div class="wrap hxg"><div class="tx"><div class="eyebrow">Your Safety Is Our Mission</div>
 <h1><span class="ln"><span>A life with</span></span><span class="ln"><span><em>full protection.</em></span></span></h1>
-<p class="lead">Professionally managed private security since 2017 — disciplined manpower, rigorous training and deep-rooted Indian values to protect people, property and operations.</p>
+<p class="lead">Professionally managed private security since 2017, with disciplined manpower, rigorous training and deeply rooted Indian values to protect people, property and operations.</p>
 <div class="cta"><a class="btn btn-g" href="#planner">Plan Your Security →</a><a class="btn btn-o" href="#services">Our Services</a></div></div></div></div>
 <div class="slide"><div class="bgc"></div><div class="ph" style="--bg:url(img/parakram-operations.webp)"></div>
 <div class="wrap hxg"><div class="tx"><div class="eyebrow">Corporate &amp; Commercial</div>
 <h2 class="hh"><span class="ln"><span>Protection for</span></span><span class="ln"><span><em>every premises.</em></span></span></h2>
-<p class="lead">Trained, verified guards with excellent site coordination — for offices, campuses and business environments.</p>
+<p class="lead">Trained, verified guards with excellent site coordination, for offices, campuses and business environments.</p>
 <div class="cta"><a class="btn btn-g" href="#contact">Get Started →</a><a class="btn btn-o" href="#industries">Industries We Protect</a></div></div></div></div>
 <div class="slide"><div class="bgc"></div><div class="ph" style="--bg:url(img/parakram-training.webp)"></div>
 <div class="wrap hxg"><div class="tx"><div class="eyebrow">Trained &amp; Verified Personnel</div>
@@ -494,12 +541,12 @@ body .stat{padding:18px 4px}body .stat b{font-size:32px}
 <div class="stat"><b data-n="8">0</b><span>Security Services</span></div>
 </div></div></div>
 
-<section class="lead-s" id="intro"><div class="wrap"><p class="ls rv">Parakram Security India provides <b>manned, armed, industrial, commercial, residential, hospital, educational and bank &amp; ATM security</b> — professionally managed since 2017, combining disciplined manpower, rigorous training and deep-rooted Indian values to protect people, property and operations.</p><a class="kn" href="#about">Know more</a></div></section>
+<section class="lead-s" id="intro"><div class="wrap"><p class="ls rv">Parakram Security India provides <b>manned, armed, industrial, commercial, residential, hospital, educational and bank &amp; ATM security</b>, professionally managed since 2017 and combining disciplined manpower, rigorous training and deeply rooted Indian values to protect people, property and operations.</p><a class="kn" href="#about">Know more</a></div></section>
 
 <section id="about"><div class="wrap two">
 <div class="abt rv"><div class="eyebrow dk">About Parakram</div><h2 class="h2">Protecting people, property &amp; <em>operations.</em></h2>
 <p>Parakram Security India Private Limited was established in 2017 as a professionally managed private security company.</p>
-<p>We combine disciplined manpower, rigorous training and deep-rooted Indian values to protect people, property and operations — with personnel known for professionalism, integrity and courtesy.</p>
+<p>We combine disciplined manpower, rigorous training and deeply rooted Indian values to protect people, property and operations, with personnel known for professionalism, integrity and courtesy.</p>
 <div class="vals"><div><b>Professionalism</b><span>Disciplined, trained personnel</span></div><div><b>Integrity</b><span>Verified, trustworthy teams</span></div><div><b>Courtesy</b><span>Respectful service, always</span></div></div>
 <a class="btn btn-n" href="#contact">Get Started →</a></div>
 <div class="imgc rv"><div class="im"><img src="img/parakram-about.webp" alt="Parakram security team" width="1200" height="896" loading="lazy" decoding="async"></div><div class="bd"><b>2017</b><span>Established · Haridwar</span></div></div>
@@ -512,8 +559,8 @@ body .stat{padding:18px 4px}body .stat b{font-size:32px}
 
 <section id="planner" class="plan"><div class="wrap">
 <div class="rv"><div class="eyebrow">Security Planner</div><h2 class="h2">Tell us what you need. <em>We'll design the plan.</em></h2>
-<p class="s">Answer four quick questions and our team will respond with a solution customized to your site — no obligation.</p>
-<ul><li>Customized security solutions</li><li>Trained &amp; verified personnel</li><li>Multi-site support</li><li>Available 24/7</li></ul></div>
+<p class="s">Answer four quick questions and our team will respond with a solution customized to your site, with no obligation.</p>
+<ul><li>Customized security solutions</li><li>Trained &amp; verified personnel</li><li>Support for multiple sites</li><li>Available 24/7</li></ul></div>
 <div class="wz rv" id="wz">
 <div class="st"><i class="on"></i><i></i><i></i><i></i></div>
 <div class="step on"><h3>Which services do you need?</h3><p class="sub">Select one or more.</p><div class="chips">@@CHIPS@@</div><div class="nav2"><span></span><button class="btn btn-n" data-nx>Continue →</button></div></div>
@@ -521,9 +568,9 @@ body .stat{padding:18px 4px}body .stat b{font-size:32px}
 <label class="chp"><input type="radio" name="site" value="Industrial"><span>Industrial</span></label><label class="chp"><input type="radio" name="site" value="Corporate / Commercial"><span>Corporate / Commercial</span></label><label class="chp"><input type="radio" name="site" value="Healthcare"><span>Healthcare</span></label><label class="chp"><input type="radio" name="site" value="Banking / ATM"><span>Banking / ATM</span></label><label class="chp"><input type="radio" name="site" value="Residential"><span>Residential</span></label><label class="chp"><input type="radio" name="site" value="Educational"><span>Educational</span></label></div>
 <div class="nav2"><button class="bk" data-bk>← Back</button><button class="btn btn-n" data-nx>Continue →</button></div></div>
 <div class="step"><h3>Coverage &amp; team size</h3><p class="sub">Approximate is fine.</p><div class="chips">
-<label class="chp"><input type="radio" name="g" value="1–5 personnel"><span>1–5 personnel</span></label><label class="chp"><input type="radio" name="g" value="6–20 personnel"><span>6–20 personnel</span></label><label class="chp"><input type="radio" name="g" value="21–50 personnel"><span>21–50 personnel</span></label><label class="chp"><input type="radio" name="g" value="50+ personnel"><span>50+ personnel</span></label><label class="chp"><input type="radio" name="sh" value="24/7 coverage"><span>24/7 coverage</span></label><label class="chp"><input type="radio" name="sh" value="Day shift"><span>Day shift</span></label><label class="chp"><input type="radio" name="sh" value="Night shift"><span>Night shift</span></label><label class="chp"><input type="radio" name="sh" value="Multiple sites"><span>Multiple sites</span></label></div>
+<label class="chp"><input type="radio" name="g" value="1 to 5 personnel"><span>1 to 5 personnel</span></label><label class="chp"><input type="radio" name="g" value="6 to 20 personnel"><span>6 to 20 personnel</span></label><label class="chp"><input type="radio" name="g" value="21 to 50 personnel"><span>21 to 50 personnel</span></label><label class="chp"><input type="radio" name="g" value="50+ personnel"><span>50+ personnel</span></label><label class="chp"><input type="radio" name="sh" value="24/7 coverage"><span>24/7 coverage</span></label><label class="chp"><input type="radio" name="sh" value="Day shift"><span>Day shift</span></label><label class="chp"><input type="radio" name="sh" value="Night shift"><span>Night shift</span></label><label class="chp"><input type="radio" name="sh" value="Multiple sites"><span>Multiple sites</span></label></div>
 <div class="nav2"><button class="bk" data-bk>← Back</button><button class="btn btn-n" data-nx>Continue →</button></div></div>
-<div class="step"><h3>Where should we reach you?</h3><p class="sub">We'll open WhatsApp with your plan pre-filled.</p><input class="t" id="pn" placeholder="Your name"><input class="t" id="pp" type="tel" placeholder="Phone number"><input class="t" id="pc" placeholder="City / site location"><p class="note">Your details are shared only with the Parakram team.</p>
+<div class="step"><h3>Where should we reach you?</h3><p class="sub">We'll open WhatsApp with your plan prefilled.</p><input class="t" id="pn" placeholder="Your name"><input class="t" id="pp" type="tel" placeholder="Phone number"><input class="t" id="pc" placeholder="City / site location"><p class="note">Your details are shared only with the Parakram team.</p>
 <div class="nav2"><button class="bk" data-bk>← Back</button><button class="btn btn-g" id="send">Send on WhatsApp →</button></div></div>
 </div></div></section>
 
@@ -536,7 +583,7 @@ body .stat{padding:18px 4px}body .stat b{font-size:32px}
 <a class="ic rv" style="--bg2:url(img/parakram-operations.webp);--pos:85% 50%" href="#planner"><span class="n">04</span><span class="go">→</span><h3>Banking</h3><span>Branches · ATMs</span></a>
 </div></div></section>
 
-<section class="band" style="background-image:url(img/parakram-operations.webp)"><div class="wrap rv"><div class="eyebrow" style="justify-content:center">Trusted Protection</div><h2>Professionalism. Integrity. <em>Courtesy.</em></h2><p>Personnel who protect people, property and operations — 24/7.</p><a class="btn btn-g" href="#contact">Get Started →</a></div></section>
+<section class="band" style="background-image:url(img/parakram-operations.webp)"><div class="wrap rv"><div class="eyebrow" style="justify-content:center">Trusted Protection</div><h2>Professionalism. Integrity. <em>Courtesy.</em></h2><p>Personnel who protect people, property and operations, 24/7.</p><a class="btn btn-g" href="#contact">Get Started →</a></div></section>
 
 <section id="why" class="bg"><div class="wrap">
 <div class="sec-h rv"><div class="eyebrow dk">Why Us</div><h2 class="h2">Why leaders choose <em>Parakram.</em></h2></div>
@@ -549,13 +596,13 @@ body .stat{padding:18px 4px}body .stat b{font-size:32px}
 </div></section>
 
 <section id="coverage"><div class="wrap cov">
-<div class="map rv" id="map">@@MAP@@<div class="mtip" id="mtip"></div><div class="mc"><div><b id="mn">Uttarakhand</b><span id="ms">Headquarters · 6-A Sandesh Nagar, Kankhal, Haridwar – 249408</span></div><a class="btn btn-n" id="mb" style="padding:12px 20px" href="#contact">Contact Us</a></div><div class="mhint">Hover or tap a state</div></div>
-<div class="covt rv"><div class="eyebrow dk">Coverage</div><h2 class="h2">Local roots. <em>Multi-site</em> reach across India.</h2>
-<ul><li><i>◎</i><div><b>Headquartered in Haridwar</b><span>Registered office in Kankhal, Haridwar, Uttarakhand.</span></div></li><li><i>⇄</i><div><b>Multi-site support</b><span>One partner across all your locations.</span></div></li><li><i>24</i><div><b>Always available</b><span>Services available 24/7.</span></div></li></ul></div>
+<div class="map rv" id="map">@@MAP@@<div class="mtip" id="mtip"></div><div class="mc"><div><b id="mn">Uttarakhand</b><span id="ms">Headquarters · 6A Sandesh Nagar, Kankhal, Haridwar 249408</span></div><a class="btn btn-n" id="mb" style="padding:12px 20px" href="#contact">Contact Us</a></div><div class="mhint">Hover or tap a state</div></div>
+<div class="covt rv"><div class="eyebrow dk">Coverage</div><h2 class="h2">Local roots. <em>Wider reach</em> across India.</h2>
+<ul><li><i>◎</i><div><b>Headquartered in Haridwar</b><span>Registered office in Kankhal, Haridwar, Uttarakhand.</span></div></li><li><i>⇄</i><div><b>Support for multiple sites</b><span>One partner across all your locations.</span></div></li><li><i>24</i><div><b>Always available</b><span>Services available 24/7.</span></div></li></ul></div>
 </div></section>
 
 <section class="tm"><div class="wrap rv"><div class="rate"><b>4.9</b>★★★★★ Rated by 1,200+ clients</div><h2 class="h2">What our <em>clients say.</em></h2>
-<div class="qs"><div class="q on"><div class="st">★★★★★</div><blockquote>Well-trained guards and excellent site coordination.</blockquote><cite>Facility Manager</cite></div>
+<div class="qs"><div class="q on"><div class="st">★★★★★</div><blockquote>Well trained guards and excellent site coordination.</blockquote><cite>Facility Manager</cite></div>
 <div class="q"><div class="st">★★★★★</div><blockquote>Dependable security routines that keep our operations running smoothly.</blockquote><cite>Industrial Client</cite></div>
 <div class="q"><div class="st">★★★★★</div><blockquote>Supervisors are accessible and responsive whenever we need them.</blockquote><cite>Institutional Client</cite></div></div>
 <div class="qd"><button class="on" aria-label="Quote 1"></button><button aria-label="Quote 2"></button><button aria-label="Quote 3"></button></div></div></section>
@@ -565,7 +612,7 @@ body .stat{padding:18px 4px}body .stat b{font-size:32px}
 <div class="rv"><details open><summary>What types of security services do you provide?</summary><p>Manned, Armed, Industrial, Commercial, Residential, Hospital, Educational, and Bank &amp; ATM security.</p></details>
 <details><summary>How are your personnel trained and verified?</summary><p>Through disciplined recruitment and rigorous training, so every guard is trained and verified before deployment.</p></details>
 <details><summary>Is your service available 24/7?</summary><p>Yes, our services are available 24/7.</p></details>
-<details><summary>Can solutions be customized to my site?</summary><p>Yes — we design customized security solutions around your needs, including multi-site support.</p></details>
+<details><summary>Can solutions be customized to my site?</summary><p>Yes. We design customized security solutions around your needs, including support for multiple sites.</p></details>
 <details><summary>How do I get started?</summary><p>Use our Security Planner, call +91 91059 09006, or email info@parakramindia.org.</p></details></div></div>
 <div class="careers rv" id="careers"><div><div class="eyebrow">Careers</div><h3>Serve with <em>Parakram.</em></h3><p>Join a disciplined, professionally managed team built on integrity and courtesy.</p><a class="btn btn-g" href="mailto:info@parakramindia.org?subject=Career%20enquiry">Apply Now →</a></div>
 <div class="req"><div class="row"><span>Culture</span><b>Professionalism, integrity, courtesy</b></div><div class="row"><span>Training</span><b>Rigorous &amp; structured</b></div><div class="row"><span>Team</span><b>1,500+ professionals</b></div><div class="row"><span>Apply</span><b>info@parakramindia.org</b></div></div></div>
@@ -573,7 +620,7 @@ body .stat{padding:18px 4px}body .stat b{font-size:32px}
 
 <section id="contact" class="bg"><div class="wrap"><div class="contact rv">
 <div class="l"><h3>Let's secure your world.</h3>
-<p><b>Address</b>6-A Sandesh Nagar, Kankhal, Haridwar – 249408, Uttarakhand</p>
+<p><b>Address</b>6A Sandesh Nagar, Kankhal, Haridwar 249408, Uttarakhand</p>
 <p><b>Phone</b><a href="tel:+919105909006">+91 91059 09006</a> · <a href="tel:+918937000489">+91 89370 00489</a> · <a href="tel:+919105909000">+91 91059 09000</a></p>
 <p><b>Email</b><a href="mailto:info@parakramindia.org">info@parakramindia.org</a></p></div>
 <form id="cf"><input required id="cn" placeholder="Full name"><input required id="cp" type="tel" placeholder="Phone"><input class="full" id="ce" type="email" placeholder="Email">
@@ -582,26 +629,31 @@ body .stat{padding:18px 4px}body .stat b{font-size:32px}
 <button class="btn btn-n full" style="justify-content:center">Get Started →</button></form></div></div></section>
 </main>
 
-<div class="ctab"><div class="wrap"><div><h2>Ready to secure your premises?</h2><p>Speak to our team — available 24/7.</p></div><div class="cta2"><a class="btn btn-g" href="#planner">Plan Your Security →</a><a class="btn btn-o" href="tel:+919105909006">+91 91059 09006</a></div></div></div>
+<div class="ctab"><div class="wrap"><div><h2>Ready to secure your premises?</h2><p>Speak to our team. We are available 24/7.</p></div><div class="cta2"><a class="btn btn-g" href="#planner">Plan Your Security →</a><a class="btn btn-o" href="tel:+919105909006">+91 91059 09006</a></div></div></div>
 <footer><div class="wrap"><div class="fg">
 <div><div class="brand" style="margin-bottom:18px"><img src="logo.png" alt="" style="height:64px"><div><b style="color:#fff">PARAKRAM</b><small style="color:#aab0d6">SECURITY INDIA PVT. LTD.</small></div></div><p style="font-size:14.5px;max-width:320px">We aim to provide you with a life with full protection.</p></div>
 <div><h4>Company</h4><ul><li><a href="#about">About</a></li><li><a href="#why">Why Parakram</a></li><li><a href="#coverage">Coverage</a></li><li><a href="#careers">Careers</a></li><li><a href="#faq">FAQ</a></li></ul></div>
 <div><h4>Services</h4><ul><li><a href="#services">Manned</a></li><li><a href="#services">Armed</a></li><li><a href="#services">Industrial</a></li><li><a href="#services">Commercial</a></li><li><a href="#services">Bank &amp; ATM</a></li></ul></div>
-<div><h4>Contact</h4><ul><li>Parakram Security India Pvt. Ltd.<br>6-A Sandesh Nagar, Kankhal,<br>Haridwar – 249408, Uttarakhand</li><li><a href="tel:+918937000489">+91 89370 00489</a></li><li><a href="tel:+919105909006">+91 91059 09006</a></li><li><a href="mailto:info@parakramindia.org">info@parakramindia.org</a></li></ul></div></div>
+<div><h4>Contact</h4><ul><li>Parakram Security India Pvt. Ltd.<br>6A Sandesh Nagar, Kankhal,<br>Haridwar 249408, Uttarakhand</li><li><a href="tel:+918937000489">+91 89370 00489</a></li><li><a href="tel:+919105909006">+91 91059 09006</a></li><li><a href="mailto:info@parakramindia.org">info@parakramindia.org</a></li></ul></div></div>
 <div class="fb"><span>© 2026 Parakram Security India Pvt. Ltd. All rights reserved.</span><span class="fl"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a><span>Website by AIBOOTSTRAPPER</span></span></div></div></footer>
 <div class="mbar"><a href="tel:+919105909006">Call</a><a class="mw" href="https://wa.me/919105909006" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.2-1.4A10 10 0 1 0 12 2zm5.4 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.2-.7-2.7-1.1-4.4-3.8-4.5-4-.1-.1-1.100-1.500-1.100-2.800s.7-2 1-2.300c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.4-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.100 1.500 1.800 1 .9 1.900 1.200 2.200 1.300.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.900.9c.3.1.5.2.6.3.1.2.1.8-.1 1.400z"/></svg>WhatsApp</a><a href="#planner">Get Started</a></div>
 <button class="top" id="top2" aria-label="Back to top">↑</button>
 <a class="wa" href="https://wa.me/919105909006" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.2-1.4A10 10 0 1 0 12 2zm5.4 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.2-.7-2.7-1.1-4.4-3.8-4.5-4-.1-.1-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.4-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.1 1.5 1.8 1 .9 1.900 1.200 2.200 1.300.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.900.9c.3.1.5.2.6.3.1.2.1.8-.1 1.400z"/></svg></a>
+<script src="js/lenis.min.js"></script>
 <script>
 const $=s=>[...document.querySelectorAll(s)],mq=q=>matchMedia(q).matches,PH='919105909006';
+/* smooth inertial scrolling (desktop, fine pointer only) */
+const hd0=document.getElementById('hd');let lenis=null;const REDUCE=mq('(prefers-reduced-motion:reduce)');
+if(!REDUCE&&!mq('(pointer:coarse)')&&window.Lenis){lenis=new Lenis({duration:1.15,easing:t=>Math.min(1,1.001-Math.pow(2,-10*t)),wheelMultiplier:.95});const raf=t=>{lenis.raf(t);requestAnimationFrame(raf)};requestAnimationFrame(raf);document.documentElement.classList.add('lenis')}
+const goTo=el=>{window.__nj=Date.now();hd0.classList.remove('hide');const hh=document.getElementById('hd').offsetHeight;const sp=parseFloat(getComputedStyle(el).paddingTop)||0;const off=el.matches('.sx')?-(hh+16):(el.matches('section')?-(hh+24-sp):-(hh+16));if(lenis){lenis.scrollTo(el,{offset:off,duration:1.4});setTimeout(()=>{const d=el.getBoundingClientRect().top+off;if(Math.abs(d)>60){lenis.scrollTo(scrollY+d,{immediate:true})}},2000)}else el.scrollIntoView({behavior:'smooth'})};
 /* clean URLs: smooth-scroll to anchors without leaving #hash in the address bar */
-document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]');if(!a)return;const id=a.getAttribute('href').slice(1);const t=a.dataset.go!==undefined?document.querySelector('.sx'):(id&&document.getElementById(id));if(!t&&id)return;e.preventDefault();setTimeout(()=>(t||document.body).scrollIntoView({behavior:'smooth'}),a.closest('nav')?60:0);if(location.hash)history.replaceState(null,'',location.pathname+location.search)});
-document.querySelector('.brand').addEventListener('click',e=>{e.preventDefault();scrollTo({top:0,behavior:'smooth'});if(location.hash)history.replaceState(null,'',location.pathname)});
-if(location.hash){const t=document.getElementById(location.hash.slice(1));if(t)setTimeout(()=>{t.scrollIntoView();history.replaceState(null,'',location.pathname)},60)}
+document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]');if(!a)return;const id=a.getAttribute('href').slice(1);const t=a.dataset.go!==undefined?document.querySelector('.sx'):(id&&document.getElementById(id));if(!t&&id)return;e.preventDefault();setTimeout(()=>goTo(t||document.body),a.closest('nav')?60:0);if(location.hash)history.replaceState(null,'',location.pathname+location.search)});
+document.querySelector('.brand').addEventListener('click',e=>{e.preventDefault();lenis?lenis.scrollTo(0,{duration:1.3}):scrollTo({top:0,behavior:'smooth'});if(location.hash)history.replaceState(null,'',location.pathname)});
+if(location.hash){const t=document.getElementById(location.hash.slice(1));if(t)setTimeout(()=>{lenis?lenis.scrollTo(t,{immediate:true,offset:-(document.getElementById('hd').offsetHeight)}):t.scrollIntoView();history.replaceState(null,'',location.pathname)},60)}
 /* header/progress/back-to-top */
 const hd=document.getElementById('hd'),pg=document.getElementById('pg'),t2=document.getElementById('top2');
-addEventListener('scroll',()=>{hd.classList.toggle('sh',scrollY>10);pg.style.width=(scrollY/(document.documentElement.scrollHeight-innerHeight)*100)+'%';t2.classList.toggle('v',scrollY>900)},{passive:true});
-t2.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+let lastY=0;addEventListener('scroll',()=>{const y=scrollY;hd.classList.toggle('sh',y>10);pg.style.width=(y/(document.documentElement.scrollHeight-innerHeight)*100)+'%';t2.classList.toggle('v',y>900);if(!document.body.classList.contains('no')){if(y>420&&y>lastY+6&&Date.now()-(window.__nj||0)>2600)hd.classList.add('hide');else if(y<lastY-6||y<420)hd.classList.remove('hide')}lastY=y},{passive:true});
+t2.onclick=()=>lenis?lenis.scrollTo(0,{duration:1.3}):scrollTo({top:0,behavior:'smooth'});
 /* mobile nav */
 const nav=document.getElementById('nav'),bg=document.getElementById('bg');
 bg.onclick=()=>{const o=nav.classList.toggle('open');document.body.classList.toggle('no',o);bg.classList.toggle('x',o);bg.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':''};
@@ -610,7 +662,8 @@ $('.ddt').forEach(b=>b.addEventListener('click',()=>{const o=b.parentNode.classL
 /* reveal */
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
 const io2=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io2.unobserve(e.target)}}),{threshold:.3});
-$('.rv').forEach((e,i)=>{e.style.transitionDelay=(i%4)*80+'ms';io.observe(e)});
+$('.vals>div,.stats .stat,.fg>div,.covt li,.faq details,.fq details').forEach(e=>e.classList.add('rv'));
+$('.rv').forEach(e=>{const sib=[...e.parentNode.children].filter(c=>c.classList.contains('rv'));e.style.setProperty('--d',Math.min(sib.indexOf(e),6)*90+'ms');io.observe(e)});
 /* counters */
 const co=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,n=+el.dataset.n,d=+el.dataset.d||0,s=el.dataset.s||'';let t0=null;const f=t=>{t0=t0||t;const p=Math.min((t-t0)/1800,1),v=n*(1-Math.pow(1-p,4));el.innerHTML=(d?v.toFixed(d):Math.round(v).toLocaleString('en-IN'))+(s?'<sup>'+s+'</sup>':'');if(p<1)requestAnimationFrame(f)};requestAnimationFrame(f);co.unobserve(el)}),{threshold:.5});
 $('[data-n]').forEach(e=>co.observe(e));
@@ -648,8 +701,8 @@ addEventListener('scroll',()=>{const im=document.querySelector('.imgc .im img');
 /* india map */
 (()=>{const m=document.getElementById('map'),tip=document.getElementById('mtip'),mn=document.getElementById('mn'),ms=document.getElementById('ms'),mb=document.getElementById('mb'),sts=$('.st');
 const pick=p=>{const n=p.dataset.n;sts.forEach(x=>x.classList.toggle('sel',x===p));mn.textContent=n;
-if(n==='Uttarakhand'){ms.textContent='Headquarters · 6-A Sandesh Nagar, Kankhal, Haridwar – 249408';mb.textContent='Contact Us';mb.href='#contact';mb.onclick=null}
-else{ms.textContent='Multi-site support — tell us about your site in '+n+'.';mb.textContent='Enquire for '+n+' →';mb.href='#planner';mb.onclick=()=>{const f=document.getElementById('pc');if(f)f.value=n}}};
+if(n==='Uttarakhand'){ms.textContent='Headquarters · 6A Sandesh Nagar, Kankhal, Haridwar 249408';mb.textContent='Contact Us';mb.href='#contact';mb.onclick=null}
+else{ms.textContent='Support for multiple sites — tell us about your site in '+n+'.';mb.textContent='Enquire for '+n+' →';mb.href='#planner';mb.onclick=()=>{const f=document.getElementById('pc');if(f)f.value=n}}};
 sts.forEach(p=>{p.addEventListener('mousemove',e=>{const r=m.getBoundingClientRect();tip.textContent=p.dataset.n+(p.classList.contains('hq')?' · HQ':'');tip.style.left=(e.clientX-r.left)+'px';tip.style.top=(e.clientY-r.top)+'px';tip.classList.add('on')});p.addEventListener('mouseleave',()=>tip.classList.remove('on'));p.addEventListener('click',()=>pick(p));p.setAttribute('tabindex','0');p.setAttribute('role','button');p.setAttribute('aria-label',p.dataset.n);p.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();pick(p)}})});
 pick(document.querySelector('.st.hq'))})();
 
@@ -666,7 +719,7 @@ const m=`Hello Parakram Security, I'd like a security plan.%0A%0A*Services:* ${s
 cf.onsubmit=e=>{e.preventDefault();const m=`Hello Parakram Security,%0A*Name:* ${cn.value}%0A*Phone:* ${cp.value}%0A*Email:* ${ce.value}%0A*Service:* ${cs.value||'Not specified'}%0A*Details:* ${cm.value}`;open(`https://wa.me/${PH}?text=${m}`,'_blank');toast('Opening WhatsApp…')};
 </script>
 </body></html>'''
-mq=['Trained &amp; Verified Personnel','Customized Solutions','24/7 Availability','Multi-Site Support','Professionalism','Integrity','Courtesy','Your Safety Is Our Mission']
+mq=['Trained &amp; Verified Personnel','Customized Solutions','24/7 Availability','Support for Multiple Sites','Professionalism','Integrity','Courtesy','Your Safety Is Our Mission']
 M=json.load(open(os.path.join(H,'india_paths.json')))
 mapsvg=f'<svg id="imap" viewBox="0 0 {M["w"]} {M["h"]}" role="img" aria-label="Interactive map of India"><g>'+''.join(f'<path class="st{" hq" if x["n"]=="Uttarakhand" else ""}" data-n="{x["n"].replace("&","&amp;")}" d="{x["d"]}"/>' for x in M['states'])+f'</g><g class="pinG" transform="translate({M["pin"][0]} {M["pin"][1]})"><circle class="rd" r="14"/><circle class="rd r2" r="14"/><circle class="pd" r="9"/></g></svg>'
 html=(html.replace('@@MAP@@',mapsvg).replace('@@MEGA@@',mega).replace('@@TABS@@',tabs).replace('@@PANELS@@',panels).replace('@@CHIPS@@',chips)
