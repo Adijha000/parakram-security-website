@@ -63,7 +63,7 @@ section{padding:120px 0;position:relative}
 /* progress + util + header */
 #pg{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--gold),#fff);width:0;z-index:100}
 .util{background:var(--navy);color:#c9cef0;font-size:12.5px}.util .wrap{display:flex;justify-content:space-between;align-items:center;height:40px;gap:16px}
-.util a:hover{color:var(--gold)}.util .r{display:flex;gap:24px}.pulse{display:inline-block;width:8px;height:8px;border-radius:50%;background:#2ee66b;margin-right:8px;animation:p 1.8s infinite}
+.util a:hover{color:var(--gold)}.ist{margin-left:14px;padding-left:14px;border-left:1px solid rgba(255,255,255,.25);font-variant-numeric:tabular-nums;color:var(--gold2);font-weight:600}.util .r{display:flex;gap:24px}.pulse{display:inline-block;width:8px;height:8px;border-radius:50%;background:#2ee66b;margin-right:8px;animation:p 1.8s infinite}
 @keyframes p{0%{box-shadow:0 0 0 0 rgba(46,230,107,.7)}70%{box-shadow:0 0 0 9px transparent}100%{box-shadow:0 0 0 0 transparent}}
 header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.94);backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid var(--line);transition:box-shadow .3s}
 header.sh{box-shadow:0 10px 40px rgba(5,13,58,.12)}
@@ -340,7 +340,7 @@ section{padding:76px 0}.wrap{padding:0 20px}.sec-h{margin-bottom:38px}.sec-h p{f
 <div id="pg"></div>
 <div id="toast" role="status" aria-live="polite"></div>
 <a class="sidetab" href="#contact">Get in Touch</a>
-<div class="util"><div class="wrap"><div class="l"><span class="pulse"></span>Available 24/7 · Your Safety Is Our Mission</div><div class="r"><a href="tel:+919105909006">+91 91059 09006</a><a href="mailto:info@parakramindia.org">info@parakramindia.org</a><a href="#careers">Careers</a></div></div></div>
+<div class="util"><div class="wrap"><div class="l"><span class="pulse"></span>Control room online · 24/7 <span class="ist" id="ist"></span></div><div class="r"><a href="tel:+919105909006">+91 91059 09006</a><a href="mailto:info@parakramindia.org">info@parakramindia.org</a><a href="#careers">Careers</a></div></div></div>
 <header id="hd"><div class="wrap nav">
 <a class="brand" href="#top"><img src="logo.png" alt="Parakram shield logo"><div><b>PARAKRAM</b><small>SECURITY INDIA PVT. LTD.</small></div></a>
 <nav id="nav"><ul>
@@ -526,6 +526,8 @@ addEventListener('scroll',()=>{if(scrollY<900){const y=scrollY;$('.hxg .tx').for
 /* parallax on about image + band */
 addEventListener('scroll',()=>{const im=document.querySelector('.imgc .im img');if(im){const r=im.getBoundingClientRect();if(r.top<innerHeight&&r.bottom>0)im.style.objectPosition=`50% ${50+(r.top/innerHeight-.5)*18}%`}},{passive:true});
 
+/* ist clock */
+(()=>{const e=document.getElementById('ist');const t=()=>{e.textContent=new Date().toLocaleTimeString('en-IN',{timeZone:'Asia/Kolkata',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:true})+' IST'};t();setInterval(t,1000)})();
 /* india map */
 (()=>{const m=document.getElementById('map'),tip=document.getElementById('mtip'),mn=document.getElementById('mn'),ms=document.getElementById('ms'),mb=document.getElementById('mb'),sts=$('.st');
 const pick=p=>{const n=p.dataset.n;sts.forEach(x=>x.classList.toggle('sel',x===p));mn.textContent=n;
