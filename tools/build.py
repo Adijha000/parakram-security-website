@@ -24,8 +24,7 @@ for k,(ic,h,p,im,pos) in enumerate(SV):
     on=' on' if k==0 else ''
     alt=h.replace('&amp;','and')
     tabs+=f'<button class="tb{on}" data-k="{k}" role="tab"><span class="ti">{IC[ic]}</span><span class="tt">{h}</span><span class="ar">→</span></button>'
-    media=(f'<div class="pm cut"><div class="bgc"></div><img src="img/parakram-hero-tall.webp" alt="{alt}" width="800" height="800" loading="lazy"></div>' if im=='hero'
-      else f'<div class="pm"><img src="img/parakram-{im}.webp" alt="{alt}" style="object-position:{pos}" loading="lazy"></div>')
+    media=f'<div class="pm art m{(k%8)+1}"><div class="rg a"></div><div class="rg b"></div><span class="ai">{IC[ic]}</span></div>'
     panels+=f'<article class="pn{on}" data-k="{k}">{media}<div class="pb"><div class="num">0{k+1}<small>/ 08</small></div><h3>{h}</h3><p>{p}</p><ul><li>Trained &amp; verified personnel</li><li>Available 24/7</li><li>Customized to your site</li></ul><a class="btn btn-g" href="/services/{SLUGS[k]}">View details →</a><a class="lk" href="/planner">Plan this service</a></div></article>'
     mega+=f'<a href="/services/{SLUGS[k]}"><i>{IC[ic]}</i>{h}</a>'
     chips+=f'<label class="chp"><input type="checkbox" value="{alt}"><span>{IC[ic]}{h}</span></label>'
@@ -839,6 +838,64 @@ body{font-size:16px!important}
 @media(min-width:2200px){.wrap{max-width:1680px}html{font-size:110%}}
 
 html{overflow-x:clip}body{overflow-x:clip}
+
+/* ===== 3D and picture motion ===== */
+[data-tilt]{transform-style:preserve-3d;will-change:transform;transition:transform .45s cubic-bezier(.22,.8,.24,1),box-shadow .45s}
+[data-tilt].tilting{transition:transform .1s linear,box-shadow .45s}
+.glare{position:absolute;inset:0;pointer-events:none;z-index:6;border-radius:inherit;background:radial-gradient(360px circle at var(--gx,50%) var(--gy,50%),rgba(255,255,255,.26),transparent 60%);opacity:0;transition:opacity .35s}
+[data-tilt]:hover .glare{opacity:1}
+.sp2i img,.mos img{scale:1.14;translate:0 var(--py,0px)}
+.pbn .pbg{top:-32px;bottom:-32px;translate:0 var(--py,0px)}
+.orbs{position:absolute;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.orbs i{position:absolute;border-radius:50%;transition:translate .3s ease-out}
+.orbs .o1{width:520px;height:520px;right:6%;top:6%;border:1px solid rgba(255,196,0,.26);translate:calc(var(--mx,0)*-46px) calc(var(--my,0)*-34px)}
+.orbs .o1:after{content:"";position:absolute;inset:44px;border-radius:50%;border:1px dashed rgba(255,255,255,.14);animation:spin 40s linear infinite}
+.orbs .o2{width:340px;height:340px;right:22%;bottom:-6%;background:radial-gradient(circle,rgba(255,196,0,.22),transparent 65%);translate:calc(var(--mx,0)*70px) calc(var(--my,0)*50px)}
+.orbs .o3{width:14px;height:14px;right:30%;top:22%;background:var(--gold);box-shadow:0 0 0 8px rgba(255,196,0,.18),0 0 40px 10px rgba(255,196,0,.35);translate:calc(var(--mx,0)*-90px) calc(var(--my,0)*-70px)}
+.floor,.pbn .floor{position:absolute;left:-25%;right:-25%;bottom:-2px;height:46%;perspective:420px;z-index:1;pointer-events:none;-webkit-mask-image:linear-gradient(transparent,#000 75%);mask-image:linear-gradient(transparent,#000 75%)}
+.floor:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,196,0,.26) 1px,transparent 1px),linear-gradient(90deg,rgba(255,196,0,.26) 1px,transparent 1px);background-size:64px 64px;transform:rotateX(64deg);transform-origin:50% 100%;animation:floorm 4s linear infinite}
+@keyframes floorm{to{background-position:0 64px}}
+.hx .ph{translate:calc(var(--mx,0)*-14px) calc(var(--my,0)*-10px);transition:transform 8s linear,translate .4s ease-out}
+.emb3d{display:none;width:170px;height:170px;perspective:900px;flex:none;margin:-18px 10px;filter:drop-shadow(0 22px 22px rgba(5,13,58,.38));animation:embf 5s ease-in-out infinite}
+@keyframes embf{50%{transform:translateY(-8px)}}
+.emb-in{position:relative;width:100%;height:100%;transform-style:preserve-3d;transform:rotateY(calc(var(--ex,0)*36deg)) rotateX(calc(var(--ey,0)*-24deg));transition:transform .25s ease-out}
+.emb-sw{position:absolute;inset:0;transform-style:preserve-3d;animation:sway 9s ease-in-out infinite}
+.emb-sw img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+@keyframes sway{0%,100%{transform:rotateY(-32deg) rotateX(5deg)}50%{transform:rotateY(32deg) rotateX(-3deg)}}
+.cta2b .emb3d{display:none}
+@media(min-width:1000px){.emb3d{display:block}}
+@media(max-width:980px){.orbs .o1{width:300px;height:300px;right:-80px;top:3%}.orbs .o2,.orbs .o3{display:none}.floor{height:30%}}
+@media(prefers-reduced-motion:reduce){.floor:before,.emb3d,.emb-sw,.orbs .o1:after{animation:none!important}}
+
+/* ===== art panels: distinct graphics instead of repeated photos ===== */
+.art{position:relative;overflow:hidden;background:linear-gradient(145deg,#0a1660,#050d3a);isolation:isolate}
+.art:before{content:"";position:absolute;inset:0;z-index:-1}
+.art.m1:before{background:radial-gradient(circle at 72% 28%,rgba(255,196,0,.3),transparent 55%),repeating-linear-gradient(45deg,rgba(255,255,255,.055) 0 2px,transparent 2px 20px)}
+.art.m2:before{background:radial-gradient(circle at 28% 72%,rgba(60,110,255,.55),transparent 58%),linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);background-size:auto,34px 34px,34px 34px}
+.art.m3:before{background:conic-gradient(from 210deg at 62% 46%,rgba(255,196,0,.26),transparent 38%,rgba(90,130,255,.32),transparent 78%)}
+.art.m4:before{background:radial-gradient(circle at 18% 22%,rgba(255,196,0,.28),transparent 52%),radial-gradient(rgba(255,255,255,.16) 1.4px,transparent 1.6px) 0 0/22px 22px}
+.art.m5:before{background:repeating-radial-gradient(circle at 70% 42%,rgba(255,255,255,.075) 0 2px,transparent 2px 28px),radial-gradient(circle at 70% 42%,rgba(255,196,0,.22),transparent 45%)}
+.art.m6:before{background:linear-gradient(125deg,rgba(255,196,0,.2),transparent 42%),repeating-linear-gradient(90deg,rgba(255,255,255,.055) 0 1px,transparent 1px 30px)}
+.art.m7:before{background:radial-gradient(circle at 80% 80%,rgba(60,110,255,.5),transparent 55%),repeating-linear-gradient(135deg,rgba(255,196,0,.09) 0 2px,transparent 2px 22px)}
+.art.m8:before{background:radial-gradient(circle at 30% 30%,rgba(255,196,0,.25),transparent 50%),linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:auto,26px 26px,26px 26px}
+.art .ai{position:absolute;left:50%;top:50%;width:44%;max-width:170px;aspect-ratio:1;translate:-50% -50%;display:grid;place-items:center;color:var(--gold);animation:aif 6s ease-in-out infinite}
+.art .ai svg{width:100%;height:100%;stroke:currentColor;fill:none;stroke-width:1.15;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 16px rgba(255,196,0,.5))}
+@keyframes aif{50%{transform:translateY(-8px)}}
+.art .rg{position:absolute;left:50%;top:50%;border:1px solid rgba(255,196,0,.3);border-radius:50%;translate:-50% -50%;pointer-events:none}
+.art .rg.a{width:74%;aspect-ratio:1}.art .rg.b{width:104%;aspect-ratio:1;border-style:dashed;border-color:rgba(255,255,255,.16);animation:spin 60s linear infinite}
+.pm.art:after{display:none}
+.pm.art{min-height:260px}
+.ic{background:var(--navy)}.ic:before{display:none}.ic>.art{position:absolute;inset:0;z-index:-2}.ic>.art .ai{top:38%;width:40%}.ic .art .rg{top:38%}
+.rt.art{aspect-ratio:16/10}.rt.art .ai{width:34%}
+.pbn .pbg.pbart{width:52%;opacity:1;-webkit-mask-image:linear-gradient(90deg,transparent,#000 40%);mask-image:linear-gradient(90deg,transparent,#000 40%);background:none}
+.pbn .pbg.pbart .art{position:absolute;inset:0;background:none}.pbn .pbg.pbart .ai{left:56%;width:34%;max-width:280px}.pbn .pbg.pbart .rg{left:56%}
+.empanel{aspect-ratio:4/3.4}.empanel .emb3d{display:block!important;width:min(240px,60%);height:auto;aspect-ratio:1;margin:0;position:absolute;left:50%;top:50%;translate:-50% -50%;animation:none}
+.sp2i.art{aspect-ratio:4/3}.sp2i.art .ai{width:34%}
+.tile2{position:relative;border-radius:12px;overflow:hidden;min-height:170px;display:flex;align-items:flex-end;padding:16px;color:#fff;font-family:Manrope;font-weight:700;background:var(--navy)}.tile2 .art{position:absolute;inset:0}.tile2 .ai{top:40%;width:38%}.tile2 .rg{top:40%}.tile2 b{position:relative;z-index:2}
+@media(max-width:980px){.pm.art{min-height:190px}.pbn .pbg.pbart{width:100%;opacity:.35;-webkit-mask-image:linear-gradient(180deg,#000,transparent);mask-image:linear-gradient(180deg,#000,transparent)}.pbn .pbg.pbart .ai{left:74%;top:44%;width:38%}.pbn .pbg.pbart .rg{left:74%;top:44%}}
+@media(prefers-reduced-motion:reduce){.art .ai,.art .rg.b{animation:none}}
+.sp2i .emb3d{display:block!important;position:absolute;left:50%;top:50%;translate:-50% -50%;width:min(230px,56%);height:auto;aspect-ratio:1;margin:0;animation:none}.mos .art .ai{top:44%;width:34%}.mos>div>.art .rg{top:44%}.mos>div:after{z-index:1}.mos b{z-index:2}
+.rt{position:relative}.rt>.art{position:absolute;inset:0}.rt .ai{width:32%;max-width:120px}.rcard:hover .art .ai{transform:scale(1.1)}.art .ai{transition:transform .6s var(--ease)}
 </style>
 </head>
 <body>
@@ -857,13 +914,14 @@ html{overflow-x:clip}body{overflow-x:clip}
 <a class="brand" href="/"><img src="logo.png" alt="Parakram shield logo" width="56" height="56"><div><b>PARAKRAM</b><small>SECURITY INDIA PVT. LTD.</small></div></a>
 <nav id="nav"><ul>
 <li><a href="/about">About</a></li>
-<li class="dd"><a href="/services">Services<span class="cv"> ▾</span></a><button class="ddt" aria-label="Show services" aria-expanded="false"></button><div class="menu"><div class="mg">@@MEGA@@</div><div class="mp"><img src="img/parakram-operations.webp" alt="" loading="lazy"><b>Customized security solutions for every environment</b><a href="/services">All services →</a></div></div></li>
+<li class="dd"><a href="/services">Services<span class="cv"> ▾</span></a><button class="ddt" aria-label="Show services" aria-expanded="false"></button><div class="menu"><div class="mg">@@MEGA@@</div><div class="mp"><div class="art m4" style="position:absolute;inset:0"><div class="rg a"></div><div class="rg b"></div><span class="ai"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span></div><b>Customized security solutions for every environment</b><a href="/services">All services →</a></div></div></li>
 <li><a href="/industries">Industries</a></li><li><a href="/why">Why Us</a></li><li><a href="/coverage">Coverage</a></li><li><a href="/careers">Careers</a></li><li><a href="/faq">FAQ</a></li><li><a href="/contact">Contact</a></li><li class="mcta"><a class="btn btn-g" href="/planner">Plan Your Security →</a><a class="btn btn-n" href="tel:+919105909006">Call +91 91059 09006</a></li><li class="mfoot"><b>Parakram Security India Pvt. Ltd.</b><span>6A Sandesh Nagar, Kankhal, Haridwar 249408</span><a href="mailto:info@parakramindia.org">info@parakramindia.org</a></li></ul></nav>
 <a class="btn btn-n" href="/planner" style="padding:13px 24px">Plan Your Security</a><button class="burger" id="bg" aria-label="Menu" aria-expanded="false"><i></i></button>
 </div></header>
 
 <main id="main">
 <section class="hx" id="hero" style="padding:0" aria-roledescription="carousel">
+<div class="orbs" aria-hidden="true"><i class="o1"></i><i class="o2"></i><i class="o3"></i></div><div class="floor" aria-hidden="true"></div>
 <div class="slide on"><div class="bgc"></div><div class="ph phm" style="--bg:url(img/parakram-about.webp)"></div>
 <div class="fig" id="fig"><div class="halo"></div><img src="img/parakram-hero-portrait.webp" alt="Parakram security officer" width="800" height="620" fetchpriority="high" decoding="async"></div>
 <div class="wrap hxg"><div class="tx"><div class="eyebrow">Your Safety Is Our Mission</div>
@@ -911,7 +969,7 @@ html{overflow-x:clip}body{overflow-x:clip}
 <p>We combine disciplined manpower, rigorous training and deeply rooted Indian values to protect people, property and operations, with personnel known for professionalism, integrity and courtesy.</p>
 <div class="vals"><div><b>Professionalism</b><span>Disciplined, trained personnel</span></div><div><b>Integrity</b><span>Verified, trustworthy teams</span></div><div><b>Courtesy</b><span>Respectful service, always</span></div></div>
 <a class="btn btn-n" href="/about">Read Our Story →</a></div>
-<div class="imgc rv"><div class="im"><img src="img/parakram-about.webp" alt="Parakram security team" width="1200" height="896" loading="lazy" decoding="async"></div><div class="bd"><b>2017</b><span>Established · Haridwar</span></div></div>
+<div class="imgc rv"><div class="im art m3 empanel"><div class="rg a"></div><div class="rg b"></div><div class="emb3d" aria-hidden="true"></div></div><div class="bd"><b>2017</b><span>Established · Haridwar</span></div></div>
 </div></section>
 
 <section id="services" class="bg"><div class="wrap">
@@ -939,10 +997,10 @@ html{overflow-x:clip}body{overflow-x:clip}
 <section id="industries"><div class="wrap">
 <div class="sec-h rv"><div class="eyebrow dk">Industries We Protect</div><h2 class="h2">Trusted where safety <em>matters most.</em></h2></div>
 <div class="ind">
-<a class="ic rv" style="--bg2:url(img/parakram-training.webp)" href="/industries#industrial"><span class="n">01</span><span class="go">→</span><h3>Industrial</h3><span>Plants · Warehouses</span></a>
-<a class="ic rv" style="--bg2:url(img/parakram-operations.webp)" href="/industries#corporate"><span class="n">02</span><span class="go">→</span><h3>Corporate</h3><span>Offices · Business premises</span></a>
-<a class="ic rv" style="--bg2:url(img/parakram-about.webp)" href="/industries#healthcare"><span class="n">03</span><span class="go">→</span><h3>Healthcare</h3><span>Hospitals · Clinics</span></a>
-<a class="ic rv" style="--bg2:url(img/parakram-operations.webp);--pos:85% 50%" href="/industries#banking"><span class="n">04</span><span class="go">→</span><h3>Banking</h3><span>Branches · ATMs</span></a>
+<a class="ic rv" href="/industries#industrial"><div class="art m1"><div class="rg a"></div><div class="rg b"></div><span class="ai">@@IC_ind@@</span></div><span class="n">01</span><span class="go">→</span><h3>Industrial</h3><span>Plants · Warehouses</span></a>
+<a class="ic rv" href="/industries#corporate"><div class="art m2"><div class="rg a"></div><div class="rg b"></div><span class="ai">@@IC_com@@</span></div><span class="n">02</span><span class="go">→</span><h3>Corporate</h3><span>Offices · Business premises</span></a>
+<a class="ic rv" href="/industries#healthcare"><div class="art m3"><div class="rg a"></div><div class="rg b"></div><span class="ai">@@IC_hos@@</span></div><span class="n">03</span><span class="go">→</span><h3>Healthcare</h3><span>Hospitals · Clinics</span></a>
+<a class="ic rv" href="/industries#banking"><div class="art m4"><div class="rg a"></div><div class="rg b"></div><span class="ai">@@IC_bnk@@</span></div><span class="n">04</span><span class="go">→</span><h3>Banking</h3><span>Branches · ATMs</span></a>
 </div></div></section>
 
 <section class="band" style="background-image:url(img/parakram-operations.webp)"><div class="wrap rv"><div class="eyebrow" style="justify-content:center">Trusted Protection</div><h2>Professionalism. Integrity. <em>Courtesy.</em></h2><p>Personnel who protect people, property and operations, 24/7.</p><a class="btn btn-g" href="#contact">Get Started →</a></div></section>
@@ -1001,7 +1059,7 @@ html{overflow-x:clip}body{overflow-x:clip}
 <button class="btn btn-n full" style="justify-content:center">Get Started →</button></form></div></div></section>
 </main>
 
-<div class="ctab"><div class="wrap"><div><h2>Ready to secure your premises?</h2><p>Speak to our team. We are available 24/7.</p></div><div class="cta2"><a class="btn btn-g" href="#planner">Plan Your Security →</a><a class="btn btn-o" href="tel:+919105909006">+91 91059 09006</a></div></div></div>
+<div class="ctab"><div class="wrap"><div><h2>Ready to secure your premises?</h2><p>Speak to our team. We are available 24/7.</p></div><div class="emb3d" aria-hidden="true"></div><div class="cta2"><a class="btn btn-g" href="#planner">Plan Your Security →</a><a class="btn btn-o" href="tel:+919105909006">+91 91059 09006</a></div></div></div>
 <footer><div class="wrap"><div class="fg">
 <div><div class="brand" style="margin-bottom:18px"><img src="logo.png" alt="" style="height:64px"><div><b style="color:#fff">PARAKRAM</b><small style="color:#aab0d6">SECURITY INDIA PVT. LTD.</small></div></div><p style="font-size:14.5px;max-width:320px">We aim to provide you with a life with full protection.</p></div>
 <div><h4>Company</h4><ul><li><a href="/about">About Us</a></li><li><a href="/why">Why Parakram</a></li><li><a href="/industries">Industries</a></li><li><a href="/coverage">Coverage</a></li><li><a href="/careers">Careers</a></li><li><a href="/faq">FAQ</a></li><li><a href="/contact">Contact</a></li></ul></div>
@@ -1146,6 +1204,16 @@ const r=await fetch('/api/apply',{method:'POST',headers:{'Content-Type':'applica
 const j=await r.json().catch(()=>({}));if(r.ok&&j.ok){f.innerHTML='<div class="full" style="grid-column:1/-1;text-align:center;padding:30px 10px"><div style="width:64px;height:64px;border-radius:50%;background:var(--gold);display:grid;place-items:center;margin:0 auto 16px;font-size:30px">✓</div><h3 style="font-size:24px;color:var(--navy)">Application received</h3><p style="color:#4a5070;margin-top:8px">Thank you. Our team will review your details and contact you.</p></div>';return}
 if(j.code==='too_large')say('err','That file is larger than 3 MB. Please choose a smaller file.');else if(j.code==='invalid')say('err','Please enter your name and a valid phone number.');else fallback()}catch(err){fallback()}
 btn.disabled=false;btn.textContent='Submit application'})})();
+
+/* 3D: tilt with glare, hero depth, emblem, image parallax */
+(()=>{const fine=!mq('(pointer:coarse)')&&!REDUCE;
+if(fine){$('.rcard,.sp2i,.imgc,.ic,.mos>div,.hx .fig').forEach(el=>{el.setAttribute('data-tilt','');if(getComputedStyle(el).position==='static')el.style.position='relative';const g=document.createElement('span');g.className='glare';el.appendChild(g);const lift=el.matches('.rcard,.ic')?-6:0,m=el.matches('.hx .fig')?4.5:6.5;
+el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;el.classList.add('tilting');el.style.transform=`perspective(1000px) translateY(${lift}px) rotateX(${((.5-y)*m*2).toFixed(2)}deg) rotateY(${((x-.5)*m*2).toFixed(2)}deg) scale(1.015)`;el.style.setProperty('--gx',(x*100).toFixed(1)+'%');el.style.setProperty('--gy',(y*100).toFixed(1)+'%')});
+el.addEventListener('pointerleave',()=>{el.classList.remove('tilting');el.style.transform=''})});
+const hx=document.getElementById('hero');if(hx){let raf=0;hx.addEventListener('pointermove',e=>{if(raf)return;raf=requestAnimationFrame(()=>{raf=0;const r=hx.getBoundingClientRect();hx.style.setProperty('--mx',((e.clientX-r.left)/r.width-.5).toFixed(3));hx.style.setProperty('--my',((e.clientY-r.top)/r.height-.5).toFixed(3))})});hx.addEventListener('pointerleave',()=>{hx.style.setProperty('--mx',0);hx.style.setProperty('--my',0)})}}
+$('.emb3d').forEach(b=>{const a=document.createElement('div');a.className='emb-in';const w=document.createElement('div');w.className='emb-sw';for(let i=0;i<16;i++){const im=new Image();im.src='/logo.png';im.alt='';im.width=170;im.height=170;im.decoding='async';im.style.transform='translateZ('+((i-8)*2.4)+'px)';im.style.filter=i<15?'brightness('+(0.4+i*0.038).toFixed(2)+')':'none';w.appendChild(im)}a.appendChild(w);b.appendChild(a);if(fine)b.addEventListener('pointermove',e=>{const r=b.getBoundingClientRect();b.style.setProperty('--ex',((e.clientX-r.left)/r.width-.5).toFixed(3));b.style.setProperty('--ey',((e.clientY-r.top)/r.height-.5).toFixed(3))})});
+if(!REDUCE){const ps=$('.sp2i img,.mos img,.pbn .pbg');if(ps.length){let t=0;const upd=()=>{t=0;const vh=innerHeight;ps.forEach(el=>{const host=el.closest('.sp2i,.mos>div')||el;const r=host.getBoundingClientRect();if(r.bottom<-60||r.top>vh+60)return;const p=((r.top+r.height/2)-vh/2)/vh;el.style.setProperty('--py',(p*-28).toFixed(1)+'px')})};addEventListener('scroll',()=>{if(!t)t=requestAnimationFrame(upd)},{passive:true});upd()}}
+})();
 /* planner wizard */
 (()=>{const w=document.getElementById('wz'),st=$('#wz .step'),bars=$('#wz .st i');let s=0;const show=n=>{s=n;st.forEach((e,k)=>e.classList.toggle('on',k==n));bars.forEach((e,k)=>e.classList.toggle('on',k<=n))};
 $('#wz [data-nx]').forEach(b=>b.onclick=()=>show(Math.min(s+1,3)));$('#wz [data-bk]').forEach(b=>b.onclick=()=>show(Math.max(s-1,0)));
@@ -1159,6 +1227,7 @@ mq=['Trained &amp; Verified Personnel','Customized Solutions','24/7 Availability
 M=json.load(open(os.path.join(H,'india_paths.json')))
 mapsvg=f'<svg id="imap" viewBox="0 0 {M["w"]} {M["h"]}" role="img" aria-label="Interactive map of India"><g>'+''.join(f'<path class="st{" hq" if x["n"]=="Uttarakhand" else ""}" data-n="{x["n"].replace("&","&amp;")}" d="{x["d"]}"/>' for x in M['states'])+f'</g><g class="pinG" transform="translate({M["pin"][0]} {M["pin"][1]})"><circle class="rd" r="14"/><circle class="rd r2" r="14"/><circle class="pd" r="9"/></g></svg>'
 for _k in ['ind','com','hos','bnk','res','edu']:
+    html=html.replace('@@IC_'+_k+'@@',IC[_k])
     html=html.replace('@@I_'+_k+'@@',IC[{'ind':'ind','com':'com','hos':'hos','bnk':'bnk','res':'res','edu':'edu'}[_k]])
 html=(html.replace('@@MAP@@',mapsvg).replace('@@MEGA@@',mega).replace('@@TABS@@',tabs).replace('@@PANELS@@',panels).replace('@@CHIPS@@',chips)
  .replace('@@MARQUEE@@',''.join(f'<span>{x}</span>' for x in mq*2))

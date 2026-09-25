@@ -219,6 +219,19 @@ const j=await r.json().catch(()=>({}));if(r.ok&&j.ok){f.innerHTML='<div class="f
 if(j.code==='too_large')say('err','That file is larger than 3 MB. Please choose a smaller file.');else if(j.code==='invalid')say('err','Please enter your name and a valid phone number.');else fallback()}catch(err){fallback()}
 btn.disabled=false;btn.textContent='Submit application'})})();
 
+
+}catch(e){}
+try{
+/* 3D: tilt with glare, hero depth, emblem, image parallax */
+(()=>{const fine=!mq('(pointer:coarse)')&&!REDUCE;
+if(fine){$('.rcard,.sp2i,.imgc,.ic,.mos>div,.hx .fig').forEach(el=>{el.setAttribute('data-tilt','');if(getComputedStyle(el).position==='static')el.style.position='relative';const g=document.createElement('span');g.className='glare';el.appendChild(g);const lift=el.matches('.rcard,.ic')?-6:0,m=el.matches('.hx .fig')?4.5:6.5;
+el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;el.classList.add('tilting');el.style.transform=`perspective(1000px) translateY(${lift}px) rotateX(${((.5-y)*m*2).toFixed(2)}deg) rotateY(${((x-.5)*m*2).toFixed(2)}deg) scale(1.015)`;el.style.setProperty('--gx',(x*100).toFixed(1)+'%');el.style.setProperty('--gy',(y*100).toFixed(1)+'%')});
+el.addEventListener('pointerleave',()=>{el.classList.remove('tilting');el.style.transform=''})});
+const hx=document.getElementById('hero');if(hx){let raf=0;hx.addEventListener('pointermove',e=>{if(raf)return;raf=requestAnimationFrame(()=>{raf=0;const r=hx.getBoundingClientRect();hx.style.setProperty('--mx',((e.clientX-r.left)/r.width-.5).toFixed(3));hx.style.setProperty('--my',((e.clientY-r.top)/r.height-.5).toFixed(3))})});hx.addEventListener('pointerleave',()=>{hx.style.setProperty('--mx',0);hx.style.setProperty('--my',0)})}}
+$('.emb3d').forEach(b=>{const a=document.createElement('div');a.className='emb-in';const w=document.createElement('div');w.className='emb-sw';for(let i=0;i<16;i++){const im=new Image();im.src='/logo.png';im.alt='';im.width=170;im.height=170;im.decoding='async';im.style.transform='translateZ('+((i-8)*2.4)+'px)';im.style.filter=i<15?'brightness('+(0.4+i*0.038).toFixed(2)+')':'none';w.appendChild(im)}a.appendChild(w);b.appendChild(a);if(fine)b.addEventListener('pointermove',e=>{const r=b.getBoundingClientRect();b.style.setProperty('--ex',((e.clientX-r.left)/r.width-.5).toFixed(3));b.style.setProperty('--ey',((e.clientY-r.top)/r.height-.5).toFixed(3))})});
+if(!REDUCE){const ps=$('.sp2i img,.mos img,.pbn .pbg');if(ps.length){let t=0;const upd=()=>{t=0;const vh=innerHeight;ps.forEach(el=>{const host=el.closest('.sp2i,.mos>div')||el;const r=host.getBoundingClientRect();if(r.bottom<-60||r.top>vh+60)return;const p=((r.top+r.height/2)-vh/2)/vh;el.style.setProperty('--py',(p*-28).toFixed(1)+'px')})};addEventListener('scroll',()=>{if(!t)t=requestAnimationFrame(upd)},{passive:true});upd()}}
+})();
+
 }catch(e){}
 try{
 /* planner wizard */
