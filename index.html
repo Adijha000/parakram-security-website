@@ -144,7 +144,7 @@ footer li{list-style:none;margin-bottom:10px;font-size:14px}footer a:hover{color
 .fb{border-top:1px solid rgba(255,255,255,.1);padding:24px 0;display:flex;justify-content:space-between;font-size:13px;flex-wrap:wrap;gap:10px}
 /* float */
 .wa{position:fixed;right:22px;bottom:22px;z-index:60;background:#25d366;color:#fff;width:60px;height:60px;border-radius:50%;display:grid;place-items:center;box-shadow:0 12px 30px rgba(0,0,0,.3);font-size:28px;transition:.2s}.wa:hover{transform:scale(1.1)}
-.sos{position:fixed;left:22px;bottom:22px;z-index:60;background:var(--gold);color:var(--navy);padding:14px 20px;font-weight:800;font-size:13px;letter-spacing:.06em;box-shadow:0 12px 30px rgba(0,0,0,.3)}
+.sos{display:none;position:fixed;left:22px;bottom:22px;z-index:60;background:var(--gold);color:var(--navy);padding:14px 20px;font-weight:800;font-size:13px;letter-spacing:.06em;box-shadow:0 12px 30px rgba(0,0,0,.3)}
 .rv{opacity:0;transform:translateY(34px);transition:1s cubic-bezier(.2,.7,.2,1)}.rv.in{opacity:1;transform:none}
 @media(max-width:1180px){
 nav{position:fixed;inset:122px 0 0 0;background:#fff;transform:translateX(100%);transition:.3s;overflow:auto;padding:20px}nav.open{transform:none}
@@ -152,7 +152,75 @@ nav ul{flex-direction:column}nav>ul>li>a{padding:16px 6px;border-bottom:1px soli
 .burger{display:block}.hero .wrap,.why,.train,.careers .wrap,.contact{grid-template-columns:1fr}.shieldbox{display:none}
 .svc,.ind,.comp{grid-template-columns:1fr 1fr}.stats .grid{grid-template-columns:1fr 1fr}.pill,.rev{grid-template-columns:1fr}.fg{grid-template-columns:1fr 1fr}.patron .wrap{grid-template-columns:1fr}
 .util .l{display:none}}
-@media(max-width:560px){.svc,.ind,.comp,.fg{grid-template-columns:1fr}.contact form{grid-template-columns:1fr;padding:30px}.contact .l{padding:30px}section{padding:76px 0}.sos{display:none}}
+@media(max-width:560px){.svc,.ind,.comp,.fg{grid-template-columns:1fr}.contact form{grid-template-columns:1fr;padding:30px}.contact .l{padding:30px}section{padding:76px 0}.sos{display:none;display:none}}
+
+/* ===== enterprise hero ===== */
+.hx{position:relative;background:#030826;color:#fff;overflow:hidden;height:calc(100vh - 122px);min-height:640px;max-height:860px}
+.slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity 1s,visibility 1s;display:flex;align-items:center}
+.slide.on{opacity:1;visibility:visible}
+.bgc{position:absolute;inset:0;background:radial-gradient(800px 520px at 78% 40%,rgba(255,196,0,.28),transparent 62%),radial-gradient(700px 600px at 5% 110%,rgba(40,60,220,.6),transparent 60%),linear-gradient(135deg,#030826,#0a1660 60%,#050d3a)}
+.bgc:after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(circle at 70% 45%,#000,transparent 70%)}
+.photo{position:absolute;inset:0;background:var(--bg) center/cover;transform:scale(1.08);transition:transform 7s linear}.slide.on .photo{transform:scale(1)}
+.photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,8,38,.95) 0%,rgba(3,8,38,.78) 45%,rgba(3,8,38,.25) 100%)}
+.hxg{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:end;height:100%;padding-top:50px;padding-bottom:100px}
+.hxg.one{grid-template-columns:1fr;align-items:center}.hxg.one .tx{max-width:760px}
+.hxg .tx{align-self:center;padding-bottom:90px}
+.hx h1{font-size:clamp(46px,7vw,104px);font-weight:800;line-height:.98}.hx h1 em{font-style:normal;color:var(--gold);display:block}
+.hx .lead{font-size:19px;color:#c9cef0;max-width:560px;margin:24px 0 36px}.hx .cta{display:flex;flex-wrap:wrap;gap:14px}
+.fig{position:relative;height:100%;display:flex;align-items:flex-end;justify-content:center}
+.fig img{position:relative;z-index:2;height:112%;max-height:820px;width:auto;object-fit:contain;object-position:bottom;filter:drop-shadow(0 30px 50px rgba(0,0,0,.5))}
+.halo{position:absolute;bottom:0;width:560px;height:560px;max-width:100%;border-radius:50%;background:radial-gradient(circle,rgba(255,196,0,.5),transparent 68%);filter:blur(10px)}
+.tagc{position:absolute;z-index:3;background:rgba(255,255,255,.95);color:var(--navy);padding:14px 20px;font-size:12px;font-weight:700;letter-spacing:.04em;box-shadow:0 18px 40px rgba(0,0,0,.4);border-left:4px solid var(--gold);animation:fl 6s ease-in-out infinite}
+.tagc b{display:block;font-family:'Barlow Condensed';font-size:34px;line-height:1;color:var(--navy)}
+.tagc.t1{top:22%;left:-2%}.tagc.t2{bottom:26%;right:-2%;animation-delay:-3s}
+.hxc{position:absolute;left:0;right:0;bottom:0;z-index:5;padding-bottom:100px}
+.hxc .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px}
+.dots{display:flex;gap:26px}.d{background:none;border:0;color:rgba(255,255,255,.55);text-align:left;cursor:pointer;width:170px;font:600 12px Inter;letter-spacing:.1em;text-transform:uppercase}
+.d i{display:block;height:3px;background:rgba(255,255,255,.25);margin-bottom:10px;position:relative;overflow:hidden}.d i:after{content:"";position:absolute;inset:0;background:var(--gold);transform:scaleX(0);transform-origin:left}
+.d.on{color:#fff}.d.on i:after{animation:pr 6.5s linear forwards}@keyframes pr{to{transform:scaleX(1)}}
+.arrows{display:flex;gap:10px}.arrows button{width:48px;height:48px;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.06);color:#fff;font-size:20px;cursor:pointer;transition:.2s}.arrows button:hover{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+.stats{margin-top:-84px}
+/* photo sections */
+.imgc{position:relative;overflow:hidden;box-shadow:0 30px 70px rgba(5,13,58,.25)}.imgc img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:4/3}
+.imgc:before{content:"";position:absolute;left:-14px;bottom:-14px;width:60%;height:60%;border:4px solid var(--gold);z-index:-1}
+.imgc .bd{position:absolute;left:0;bottom:0;background:var(--gold);color:var(--navy);padding:18px 26px;font-family:'Barlow Condensed';font-size:22px;font-weight:800;text-transform:uppercase}
+.ind a.ph{background:var(--bg) center/cover}.ind a.ph:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,13,58,.25),rgba(5,13,58,.92))}.ind a.ph h3,.ind a.ph span,.ind a.ph svg{z-index:2}
+.band{position:relative;background:var(--navy) center/cover;color:#fff;padding:120px 0;text-align:center}
+.band:before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(3,8,38,.82),rgba(3,8,38,.9))}.band .wrap{position:relative}
+.band h2{font-size:clamp(40px,6vw,84px);font-weight:800}.band h2 em{font-style:normal;color:var(--gold)}.band p{color:#c9cef0;font-size:19px;max-width:640px;margin:18px auto 32px}
+.mbar{display:none}
+/* ===== responsive ===== */
+@media(max-width:1180px){
+.util{display:none}
+.nav{height:68px}.brand img{height:46px}.brand b{font-size:22px}
+nav{position:fixed;top:68px;left:0;right:0;bottom:0;background:#fff;transform:translateX(100%);transition:.3s;overflow:auto;padding:14px 20px 100px;z-index:49}
+nav.open{transform:none}nav ul{flex-direction:column;gap:0}nav>ul>li>a{padding:18px 4px;font-size:18px;border-bottom:1px solid var(--line)}nav>ul>li>a:after{display:none}
+.dd .menu{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:0;min-width:0;padding:0 0 8px 12px;display:none;background:var(--bg)}.dd.o .menu{display:block}
+.nav>.btn{display:none}.burger{display:block;margin-left:auto;font-size:32px;padding:6px 10px}
+.hx{height:calc(100vh - 68px);min-height:640px;max-height:860px}
+}
+@media(max-width:900px){
+.hx{height:calc(100svh - 68px);min-height:640px;max-height:900px}
+.hxg,.hxg.one{grid-template-columns:1fr;align-items:start;padding-top:24px;padding-bottom:150px;gap:0}.hxg.one{padding-top:70px}
+.hxg .tx{padding-bottom:10px}.hx h1{font-size:clamp(42px,12vw,64px)}.hx .lead{font-size:16px;margin:16px 0 24px}
+.hxg{align-content:start}.fig{order:-1;position:relative;height:250px;margin:0 0 18px;justify-content:center}.fig img{height:100%}.tagc{display:none}.hx .cta .btn{padding:14px 18px;font-size:13px;flex:1;justify-content:center}
+.halo{width:320px;height:320px}
+.hx .eyebrow{font-size:11px;margin-bottom:12px}.hx .lead{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.hxc{padding-bottom:100px}.d{width:auto;font-size:0}.d span{display:none}.dots{gap:8px}.d{width:38px}.arrows{display:none}
+.stats .grid{grid-template-columns:repeat(2,1fr)}.stat{padding:22px 10px}.stat b{font-size:44px}.stats{margin-top:-80px}
+.stat:nth-child(2n){border-right:0}.stat:nth-child(-n+4){border-bottom:1px solid var(--line)}.stat:last-child{grid-column:1/-1}
+.photo:after{background:linear-gradient(180deg,rgba(3,8,38,.92),rgba(3,8,38,.7))}
+.sec-h{margin-bottom:34px}.sec-h p,.why li span{font-size:16px}
+.imgc:before{display:none}.band{padding:80px 0}
+.mbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:70;box-shadow:0 -8px 30px rgba(0,0,0,.25)}
+.mbar a{padding:16px;text-align:center;font-weight:800;font-size:14px;letter-spacing:.06em;text-transform:uppercase}.mbar a:first-child{background:var(--navy);color:#fff}.mbar a:last-child{background:var(--gold);color:var(--navy)}
+.wa{bottom:78px;right:14px;width:52px;height:52px}body{padding-bottom:52px}
+.patron .wrap{grid-template-columns:1fr}.panel{padding:28px}.panel .row{flex-direction:column;gap:2px}
+.ind{grid-template-columns:1fr 1fr}.ind a{aspect-ratio:1/1.2;padding:18px}.ind h3{font-size:24px}
+.careers .wrap,.contact,.why,.train{gap:36px}.req{padding:24px}.contact .l h3{font-size:36px}
+.fg{gap:32px}.fb{flex-direction:column}
+}
+@media(max-width:560px){.svc,.rev,.comp{grid-template-columns:1fr}.hero-none{display:none}.wrap{padding:0 18px}.svc{gap:16px}.card{padding:26px 22px}.ind{gap:12px}}
 </style>
 </head>
 <body>
@@ -168,14 +236,20 @@ nav ul{flex-direction:column}nav>ul>li>a{padding:16px 6px;border-bottom:1px soli
 </div></header>
 
 <main id="top">
-<section class="hero" style="padding:0"><div class="wrap">
-<div><div class="eyebrow">Your Safety Is Our Mission</div>
-<h1>A life with <em>full</em> protection.</h1>
-<p class="lead">Professionally managed private security since 2017 — disciplined manpower, rigorous training and deep-rooted Indian values to protect people, property and operations. Available 24/7.</p>
-<div class="cta"><a class="btn btn-g" href="#contact">Get Started →</a><a class="btn btn-o" href="#services">Explore Solutions</a></div></div>
-<div class="shieldbox"><div class="ring a"></div><div class="ring b"></div><img src="logo.png" alt="Parakram Security emblem">
-<div class="chip c1"><i>✓</i>Trained &amp; Verified</div><div class="chip c2"><i>24</i>/7 Service</div><div class="chip c3"><i>★</i>4.9 Client Rating</div></div>
-</div></section>
+<section class="hx" id="hero" aria-roledescription="carousel">
+<div class="slide on" data-i="0"><div class="bgc"></div>
+<div class="wrap hxg"><div class="tx"><div class="eyebrow">Your Safety Is Our Mission</div>
+<h1>A life with <em>full protection.</em></h1>
+<p class="lead">Professionally managed private security since 2017 — disciplined manpower, rigorous training and deep-rooted Indian values to protect people, property and operations.</p>
+<div class="cta"><a class="btn btn-g" href="#contact">Get Started →</a><a class="btn btn-o" href="#services">Our Services</a></div></div>
+<div class="fig"><div class="halo"></div><img src="img/parakram-hero-guard.webp" alt="Parakram security officer" fetchpriority="high"><div class="tagc t1"><b>1,500+</b>Trained professionals</div><div class="tagc t2"><b>24/7</b>Service availability</div></div></div></div>
+<div class="slide" data-i="1" style="--bg:url(img/parakram-operations.webp)"><div class="photo"></div>
+<div class="wrap hxg one"><div class="tx"><div class="eyebrow">Corporate &amp; Commercial</div><h1>Professional protection for <em>every premises.</em></h1><p class="lead">Trained, verified guards with excellent site coordination — for offices, campuses and business environments.</p><div class="cta"><a class="btn btn-g" href="#contact">Get Started →</a><a class="btn btn-o" href="#services">Explore Services</a></div></div></div></div>
+<div class="slide" data-i="2" style="--bg:url(img/parakram-training.webp)"><div class="photo"></div>
+<div class="wrap hxg one"><div class="tx"><div class="eyebrow">Trained &amp; Verified Personnel</div><h1>Rigorous training. <em>Uncompromising discipline.</em></h1><p class="lead">Disciplined recruitment and rigorous training ensure professionalism, integrity and courtesy at every site.</p><div class="cta"><a class="btn btn-g" href="#why">Why Parakram →</a><a class="btn btn-o" href="#contact">Talk to Us</a></div></div></div></div>
+<div class="hxc"><div class="wrap"><div class="dots"><button class="d on" aria-label="Slide 1"><i></i><span>01 · Protection</span></button><button class="d" aria-label="Slide 2"><i></i><span>02 · Corporate</span></button><button class="d" aria-label="Slide 3"><i></i><span>03 · Training</span></button></div>
+<div class="arrows"><button id="pv" aria-label="Previous">←</button><button id="nx" aria-label="Next">→</button></div></div></div>
+</section>
 
 <div class="stats"><div class="wrap"><div class="grid">
 <div class="stat"><b data-n="9" data-s="+">0</b><span>Years of Experience</span></div>
@@ -190,7 +264,8 @@ nav ul{flex-direction:column}nav>ul>li>a{padding:16px 6px;border-bottom:1px soli
 <p style="color:var(--mut);font-size:18px;margin-bottom:18px">Parakram Security India Private Limited was established in 2017 as a professionally managed private security company.</p>
 <p style="color:var(--mut);margin-bottom:30px">We combine disciplined manpower, rigorous training and deep-rooted Indian values to protect people, property and operations — with personnel known for professionalism, integrity and courtesy.</p>
 <a class="btn btn-n" href="#contact">Get Started →</a></div>
-<div class="panel rv"><h3>Our Promise</h3>
+<div class="imgc rv"><img src="img/parakram-about.webp" alt="Parakram security team" loading="lazy"><div class="bd">Est. 2017 · Haridwar</div></div>
+<div class="panel rv" style="grid-column:1/-1;margin-top:0;display:none"><h3>Our Promise</h3>
 <div class="row"><span>Mission</span><b>Your safety is our mission</b></div>
 <div class="row"><span>Professionalism</span><b>Disciplined, trained personnel</b></div>
 <div class="row"><span>Integrity</span><b>Verified, trustworthy teams</b></div>
@@ -214,11 +289,13 @@ nav ul{flex-direction:column}nav>ul>li>a{padding:16px 6px;border-bottom:1px soli
 <section id="industries"><div class="wrap">
 <div class="sec-h rv"><div class="eyebrow dk">Industries We Protect</div><h2>Trusted where safety matters most.</h2></div>
 <div class="ind">
-<a class="rv" href="#contact"><svg viewBox="0 0 24 24"><path d="M3 21V9l6 4V9l6 4V5h6v16z"/></svg><h3>Industrial</h3><span>Plants · Warehouses</span></a>
-<a class="rv" href="#contact"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18"/><path d="M8 7h2M14 7h2M8 11h2M14 11h2"/></svg><h3>Corporate</h3><span>Offices · Business premises</span></a>
+<a class="rv ph" style="--bg:url(img/parakram-training.webp)" href="#contact"><svg viewBox="0 0 24 24"><path d="M3 21V9l6 4V9l6 4V5h6v16z"/></svg><h3>Industrial</h3><span>Plants · Warehouses</span></a>
+<a class="rv ph" style="--bg:url(img/parakram-operations.webp)" href="#contact"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18"/><path d="M8 7h2M14 7h2M8 11h2M14 11h2"/></svg><h3>Corporate</h3><span>Offices · Business premises</span></a>
 <a class="rv" href="#contact"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 7v10M7 12h10"/></svg><h3>Healthcare</h3><span>Hospitals · Clinics</span></a>
 <a class="rv" href="#contact"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12"/><circle cx="12" cy="12" r="3"/></svg><h3>Banking</h3><span>Branches · ATMs</span></a>
 </div></div></section>
+
+<section class="band" style="background-image:url(img/parakram-operations.webp)"><div class="wrap"><div class="eyebrow" style="justify-content:center">Trusted Protection</div><h2>Professionalism. Integrity. <em>Courtesy.</em></h2><p>Personnel who protect people, property and operations — 24/7.</p><a class="btn btn-g" href="#contact">Get Started →</a></div></section>
 
 <section id="why" class="bg"><div class="wrap why">
 <div class="rv"><div class="eyebrow dk">Why Us</div><h2 style="font-size:clamp(40px,5vw,66px);color:var(--navy);margin-bottom:30px">Why choose Parakram.</h2>
@@ -272,6 +349,7 @@ nav ul{flex-direction:column}nav>ul>li>a{padding:16px 6px;border-bottom:1px soli
 <div><h4>Solutions</h4><ul><li><a href="#services">Manned</a></li><li><a href="#services">Armed</a></li><li><a href="#services">Industrial</a></li><li><a href="#services">Corporate</a></li><li><a href="#services">Bank &amp; ATM</a></li></ul></div>
 <div><h4>Contact</h4><ul><li>6-A Sandesh Nagar, Kankhal, Haridwar 249408</li><li>+91 91059 09000</li><li>info@parakramindia.org</li></ul></div></div>
 <div class="fb"><span>© 2026 Parakram Security India Pvt. Ltd. All rights reserved.</span><span>Website by AIBOOTSTRAPPER</span></div></div></footer>
+<div class="mbar"><a href="tel:+919105909006">Call Now</a><a href="#contact">Get Started</a></div>
 <a class="wa" href="https://wa.me/919105909000" aria-label="WhatsApp">💬</a><a class="sos" href="tel:+919105909000">☎ 24×7 HELPLINE</a>
 <script>
 const $=s=>document.querySelectorAll(s);
@@ -284,5 +362,9 @@ $('.rv').forEach((e,i)=>{e.style.transitionDelay=(i%4)*90+'ms';io.observe(e)});
 const co=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,n=+el.dataset.n,d=+el.dataset.d||0,s=el.dataset.s||'';let t0=null;
 const f=t=>{t0=t0||t;const p=Math.min((t-t0)/1600,1),v=n*(1-Math.pow(1-p,3));el.innerHTML=(d?v.toFixed(d):Math.round(v).toLocaleString('en-IN'))+(s?'<sup>'+s+'</sup>':'');if(p<1)requestAnimationFrame(f)};requestAnimationFrame(f);co.unobserve(el)}),{threshold:.5});
 $('[data-n]').forEach(e=>co.observe(e));
+
+(()=>{const sl=[...$('.slide')],ds=[...$('.d')];let i=0,t;
+const go=n=>{i=(n+sl.length)%sl.length;sl.forEach((e,k)=>e.classList.toggle('on',k==i));ds.forEach((e,k)=>{e.classList.remove('on');if(k==i){void e.offsetWidth;e.classList.add('on')}});clearTimeout(t);t=setTimeout(()=>go(i+1),6500)};
+ds.forEach((d,k)=>d.onclick=()=>go(k));pv.onclick=()=>go(i-1);nx.onclick=()=>go(i+1);t=setTimeout(()=>go(1),6500)})();
 </script>
 </body></html>
