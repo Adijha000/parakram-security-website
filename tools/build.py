@@ -66,7 +66,7 @@ section{padding:120px 0;position:relative}
 .util{background:var(--navy);color:#c9cef0;font-size:12.5px}.util .wrap{display:flex;justify-content:space-between;align-items:center;height:40px;gap:16px}
 .util a:hover{color:var(--gold)}.ist{margin-left:14px;padding-left:14px;border-left:1px solid rgba(255,255,255,.25);font-variant-numeric:tabular-nums;color:var(--gold2);font-weight:600}.util .r{display:flex;gap:24px}.pulse{display:inline-block;width:8px;height:8px;border-radius:50%;background:#2ee66b;margin-right:8px;animation:p 1.8s infinite}
 @keyframes p{0%{box-shadow:0 0 0 0 rgba(46,230,107,.7)}70%{box-shadow:0 0 0 9px transparent}100%{box-shadow:0 0 0 0 transparent}}
-header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.94);backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid var(--line);transition:box-shadow .3s}
+header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);transition:box-shadow .3s}header:before{content:"";position:absolute;inset:0;z-index:-1;backdrop-filter:saturate(1.6) blur(14px)}
 header.sh{box-shadow:0 10px 40px rgba(5,13,58,.12)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:80px;gap:20px}
 .brand{display:flex;align-items:center;gap:12px;flex:none}.brand img{height:56px}.brand div{white-space:nowrap}
@@ -292,13 +292,14 @@ section+section:not(.bg):not(.plan):not(.band):not(.tm){border-top:0}
 .map .mc{position:relative;left:auto;right:auto;bottom:auto;margin:0 -26px;border-radius:0;padding:22px 26px;z-index:2}
 .mhint{position:absolute;top:18px;left:24px;z-index:3;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6);font-weight:700}
 @media(max-width:980px){.map{padding:34px 16px 0}.map .mc{margin:0 -16px;padding:18px 16px}.mhint{left:16px;top:14px}}
+.mcta{display:none}body.no .mbar,body.no .wa,body.no .sidetab,body.no .top{display:none}
 /* ===== responsive ===== */
 @media(max-width:1180px){
 .util{display:none}.nav{height:68px}.brand img{height:44px}.brand b{font-size:19px}
 nav{position:fixed;top:68px;left:0;right:0;bottom:0;background:#fff;transform:translateX(100%);transition:transform .35s var(--ease);overflow:auto;padding:10px 22px 120px;z-index:59}nav.open{transform:none}
 nav>ul{flex-direction:column}nav>ul>li>a{padding:18px 2px;font-size:19px;border-bottom:1px solid var(--line);font-family:Manrope;font-weight:700}nav>ul>li>a:after{display:none}
 .dd .menu{position:static;transform:none;width:auto;opacity:1;visibility:visible;box-shadow:none;border:0;display:none;grid-template-columns:1fr;background:var(--bg);border-radius:12px;margin:8px 0}.dd.o .menu{display:block}.mp{display:none}.mg{grid-template-columns:1fr;padding:8px}
-.nav>.btn{display:none}.burger{display:block}
+.nav>.btn{display:none}.burger{display:block}nav>ul>li.mcta{display:flex;flex-direction:column;gap:12px;margin-top:26px}nav>ul>li.mcta a{padding:16px 24px;font:700 15px Inter;justify-content:center;border-bottom:0;font-family:Inter}nav>ul>li.mcta a.btn-g{color:var(--navy)}nav>ul>li.mcta a.btn-n{color:#fff}
 .hx{height:calc(100svh - 68px);min-height:640px;max-height:900px}.scrollcue{display:none}
 }
 @media(max-width:980px){
@@ -346,7 +347,7 @@ section{padding:76px 0}.wrap{padding:0 20px}.sec-h{margin-bottom:38px}.sec-h p{f
 <nav id="nav"><ul>
 <li><a href="#about">About</a></li>
 <li class="dd"><a href="#services">Services ▾</a><div class="menu"><div class="mg">@@MEGA@@</div><div class="mp"><img src="img/parakram-operations.webp" alt="" loading="lazy"><b>Customized security solutions for every environment</b><a href="#planner">Plan your security →</a></div></div></li>
-<li><a href="#industries">Industries</a></li><li><a href="#planner">Security Planner</a></li><li><a href="#why">Why Parakram</a></li><li><a href="#careers">Careers</a></li><li><a href="#faq">FAQ</a></li></ul></nav>
+<li><a href="#industries">Industries</a></li><li><a href="#planner">Security Planner</a></li><li><a href="#why">Why Parakram</a></li><li><a href="#careers">Careers</a></li><li><a href="#faq">FAQ</a></li><li class="mcta"><a class="btn btn-g" href="#planner">Plan Your Security →</a><a class="btn btn-n" href="tel:+919105909006">Call +91 91059 09006</a></li></ul></nav>
 <a class="btn btn-n" href="#contact" style="padding:13px 24px">Get Started</a><button class="burger" id="bg" aria-label="Menu" aria-expanded="false"><i></i></button>
 </div></header>
 
@@ -490,8 +491,8 @@ addEventListener('scroll',()=>{hd.classList.toggle('sh',scrollY>10);pg.style.wid
 t2.onclick=()=>scrollTo({top:0,behavior:'smooth'});
 /* mobile nav */
 const nav=document.getElementById('nav'),bg=document.getElementById('bg');
-bg.onclick=()=>{const o=nav.classList.toggle('open');bg.classList.toggle('x',o);bg.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':''};
-$('nav a').forEach(a=>a.addEventListener('click',e=>{if(a.parentNode.classList.contains('dd')&&mq('(max-width:1180px)')&&e.target===a){e.preventDefault();a.parentNode.classList.toggle('o');return}nav.classList.remove('open');bg.classList.remove('x');document.body.style.overflow=''}));
+bg.onclick=()=>{const o=nav.classList.toggle('open');document.body.classList.toggle('no',o);bg.classList.toggle('x',o);bg.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':''};
+$('nav a').forEach(a=>a.addEventListener('click',e=>{if(a.parentNode.classList.contains('dd')&&mq('(max-width:1180px)')&&e.target===a){e.preventDefault();a.parentNode.classList.toggle('o');return}nav.classList.remove('open');document.body.classList.remove('no');bg.classList.remove('x');document.body.style.overflow=''}));
 /* reveal */
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
 const io2=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io2.unobserve(e.target)}}),{threshold:.3});
