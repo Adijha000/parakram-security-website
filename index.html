@@ -601,9 +601,9 @@ body.no #nudge{display:none}
 /* ===== security intro ===== */
 #intro{position:fixed;inset:0;z-index:1000;display:none;place-items:center;cursor:pointer}
 html.intro{overflow:hidden}html.intro #intro{display:grid;animation:introFail .01s 6s forwards}@keyframes introFail{to{opacity:0;visibility:hidden}}
-#intro .ip{position:absolute;left:0;right:0;height:50.4%;background:#050d3a;transition:transform 1s cubic-bezier(.76,0,.24,1)}#intro .top{top:0}#intro .bot{bottom:0}
+#intro .ip{position:absolute;left:0;right:0;height:50.4%;background:#050d3a;transition:transform 1s cubic-bezier(.76,0,.24,1)}#intro .ipt{top:0}#intro .ipb{bottom:0}
 #intro .igrid{position:absolute;inset:0;background:radial-gradient(600px 400px at 50% 45%,rgba(255,196,0,.14),transparent 70%),linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:auto,56px 56px,56px 56px;mask-image:radial-gradient(circle at 50% 45%,#000,transparent 75%);transition:opacity .5s}
-#intro.open .top{transform:translateY(-101%)}#intro.open .bot{transform:translateY(101%)}#intro.open .igrid,#intro.open .ic2,#intro.open .it,#intro.open .ibar,#intro.open .skip2{opacity:0;transition:opacity .45s}
+#intro.open .ipt{transform:translateY(-101%)}#intro.open .ipb{transform:translateY(101%)}#intro.open .igrid,#intro.open .ic2,#intro.open .it,#intro.open .ibar,#intro.open .skip2{opacity:0;transition:opacity .45s}
 #intro .ic2{position:relative;width:150px;height:150px;margin-top:-70px;z-index:2}
 #intro .shd{position:absolute;left:-14px;top:-16px;width:calc(100% + 28px);height:calc(100% + 34px);overflow:visible}
 #intro .shd path{fill:none;stroke:#ffc400;stroke-width:1.4;stroke-dasharray:340;stroke-dashoffset:340;animation:idraw 1.15s cubic-bezier(.65,0,.35,1) .15s forwards;filter:drop-shadow(0 0 6px rgba(255,196,0,.6))}
@@ -626,7 +626,7 @@ html.intro{overflow:hidden}html.intro #intro{display:grid;animation:introFail .0
 </style>
 </head>
 <body>
-<div id="intro" aria-hidden="true"><div class="ip top"></div><div class="ip bot"></div><div class="igrid"></div>
+<div id="intro" aria-hidden="true"><div class="ip ipt"></div><div class="ip ipb"></div><div class="igrid"></div>
 <div class="ic2"><svg class="shd" viewBox="0 0 100 120"><path d="M50 4 L94 19 V58 C94 89 73 109 50 117 C27 109 6 89 6 58 V19 Z"/></svg><img class="lg" src="logo.png" alt="" width="150" height="150"><div class="scan"></div></div>
 <div class="it"><b>PARAKRAM</b><span>SECURITY INDIA PVT. LTD.</span><em>Your Safety Is Our Mission</em></div>
 <div class="ibar"><i></i></div><button class="skip2" type="button">Skip</button></div>
@@ -664,7 +664,7 @@ html.intro{overflow:hidden}html.intro #intro{display:grid;animation:introFail .0
 <h2 class="hh"><span class="ln"><span>Trained. Verified.</span></span><span class="ln"><span><em>Ready to serve.</em></span></span></h2>
 <p class="lead">Disciplined recruitment and rigorous training ensure professionalism, integrity and courtesy at every site.</p>
 <div class="cta"><a class="btn btn-g" href="#why">Why Parakram →</a><a class="btn btn-o" href="#contact">Talk to Us</a></div></div></div></div>
-<a class="cue" href="#intro" aria-label="Scroll down"><i></i></a>
+<a class="cue" href="#statement" aria-label="Scroll down"><i></i></a>
 <div class="hxc"><div class="wrap"><div class="dots"><button class="d on" aria-label="Slide 1"><i></i><span>01 · Protection</span></button><button class="d" aria-label="Slide 2"><i></i><span>02 · Corporate</span></button><button class="d" aria-label="Slide 3"><i></i><span>03 · Training</span></button></div>
 <div class="arrows"><button id="pv" aria-label="Previous">←</button><button id="nx" aria-label="Next">→</button></div></div></div>
 </section>
@@ -677,7 +677,7 @@ html.intro{overflow:hidden}html.intro #intro{display:grid;animation:introFail .0
 <div class="stat"><b data-n="8">0</b><span>Security Services</span></div>
 </div></div></div>
 
-<section class="lead-s" id="intro"><div class="wrap"><p class="ls rv">Parakram Security India provides <b>manned, armed, industrial, commercial, residential, hospital, educational and bank &amp; ATM security</b>, professionally managed since 2017 and combining disciplined manpower, rigorous training and deeply rooted Indian values to protect people, property and operations.</p><a class="kn" href="#about">Know more</a></div></section>
+<section class="lead-s" id="statement"><div class="wrap"><p class="ls rv">Parakram Security India provides <b>manned, armed, industrial, commercial, residential, hospital, educational and bank &amp; ATM security</b>, professionally managed since 2017 and combining disciplined manpower, rigorous training and deeply rooted Indian values to protect people, property and operations.</p><a class="kn" href="#about">Know more</a></div></section>
 
 <section id="about"><div class="wrap two">
 <div class="abt rv"><div class="eyebrow dk">About Parakram</div><h2 class="h2">Protecting people, property &amp; <em>operations.</em></h2>
