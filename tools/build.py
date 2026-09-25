@@ -554,6 +554,43 @@ footer .brand img{width:auto!important;height:60px!important;aspect-ratio:1/1;ob
 footer .brand{gap:14px}footer .brand b{font-size:20px!important}footer .brand small{font-size:9px!important}
 .fg>div:first-child p{max-width:none!important}
 }
+
+/* ===== enterprise motion 2 ===== */
+#journey{background:#fff}
+.jr{position:relative;padding-top:34px}
+.jl{position:absolute;left:0;right:0;top:9px;height:2px;background:#dfe3f1}.jl i{position:absolute;inset:0;background:linear-gradient(90deg,var(--gold),#e0a800);transform-origin:left;transform:scaleX(0)}
+.jn{display:grid;grid-template-columns:repeat(5,1fr);gap:26px}
+.jm{position:relative}.jm .dot{position:absolute;left:0;top:-34px;width:20px;height:20px;border-radius:50%;background:#fff;border:2px solid #cfd4e8;transition:.5s var(--ease)}
+.jm.on .dot{background:var(--gold);border-color:var(--gold);box-shadow:0 0 0 7px rgba(255,196,0,.25)}
+.jm small{display:block;font:700 12px Inter;letter-spacing:.16em;text-transform:uppercase;color:#7a80a0;margin-bottom:8px}
+.jm>b,.jm .ring b{display:block;font-family:'Barlow Condensed';font-weight:700;color:var(--navy);line-height:1}
+.jm>b{font-size:54px;font-family:Manrope;font-size:24px;letter-spacing:-.02em}
+.jm .jv{font-family:'Barlow Condensed'!important;font-size:64px!important;letter-spacing:0!important}
+.jm .jv em{font-style:normal}.jm .jv sup{color:#a87c00;font-size:.5em;top:-.7em}
+.jm p{color:#4a5070;font-size:15px;margin-top:10px;line-height:1.55}
+.jm:not(.on){opacity:.45}.jm{transition:opacity .6s var(--ease)}
+.ring{position:relative;width:104px;height:104px}.ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.ring circle{fill:none;stroke-width:9}.ring .rb{stroke:#e4e7f3}.ring .rf{stroke:var(--gold);stroke-linecap:round;stroke-dasharray:327;stroke-dashoffset:327;transition:stroke-dashoffset 1.8s var(--ease) .2s}
+.jm.on .ring .rf{stroke-dashoffset:calc(327 * .02)}
+.jm .ring b{position:absolute;inset:0;display:grid;place-items:center;font-size:36px}.ring b em{font-style:normal}
+/* process line that draws */
+.steps .fl{position:absolute;top:27px;left:5%;width:90%;height:2px;background:var(--gold);transform-origin:left;transform:scaleX(0)}
+.sp i{transition:.5s var(--ease)}.sp.on i{background:var(--gold);color:var(--navy);transform:scale(1.08)}.sp:not(.on){opacity:.55}.sp{transition:opacity .5s var(--ease)}
+/* services autoplay progress */
+.sx.auto .tb.on:after{content:"";position:absolute;left:0;bottom:0;height:3px;background:var(--gold);animation:tabp 5.5s linear forwards}
+@keyframes tabp{from{width:0}to{width:100%}}
+/* spotlight on cards and stats */
+.stat,.vals div,.covt li{background-image:radial-gradient(260px circle at var(--mx,-200px) var(--my,-200px),rgba(255,196,0,.16),transparent 70%)}
+/* angled section edges */
+@media(min-width:981px){#services,#why,#contact{clip-path:polygon(0 0,100% 34px,100% 100%,0 100%);padding-top:130px}}
+@media(max-width:980px){#services,#why,#contact{clip-path:polygon(0 0,100% 16px,100% 100%,0 100%);padding-top:64px!important}}
+@media(max-width:980px){
+.jl{left:9px;right:auto;top:0;bottom:0;width:2px;height:auto}.jl i{transform-origin:top;transform:scaleY(0)}
+.jr{padding-top:0;padding-left:0}.jn{grid-template-columns:1fr;gap:34px;padding-left:40px}
+.jm .dot{left:-40px;top:2px}.jm .jv{font-size:52px!important}.jm p{font-size:14.5px}.jm:not(.on){opacity:.55}
+.steps .fl{left:26px;top:0;width:2px;height:100%;transform-origin:top;transform:scaleY(0)}
+}
+@media(prefers-reduced-motion:reduce){.jm:not(.on),.sp:not(.on){opacity:1}}
 </style>
 </head>
 <body>
@@ -561,7 +598,7 @@ footer .brand{gap:14px}footer .brand b{font-size:20px!important}footer .brand sm
 <div id="pg"></div>
 <div id="toast" role="status" aria-live="polite"></div>
 <a class="sidetab" href="#contact">Get in Touch</a>
-<nav class="rail" aria-label="Page sections"><a href="#about" data-l="About"></a><a href="#services" data-l="Services"></a><a href="#planner" data-l="Planner"></a><a href="#industries" data-l="Industries"></a><a href="#why" data-l="Why Us"></a><a href="#coverage" data-l="Coverage"></a><a href="#faq" data-l="FAQ"></a><a href="#contact" data-l="Contact"></a></nav>
+<nav class="rail" aria-label="Page sections"><a href="#about" data-l="About"></a><a href="#services" data-l="Services"></a><a href="#planner" data-l="Planner"></a><a href="#industries" data-l="Industries"></a><a href="#why" data-l="Why Us"></a><a href="#journey" data-l="Journey"></a><a href="#coverage" data-l="Coverage"></a><a href="#faq" data-l="FAQ"></a><a href="#contact" data-l="Contact"></a></nav>
 <div class="util"><div class="wrap"><div class="l"><span class="pulse"></span>Control room online · 24/7 <span class="ist" id="ist"></span></div><div class="r"><a href="tel:+919105909006">+91 91059 09006</a><a href="mailto:info@parakramindia.org">info@parakramindia.org</a><a href="#careers">Careers</a></div></div></div>
 <header id="hd"><div class="wrap nav">
 <a class="brand" href="/"><img src="logo.png" alt="Parakram shield logo" width="56" height="56"><div><b>PARAKRAM</b><small>SECURITY INDIA PVT. LTD.</small></div></a>
@@ -653,8 +690,18 @@ footer .brand{gap:14px}footer .brand b{font-size:20px!important}footer .brand sm
 <div class="pl rv"><div class="big" data-n="1500" data-s="+">0</div><h3>Trained &amp; Verified Personnel</h3><p>Disciplined recruitment and rigorous training for every guard.</p></div>
 <div class="pl rv"><div class="big" data-n="100" data-s="%">0</div><h3>Customized Solutions</h3><p>Services designed around your site, your risk and your operations.</p></div></div>
 <div class="proc"><h3 class="h2 rv">How we get you protected.</h3>
-<div class="steps rv"><div class="sp"><i>1</i><div><b>Consult</b><span>Tell us your needs</span></div></div><div class="sp"><i>2</i><div><b>Assess</b><span>We study your site</span></div></div><div class="sp"><i>3</i><div><b>Customize</b><span>A tailored security plan</span></div></div><div class="sp"><i>4</i><div><b>Deploy</b><span>Trained, verified personnel</span></div></div><div class="sp"><i>5</i><div><b>Supervise</b><span>Ongoing quality checks</span></div></div></div></div>
+<div class="steps rv" id="steps"><i class="fl"></i><div class="sp"><i>1</i><div><b>Consult</b><span>Tell us your needs</span></div></div><div class="sp"><i>2</i><div><b>Assess</b><span>We study your site</span></div></div><div class="sp"><i>3</i><div><b>Customize</b><span>A tailored security plan</span></div></div><div class="sp"><i>4</i><div><b>Deploy</b><span>Trained, verified personnel</span></div></div><div class="sp"><i>5</i><div><b>Supervise</b><span>Ongoing quality checks</span></div></div></div></div>
 </div></section>
+
+<section id="journey"><div class="wrap">
+<div class="sec-h rv"><div class="eyebrow dk">Our Journey</div><h2 class="h2">Growing steadily <em>since 2017.</em></h2><p>A professionally managed company built on training, discipline and trust.</p></div>
+<div class="jr" id="jr"><div class="jl"><i id="jfill"></i></div><div class="jn">
+<div class="jm"><span class="dot"></span><small>2017</small><b>Company established</b><p>Founded as a professionally managed private security company in Haridwar, Uttarakhand.</p></div>
+<div class="jm"><span class="dot"></span><small>Services</small><b class="jv"><em data-n="8">0</em></b><p>Security services, from manned and armed to industrial, commercial, residential, hospital, educational, and bank and ATM security.</p></div>
+<div class="jm"><span class="dot"></span><small>People</small><b class="jv"><em data-n="1500" data-s="+">0</em></b><p>Trained professionals, recruited with discipline and prepared with rigorous training.</p></div>
+<div class="jm"><span class="dot"></span><small>Client rating</small><div class="ring"><svg viewBox="0 0 120 120"><circle class="rb" cx="60" cy="60" r="52"/><circle class="rf" cx="60" cy="60" r="52"/></svg><b><em data-n="4.9" data-d="1">0</em></b></div><p>Average rating, reviewed by more than 1,200 satisfied clients.</p></div>
+<div class="jm"><span class="dot"></span><small>Partners</small><b class="jv"><em data-n="210" data-s="K">0</em></b><p>Partners who trust Parakram to protect people, property and operations.</p></div>
+</div></div></div></section>
 
 <section id="coverage"><div class="wrap cov">
 <div class="map rv" id="map">@@MAP@@<div class="mtip" id="mtip"></div><div class="mc"><div><b id="mn">Uttarakhand</b><span id="ms">Headquarters · 6A Sandesh Nagar, Kankhal, Haridwar 249408</span></div><a class="btn btn-n" id="mb" style="padding:12px 20px" href="#contact">Contact Us</a></div><div class="mhint">Hover or tap a state</div></div>
@@ -774,6 +821,21 @@ const pw=document.querySelector('.pw');if(pw)sw(pw,d=>{const tb=$('.tb');const k
 
 /* section rail */
 (()=>{const r=$('.rail a');if(!r.length)return;const io3=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){r.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-45% 0px -50% 0px'});r.forEach(a=>{const t=document.querySelector(a.getAttribute('href'));if(t)io3.observe(t)})})();
+
+/* scroll driven progress: journey timeline and process steps */
+(()=>{const prog=(box,fill,items)=>{if(!box||!fill)return;const upd=()=>{const r=box.getBoundingClientRect();const p=Math.min(1,Math.max(0,(innerHeight*.72-r.top)/(r.height+innerHeight*.05)));const v=mq('(max-width:980px)');fill.style.transform=v?`scaleY(${p})`:`scaleX(${p})`;items.forEach((it,i)=>it.classList.toggle('on',REDUCE||p>=(i+.35)/items.length))};addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd()};
+prog(document.getElementById('jr'),document.getElementById('jfill'),$('.jm'));
+prog(document.getElementById('steps'),document.querySelector('#steps .fl'),$('#steps .sp'))})();
+/* services autoplay (starts when visible, stops on any interaction) */
+(()=>{const sx=document.querySelector('.sx');if(!sx||REDUCE)return;const tb=$('.tb');let t=null,stopped=false,vis=false;
+const idx=()=>tb.findIndex(b=>b.classList.contains('on'));
+const step=()=>{if(stopped||!vis)return;tb[(idx()+1)%tb.length].click();sx.classList.remove('auto');void sx.offsetWidth;sx.classList.add('auto');t=setTimeout(step,5500)};
+const start=()=>{clearTimeout(t);sx.classList.add('auto');t=setTimeout(step,5500)};
+const stop=()=>{stopped=true;clearTimeout(t);sx.classList.remove('auto')};
+['pointerdown','mouseenter','touchstart','keydown'].forEach(ev=>sx.addEventListener(ev,stop,{passive:true,once:true}));
+new IntersectionObserver(es=>es.forEach(e=>{vis=e.isIntersecting&&e.intersectionRatio>.35;if(vis&&!stopped)start();else{clearTimeout(t);sx.classList.remove('auto')}}),{threshold:[0,.35,.6]}).observe(sx)})();
+/* spotlight follow */
+if(!mq('(pointer:coarse)'))$('.stat,.vals div,.covt li').forEach(c=>c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')}));
 /* planner wizard */
 (()=>{const w=document.getElementById('wz'),st=$('#wz .step'),bars=$('#wz .st i');let s=0;const show=n=>{s=n;st.forEach((e,k)=>e.classList.toggle('on',k==n));bars.forEach((e,k)=>e.classList.toggle('on',k<=n))};
 $('#wz [data-nx]').forEach(b=>b.onclick=()=>show(Math.min(s+1,3)));$('#wz [data-bk]').forEach(b=>b.onclick=()=>show(Math.max(s-1,0)));
