@@ -19,7 +19,7 @@ t2.onclick=()=>lenis?lenis.scrollTo(0,{duration:1.3}):scrollTo({top:0,behavior:'
 /* mobile nav */
 const nav=document.getElementById('nav'),bg=document.getElementById('bg');
 bg.onclick=()=>{const o=nav.classList.toggle('open');document.body.classList.toggle('no',o);bg.classList.toggle('x',o);bg.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':''};
-$('nav a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');document.body.classList.remove('no');bg.classList.remove('x');bg.setAttribute('aria-expanded','false');document.body.style.overflow=''}));
+$('nav a').forEach(a=>a.addEventListener('click',e=>{if(a.parentNode.classList.contains('dd')&&mq('(max-width:1180px)')){e.preventDefault();const o=a.parentNode.classList.toggle('o');const b=a.parentNode.querySelector('.ddt');if(b)b.setAttribute('aria-expanded',o);return}nav.classList.remove('open');document.body.classList.remove('no');bg.classList.remove('x');bg.setAttribute('aria-expanded','false');document.body.style.overflow=''}));
 $('.ddt').forEach(b=>b.addEventListener('click',()=>{const o=b.parentNode.classList.toggle('o');b.setAttribute('aria-expanded',o)}));
 
 /* reveal */
@@ -133,7 +133,7 @@ prog(document.getElementById('steps'),document.querySelector('#steps .fl'),$('#s
 }catch(e){}
 try{
 /* services autoplay (starts when visible, stops on any interaction) */
-(()=>{const sx=document.querySelector('.sx');if(!sx||REDUCE)return;const tb=$('.tb');let t=null,stopped=false,vis=false;
+(()=>{const sx=document.querySelector('.sx');if(!sx||REDUCE||mq('(max-width:980px)')||mq('(pointer:coarse)'))return;const tb=$('.tb');let t=null,stopped=false,vis=false;
 const idx=()=>tb.findIndex(b=>b.classList.contains('on'));
 const step=()=>{if(stopped||!vis)return;tb[(idx()+1)%tb.length].click();sx.classList.remove('auto');void sx.offsetWidth;sx.classList.add('auto');t=setTimeout(step,5500)};
 const start=()=>{clearTimeout(t);sx.classList.add('auto');t=setTimeout(step,5500)};

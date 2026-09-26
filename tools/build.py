@@ -710,7 +710,7 @@ body:has(header.hide) .subnav{top:0}
 .narrow{max-width:860px;margin:0 auto}
 .plan-wrap{max-width:720px;margin:0 auto}
 .subhd{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:34px}.subhd .sec-h{margin:0}.subhd a.kn{margin:0}
-@media(max-width:1180px){.subnav{top:60px}}
+@media(max-width:1180px){.subnav{top:56px}}
 @media(max-width:980px){
 .pbn{padding:44px 0 40px}.pbn .pbg{width:100%;opacity:.28;-webkit-mask-image:linear-gradient(180deg,#000,transparent);mask-image:linear-gradient(180deg,#000,transparent)}
 .pbn h1{font-size:clamp(28px,8vw,34px)}.pbn .lead{font-size:15.5px;margin:14px 0 22px}.bc{margin-bottom:16px;font-size:12px}.pm2{margin-top:18px}.pm2 span{font-size:11.5px;padding:6px 11px}
@@ -896,6 +896,9 @@ html{overflow-x:clip}body{overflow-x:clip}
 @media(prefers-reduced-motion:reduce){.art .ai,.art .rg.b{animation:none}}
 .sp2i .emb3d{display:block!important;position:absolute;left:50%;top:50%;translate:-50% -50%;width:min(230px,56%);height:auto;aspect-ratio:1;margin:0;animation:none}.mos .art .ai{top:44%;width:34%}.mos>div>.art .rg{top:44%}.mos>div:after{z-index:1}.mos b{z-index:2}
 .rt{position:relative}.rt>.art{position:absolute;inset:0}.rt .ai{width:32%;max-width:120px}.rcard:hover .art .ai{transform:scale(1.1)}.art .ai{transition:transform .6s var(--ease)}
+
+.mg .allsv{grid-column:1/-1;font-weight:700;color:#a87c00;background:var(--bg)}.mg .allsv i{background:var(--gold)}.mg .allsv i svg{stroke:var(--navy)}
+@media(max-width:980px){.tl{margin:0 -18px!important;padding:0 18px 4px!important;scroll-padding-left:18px!important}}
 </style>
 </head>
 <body>
@@ -914,7 +917,7 @@ html{overflow-x:clip}body{overflow-x:clip}
 <a class="brand" href="/"><img src="logo.png" alt="Parakram shield logo" width="56" height="56"><div><b>PARAKRAM</b><small>SECURITY INDIA PVT. LTD.</small></div></a>
 <nav id="nav"><ul>
 <li><a href="/about">About</a></li>
-<li class="dd"><a href="/services">Services<span class="cv"> ▾</span></a><button class="ddt" aria-label="Show services" aria-expanded="false"></button><div class="menu"><div class="mg">@@MEGA@@</div><div class="mp"><div class="art m4" style="position:absolute;inset:0"><div class="rg a"></div><div class="rg b"></div><span class="ai"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span></div><b>Customized security solutions for every environment</b><a href="/services">All services →</a></div></div></li>
+<li class="dd"><a href="/services">Services<span class="cv"> ▾</span></a><button class="ddt" aria-label="Show services" aria-expanded="false"></button><div class="menu"><div class="mg"><a class="allsv" href="/services"><i>@@ALLI@@</i>All Services</a>@@MEGA@@</div><div class="mp"><div class="art m4" style="position:absolute;inset:0"><div class="rg a"></div><div class="rg b"></div><span class="ai"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span></div><b>Customized security solutions for every environment</b><a href="/services">All services →</a></div></div></li>
 <li><a href="/industries">Industries</a></li><li><a href="/why">Why Us</a></li><li><a href="/coverage">Coverage</a></li><li><a href="/careers">Careers</a></li><li><a href="/faq">FAQ</a></li><li><a href="/contact">Contact</a></li><li class="mcta"><a class="btn btn-g" href="/planner">Plan Your Security →</a><a class="btn btn-n" href="tel:+919105909006">Call +91 91059 09006</a></li><li class="mfoot"><b>Parakram Security India Pvt. Ltd.</b><span>6A Sandesh Nagar, Kankhal, Haridwar 249408</span><a href="mailto:info@parakramindia.org">info@parakramindia.org</a></li></ul></nav>
 <a class="btn btn-n" href="/planner" style="padding:13px 24px">Plan Your Security</a><button class="burger" id="bg" aria-label="Menu" aria-expanded="false"><i></i></button>
 </div></header>
@@ -1087,7 +1090,7 @@ t2.onclick=()=>lenis?lenis.scrollTo(0,{duration:1.3}):scrollTo({top:0,behavior:'
 /* mobile nav */
 const nav=document.getElementById('nav'),bg=document.getElementById('bg');
 bg.onclick=()=>{const o=nav.classList.toggle('open');document.body.classList.toggle('no',o);bg.classList.toggle('x',o);bg.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':''};
-$('nav a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');document.body.classList.remove('no');bg.classList.remove('x');bg.setAttribute('aria-expanded','false');document.body.style.overflow=''}));
+$('nav a').forEach(a=>a.addEventListener('click',e=>{if(a.parentNode.classList.contains('dd')&&mq('(max-width:1180px)')){e.preventDefault();const o=a.parentNode.classList.toggle('o');const b=a.parentNode.querySelector('.ddt');if(b)b.setAttribute('aria-expanded',o);return}nav.classList.remove('open');document.body.classList.remove('no');bg.classList.remove('x');bg.setAttribute('aria-expanded','false');document.body.style.overflow=''}));
 $('.ddt').forEach(b=>b.addEventListener('click',()=>{const o=b.parentNode.classList.toggle('o');b.setAttribute('aria-expanded',o)}));
 /* reveal */
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
@@ -1149,7 +1152,7 @@ const pw=document.querySelector('.pw');if(pw)sw(pw,d=>{const tb=$('.tb');const k
 prog(document.getElementById('jr'),document.getElementById('jfill'),$('.jm'));
 prog(document.getElementById('steps'),document.querySelector('#steps .fl'),$('#steps .sp'))})();
 /* services autoplay (starts when visible, stops on any interaction) */
-(()=>{const sx=document.querySelector('.sx');if(!sx||REDUCE)return;const tb=$('.tb');let t=null,stopped=false,vis=false;
+(()=>{const sx=document.querySelector('.sx');if(!sx||REDUCE||mq('(max-width:980px)')||mq('(pointer:coarse)'))return;const tb=$('.tb');let t=null,stopped=false,vis=false;
 const idx=()=>tb.findIndex(b=>b.classList.contains('on'));
 const step=()=>{if(stopped||!vis)return;tb[(idx()+1)%tb.length].click();sx.classList.remove('auto');void sx.offsetWidth;sx.classList.add('auto');t=setTimeout(step,5500)};
 const start=()=>{clearTimeout(t);sx.classList.add('auto');t=setTimeout(step,5500)};
@@ -1229,6 +1232,7 @@ mapsvg=f'<svg id="imap" viewBox="0 0 {M["w"]} {M["h"]}" role="img" aria-label="I
 for _k in ['ind','com','hos','bnk','res','edu']:
     html=html.replace('@@IC_'+_k+'@@',IC[_k])
     html=html.replace('@@I_'+_k+'@@',IC[{'ind':'ind','com':'com','hos':'hos','bnk':'bnk','res':'res','edu':'edu'}[_k]])
+html=html.replace('@@ALLI@@','<svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>')
 html=(html.replace('@@MAP@@',mapsvg).replace('@@MEGA@@',mega).replace('@@TABS@@',tabs).replace('@@PANELS@@',panels).replace('@@CHIPS@@',chips)
  .replace('@@MARQUEE@@',''.join(f'<span>{x}</span>' for x in mq*2))
  .replace('@@OPTS@@',''.join(f'<option>{h}</option>' for _,h,*_ in SV)))
