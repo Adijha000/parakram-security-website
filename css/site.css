@@ -869,3 +869,13 @@ html{overflow-x:clip}body{overflow-x:clip}
 .rvfix .imgc .im{clip-path:none!important}
 .rvfix2 .rv:not(.in){opacity:1!important;transform:none!important}
 .rvfix2 .imgc .im{clip-path:none!important}
+
+/* phones: tapping triggers :hover/:focus-within, so force the drawer submenu into flow */
+@media(max-width:1180px){
+.dd:hover .menu,.dd:focus-within .menu,.dd .menu,.dd.o .menu{position:static!important;left:auto!important;right:auto!important;top:auto!important;transform:none!important;width:100%!important;min-width:0!important;max-width:none!important;box-shadow:none!important;border:0!important;border-radius:12px!important;margin:8px 0!important;flex:0 0 100%}
+.dd:not(.o) .menu,.dd:not(.o):hover .menu,.dd:not(.o):focus-within .menu{display:none!important}
+.dd.o .menu{display:block!important;opacity:1!important;visibility:visible!important;overflow:visible}
+.dd .mg{display:block!important;padding:6px!important}
+.dd .mg a{display:flex!important;width:100%}
+.dd .mp{display:none!important}
+}
