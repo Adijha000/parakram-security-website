@@ -885,3 +885,13 @@ html{overflow-x:clip}body{overflow-x:clip}
 .svcs .chips{grid-template-columns:1fr 1fr;gap:8px}
 .svcs .chp span{padding:11px 12px;font-size:13.5px;background:#fff}
 @media(max-width:480px){.svcs .chips{grid-template-columns:1fr}}
+
+/* phone header: larger logo */
+@media(max-width:980px){
+.nav{height:62px!important}header.sh .nav{height:62px!important}
+nav{top:62px!important}header.sh nav{top:62px!important}
+.brand{gap:10px}.brand img{height:46px!important;width:46px!important}
+.brand b{font-size:17.5px!important;letter-spacing:.05em}.brand small{font-size:8px!important;letter-spacing:.14em!important}
+.subnav{top:62px!important}main section[id]{scroll-margin-top:34px}
+}
+@media(max-width:380px){.brand img{height:42px!important;width:42px!important}.brand b{font-size:15.5px!important}.brand small{display:none!important}}
