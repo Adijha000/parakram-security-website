@@ -244,9 +244,9 @@ def services_page():
     for s in SERV:
         cs+=f'<a class="rcard rv" href="/services/{s[0]}"><div class="rt">{art(s[2],(SERV.index(s)%8)+1)}</div><div class="rb"><b>{s[1].replace("&","&amp;")}</b><span>{s[6]}</span><em>View details →</em></div></a>'
     o+=trustbar()
-    o+=f'<section class="blk"><div class="wrap">{sech("Find your solution","What do you need to protect?","Choose the closest match and we will take you to the right service.")}{paths_grid()}</div></section>'
     o+=f'<section class="blk"><div class="wrap">{sech("Our Services","Choose the protection your site needs.","Every service is planned around your premises, your people and your risk. Open a service to see what it covers and how we deploy.")}<div class="rel r2">{cs}</div></div></section>'
-    o+=f'<section class="blk alt"><div class="wrap">{sech("How we work","From first call to daily supervision.")}{STEPS}</div></section>'
+    o+=f'<section class="blk alt"><div class="wrap">{sech("Find your solution","What do you need to protect?","Choose the closest match and we will take you to the right service.")}{paths_grid()}</div></section>'
+    o+=f'<section class="blk"><div class="wrap">{sech("How we work","From first call to daily supervision.")}{STEPS}</div></section>'
     o+=f'<section class="blk"><div class="wrap">{sech("Not sure where to start?","Tell us about your site.","Use the Security Planner to describe what you need. We will come back with a plan customized to your site, with no obligation.")}<div class="cta"><a class="btn btn-n" href="/planner">Open the Security Planner →</a></div></div></section>'
     o+=expect_band()
     o+=cta2('Ready to secure your premises?','Speak to our team. We are available 24/7.')
