@@ -23,15 +23,23 @@ $('nav a').forEach(a=>a.addEventListener('click',e=>{if(a.parentNode.classList.c
 $('.ddt').forEach(b=>b.addEventListener('click',()=>{const o=b.parentNode.classList.toggle('o');b.setAttribute('aria-expanded',o)}));
 
 /* reveal */
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:0,rootMargin:'0px 0px -4% 0px'});
 const io2=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io2.unobserve(e.target)}}),{threshold:.3});
 $('.vals>div,.stats .stat,.fg>div,.covt li,.faq details,.fq details').forEach(e=>e.classList.add('rv'));
 $('.rv').forEach(e=>{const sib=[...e.parentNode.children].filter(c=>c.classList.contains('rv'));e.style.setProperty('--d',Math.min(sib.indexOf(e),6)*90+'ms');io.observe(e)});
 
+
+/* reveal failsafe: never leave content hidden */
+var revealNow=()=>{const vh=innerHeight;$('.rv:not(.in)').forEach(e=>{const r=e.getBoundingClientRect();if(r.top<vh*.98&&r.bottom>-40)e.classList.add('in')});$('.h2:not(.in)').forEach(e=>{const r=e.getBoundingClientRect();if(r.top<vh*.98&&r.bottom>-40)e.classList.add('in')})};
+addEventListener('scroll',revealNow,{passive:true});addEventListener('resize',revealNow);addEventListener('load',revealNow);addEventListener('pageshow',revealNow);addEventListener('orientationchange',revealNow);
+var __rv=0;var __ti=setInterval(()=>{revealNow();if(++__rv>12)clearInterval(__ti)},700);revealNow();
+
+try{
 /* counters */
 const co=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,n=+el.dataset.n,d=+el.dataset.d||0,s=el.dataset.s||'';let t0=null;const f=t=>{t0=t0||t;const p=Math.min((t-t0)/1800,1),v=n*(1-Math.pow(1-p,4));el.innerHTML=(d?v.toFixed(d):Math.round(v).toLocaleString('en-IN'))+(s?'<sup>'+s+'</sup>':'');if(p<1)requestAnimationFrame(f)};requestAnimationFrame(f);co.unobserve(el)}),{threshold:.5});
 $('[data-n]').forEach(e=>co.observe(e));
 
+}catch(e){}
 try{
 /* hero slider */
 (()=>{const sl=$('.slide'),ds=$('.d');let i=0,t;const go=n=>{i=(n+sl.length)%sl.length;sl.forEach((e,k)=>e.classList.toggle('on',k==i));ds.forEach((e,k)=>{e.classList.remove('on');if(k==i){void e.offsetWidth;e.classList.add('on')}});clearTimeout(t);t=setTimeout(()=>go(i+1),6500)};

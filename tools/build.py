@@ -38,6 +38,7 @@ html=r'''<!DOCTYPE html>
 <meta name="description" content="Parakram Security India Pvt. Ltd. Manned, armed, industrial, commercial, residential, hospital, educational and bank &amp; ATM security. 9+ years, 1,500+ trained professionals, 24/7. Haridwar, Uttarakhand.">
 <meta name="theme-color" content="#050d3a">
 <link rel="canonical" href="https://parakram-website.vercel.app/"><meta property="og:site_name" content="Parakram Security India"><meta property="og:title" content="Parakram Security India | Your Safety Is Our Mission"><meta property="og:description" content="Professionally managed private security with trained, verified personnel, customized solutions, 24/7."><meta property="og:type" content="website"><meta property="og:url" content="https://parakram-website.vercel.app/"><meta property="og:image" content="https://parakram-website.vercel.app/og-image.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Parakram Security India | Your Safety Is Our Mission"><meta name="twitter:description" content="Manned, armed, industrial, commercial, residential, hospital, educational and bank &amp; ATM security. 24/7."><meta name="twitter:image" content="https://parakram-website.vercel.app/og-image.jpg">
+<script>window.addEventListener("error",function(){document.documentElement.classList.add("rvfix")});setTimeout(function(){document.documentElement.classList.add("rvfix2")},6000)</script>
 <script>try{if(!sessionStorage.getItem("intro")&&!matchMedia("(prefers-reduced-motion:reduce)").matches)document.documentElement.classList.add("intro")}catch(e){}</script>
 <link rel="icon" href="favicon.png" type="image/png"><link rel="apple-touch-icon" href="logo.png"><link rel="preload" as="image" href="img/parakram-hero-portrait.webp" type="image/webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -668,8 +669,9 @@ html.intro{overflow:hidden}html.intro #intro{display:grid;animation:introFail .0
 .pbn .lead{color:#c9cef0;font-size:19px;max-width:600px;margin:20px 0 30px}
 .pbn .cta{display:flex;gap:12px;flex-wrap:wrap}
 .pbn .pm2{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}.pm2 span{font-size:12.5px;font-weight:600;border:1px solid rgba(255,255,255,.22);padding:7px 14px;border-radius:999px;color:#dfe3ff;background:rgba(255,255,255,.05)}
-.pbn .bc,.pbn h1,.pbn .lead,.pbn .cta,.pbn .pm2{opacity:0;transform:translateY(18px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
-.pbn.in .bc,.pbn.in h1,.pbn.in .lead,.pbn.in .cta,.pbn.in .pm2{opacity:1;transform:none}.pbn.in h1{transition-delay:.08s}.pbn.in .lead{transition-delay:.16s}.pbn.in .cta{transition-delay:.24s}.pbn.in .pm2{transition-delay:.32s}
+.pbn .bc,.pbn h1,.pbn .lead,.pbn .cta,.pbn .pm2{animation:pbin .9s var(--ease) both}
+.pbn h1{animation-delay:.08s}.pbn .lead{animation-delay:.16s}.pbn .cta{animation-delay:.24s}.pbn .pm2{animation-delay:.32s}
+@keyframes pbin{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 .subnav{position:sticky;top:80px;z-index:50;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line);transition:top .5s var(--ease)}
 .subnav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:58px}
 .subnav .snv{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}.subnav .snv::-webkit-scrollbar{display:none}
@@ -909,6 +911,11 @@ html{overflow-x:clip}body{overflow-x:clip}
 .rcard b{font-size:16px!important}.rcard em{margin-top:8px!important}
 .rt .ai{width:50%!important}.rt .rg.a{width:120%}.rt .rg.b{width:170%}
 }
+
+.rvfix .rv,.rvfix .h2 .w>span{opacity:1!important;transform:none!important}
+.rvfix .imgc .im{clip-path:none!important}
+.rvfix2 .rv:not(.in){opacity:1!important;transform:none!important}
+.rvfix2 .imgc .im{clip-path:none!important}
 </style>
 </head>
 <body>
@@ -1103,10 +1110,15 @@ bg.onclick=()=>{const o=nav.classList.toggle('open');document.body.classList.tog
 $('nav a').forEach(a=>a.addEventListener('click',e=>{if(a.parentNode.classList.contains('dd')&&mq('(max-width:1180px)')){e.preventDefault();const o=a.parentNode.classList.toggle('o');const b=a.parentNode.querySelector('.ddt');if(b)b.setAttribute('aria-expanded',o);return}nav.classList.remove('open');document.body.classList.remove('no');bg.classList.remove('x');bg.setAttribute('aria-expanded','false');document.body.style.overflow=''}));
 $('.ddt').forEach(b=>b.addEventListener('click',()=>{const o=b.parentNode.classList.toggle('o');b.setAttribute('aria-expanded',o)}));
 /* reveal */
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:0,rootMargin:'0px 0px -4% 0px'});
 const io2=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io2.unobserve(e.target)}}),{threshold:.3});
 $('.vals>div,.stats .stat,.fg>div,.covt li,.faq details,.fq details').forEach(e=>e.classList.add('rv'));
 $('.rv').forEach(e=>{const sib=[...e.parentNode.children].filter(c=>c.classList.contains('rv'));e.style.setProperty('--d',Math.min(sib.indexOf(e),6)*90+'ms');io.observe(e)});
+
+/* reveal failsafe: never leave content hidden */
+var revealNow=()=>{const vh=innerHeight;$('.rv:not(.in)').forEach(e=>{const r=e.getBoundingClientRect();if(r.top<vh*.98&&r.bottom>-40)e.classList.add('in')});$('.h2:not(.in)').forEach(e=>{const r=e.getBoundingClientRect();if(r.top<vh*.98&&r.bottom>-40)e.classList.add('in')})};
+addEventListener('scroll',revealNow,{passive:true});addEventListener('resize',revealNow);addEventListener('load',revealNow);addEventListener('pageshow',revealNow);addEventListener('orientationchange',revealNow);
+var __rv=0;var __ti=setInterval(()=>{revealNow();if(++__rv>12)clearInterval(__ti)},700);revealNow();
 /* counters */
 const co=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,n=+el.dataset.n,d=+el.dataset.d||0,s=el.dataset.s||'';let t0=null;const f=t=>{t0=t0||t;const p=Math.min((t-t0)/1800,1),v=n*(1-Math.pow(1-p,4));el.innerHTML=(d?v.toFixed(d):Math.round(v).toLocaleString('en-IN'))+(s?'<sup>'+s+'</sup>':'');if(p<1)requestAnimationFrame(f)};requestAnimationFrame(f);co.unobserve(el)}),{threshold:.5});
 $('[data-n]').forEach(e=>co.observe(e));
