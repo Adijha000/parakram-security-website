@@ -879,3 +879,9 @@ html{overflow-x:clip}body{overflow-x:clip}
 .dd .mg a{display:flex!important;width:100%}
 .dd .mp{display:none!important}
 }
+
+.svcs .lb,.frm .lb{display:block;font-size:13px;font-weight:700;color:var(--navy);margin-bottom:8px}
+.contact form .svcs .lb{color:var(--navy)}
+.svcs .chips{grid-template-columns:1fr 1fr;gap:8px}
+.svcs .chp span{padding:11px 12px;font-size:13.5px;background:#fff}
+@media(max-width:480px){.svcs .chips{grid-template-columns:1fr}}

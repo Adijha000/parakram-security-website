@@ -207,7 +207,7 @@ tabs.forEach(b=>b.onclick=()=>set(b.dataset.m));set('full')})();
 }catch(e){}
 try{
 /* quick enquiry cards */
-$('.qc form').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();const g=n=>f.querySelector('[name='+n+']').value.trim();if(!g('p')){toast('Please enter your phone number.');return}const m=`Hello Parakram Security, I am interested in ${f.dataset.s}.%0A*Name:* ${g('n')}%0A*Phone:* ${g('p')}`;open(`https://wa.me/${PH}?text=${m}`,'_blank');toast('Opening WhatsApp...')}));
+$('.qc form').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();const g=n=>f.querySelector('[name='+n+']').value.trim();if(!g('p')){toast('Please enter your phone number.');return}const m=`Hello Parakram Security, I am interested in ${encodeURIComponent(f.dataset.s)}.%0A*Name:* ${encodeURIComponent(g('n'))}%0A*Phone:* ${encodeURIComponent(g('p'))}`;open(`https://wa.me/${PH}?text=${m}`,'_blank');toast('Opening WhatsApp...')}));
 
 }catch(e){}
 try{
@@ -246,11 +246,11 @@ try{
 (()=>{const w=document.getElementById('wz'),st=$('#wz .step'),bars=$('#wz .st i');let s=0;const show=n=>{s=n;st.forEach((e,k)=>e.classList.toggle('on',k==n));bars.forEach((e,k)=>e.classList.toggle('on',k<=n))};
 $('#wz [data-nx]').forEach(b=>b.onclick=()=>show(Math.min(s+1,3)));$('#wz [data-bk]').forEach(b=>b.onclick=()=>show(Math.max(s-1,0)));
 document.getElementById('send').onclick=()=>{const sv=$('#wz .step:first-of-type input:checked').map(i=>i.value).join(', ')||'Not specified';const v=n=>(document.querySelector(`#wz input[name=${n}]:checked`)||{}).value||'Not specified';
-const m=`Hello Parakram Security, I'd like a security plan.%0A%0A*Services:* ${sv}%0A*Site type:* ${v('site')}%0A*Team size:* ${v('g')}%0A*Coverage:* ${v('sh')}%0A*Name:* ${pn.value}%0A*Phone:* ${pp.value}%0A*Location:* ${pc.value}`;if(!pp.value.trim()){toast('Please enter your phone number.');pp.focus();return}open(`https://wa.me/${PH}?text=${m}`,'_blank');toast('Opening WhatsApp with your plan…')}})();
+const m=`Hello Parakram Security, I'd like a security plan.%0A%0A*Services:* ${encodeURIComponent(sv)}%0A*Site type:* ${encodeURIComponent(v('site'))}%0A*Team size:* ${encodeURIComponent(v('g'))}%0A*Coverage:* ${encodeURIComponent(v('sh'))}%0A*Name:* ${encodeURIComponent(pn.value)}%0A*Phone:* ${encodeURIComponent(pp.value)}%0A*Location:* ${encodeURIComponent(pc.value)}`;if(!pp.value.trim()){toast('Please enter your phone number.');pp.focus();return}open(`https://wa.me/${PH}?text=${m}`,'_blank');toast('Opening WhatsApp with your plan…')}})();
 
 }catch(e){}
 try{
 /* contact form -> WhatsApp */
-cf.onsubmit=e=>{e.preventDefault();const m=`Hello Parakram Security,%0A*Name:* ${cn.value}%0A*Phone:* ${cp.value}%0A*Email:* ${ce.value}%0A*Service:* ${cs.value||'Not specified'}%0A*Details:* ${cm.value}`;open(`https://wa.me/${PH}?text=${m}`,'_blank');toast('Opening WhatsApp…')};
+cf.onsubmit=e=>{e.preventDefault();const m=`Hello Parakram Security,%0A*Name:* ${encodeURIComponent(cn.value)}%0A*Phone:* ${encodeURIComponent(cp.value)}%0A*Email:* ${encodeURIComponent(ce.value)}%0A*Services:* ${encodeURIComponent($('#cf input[name=svc]:checked').map(i=>i.value).join(', ')||'Not specified')}%0A*Details:* ${encodeURIComponent(cm.value)}`;open(`https://wa.me/${PH}?text=${m}`,'_blank');toast('Opening WhatsApp…')};
 
 }catch(e){}

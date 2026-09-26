@@ -926,6 +926,12 @@ html{overflow-x:clip}body{overflow-x:clip}
 .dd .mg a{display:flex!important;width:100%}
 .dd .mp{display:none!important}
 }
+
+.svcs .lb,.frm .lb{display:block;font-size:13px;font-weight:700;color:var(--navy);margin-bottom:8px}
+.contact form .svcs .lb{color:var(--navy)}
+.svcs .chips{grid-template-columns:1fr 1fr;gap:8px}
+.svcs .chp span{padding:11px 12px;font-size:13.5px;background:#fff}
+@media(max-width:480px){.svcs .chips{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -1084,7 +1090,7 @@ html{overflow-x:clip}body{overflow-x:clip}
 <p><b>Phone</b><a href="tel:+919105909006">+91 91059 09006</a> · <a href="tel:+918937000489">+91 89370 00489</a> · <a href="tel:+919105909000">+91 91059 09000</a></p>
 <p><b>Email</b><a href="mailto:info@parakramindia.org">info@parakramindia.org</a></p><p><b>Availability</b>Open 24/7</p><a class="dir" href="https://www.google.com/maps/search/?api=1&amp;query=6A+Sandesh+Nagar+Kankhal+Haridwar+249408" target="_blank" rel="noopener">Get directions →</a></div>
 <form id="cf"><input required id="cn" placeholder="Full name"><input required id="cp" type="tel" placeholder="Phone"><input class="full" id="ce" type="email" placeholder="Email">
-<select class="full" id="cs"><option value="">Service required</option>@@OPTS@@</select>
+<div class="full svcs"><span class="lb">Services required (select one or more)</span><div class="chips">@@CHIPS2@@</div></div>
 <textarea class="full" id="cm" placeholder="Tell us about your site and requirements"></textarea>
 <button class="btn btn-n full" style="justify-content:center">Get Started →</button></form></div></div></section>
 </main>
@@ -1223,7 +1229,7 @@ const M={day:{h:h=>h>=6&&h<18,t:'Day shift: guards on duty from morning to eveni
 const set=k=>{tabs.forEach(b=>b.classList.toggle('on',b.dataset.m===k));spans.forEach((s,i)=>{setTimeout(()=>s.classList.toggle('on',M[k].h(i)),i*14)});cap.textContent=M[k].t};
 tabs.forEach(b=>b.onclick=()=>set(b.dataset.m));set('full')})();
 /* quick enquiry cards */
-$('.qc form').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();const g=n=>f.querySelector('[name='+n+']').value.trim();if(!g('p')){toast('Please enter your phone number.');return}const m=`Hello Parakram Security, I am interested in ${f.dataset.s}.%0A*Name:* ${g('n')}%0A*Phone:* ${g('p')}`;open(`https://wa.me/${PH}?text=${m}`,'_blank');toast('Opening WhatsApp...')}));
+$('.qc form').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();const g=n=>f.querySelector('[name='+n+']').value.trim();if(!g('p')){toast('Please enter your phone number.');return}const m=`Hello Parakram Security, I am interested in ${encodeURIComponent(f.dataset.s)}.%0A*Name:* ${encodeURIComponent(g('n'))}%0A*Phone:* ${encodeURIComponent(g('p'))}`;open(`https://wa.me/${PH}?text=${m}`,'_blank');toast('Opening WhatsApp...')}));
 /* resume upload */
 (()=>{const f=document.getElementById('cvf');if(!f)return;f.onsubmit=null;const fi=document.getElementById('vf'),drop=document.getElementById('drop'),ok=document.getElementById('fileok'),st=document.getElementById('cvst'),btn=document.getElementById('cvb');let file=null;const MAX=3*1024*1024;
 const say=(c,h)=>{st.className='cvst '+c;st.innerHTML=h};
@@ -1253,9 +1259,9 @@ if(!REDUCE){const ps=$('.sp2i img,.mos img,.pbn .pbg');if(ps.length){let t=0;con
 (()=>{const w=document.getElementById('wz'),st=$('#wz .step'),bars=$('#wz .st i');let s=0;const show=n=>{s=n;st.forEach((e,k)=>e.classList.toggle('on',k==n));bars.forEach((e,k)=>e.classList.toggle('on',k<=n))};
 $('#wz [data-nx]').forEach(b=>b.onclick=()=>show(Math.min(s+1,3)));$('#wz [data-bk]').forEach(b=>b.onclick=()=>show(Math.max(s-1,0)));
 document.getElementById('send').onclick=()=>{const sv=$('#wz .step:first-of-type input:checked').map(i=>i.value).join(', ')||'Not specified';const v=n=>(document.querySelector(`#wz input[name=${n}]:checked`)||{}).value||'Not specified';
-const m=`Hello Parakram Security, I'd like a security plan.%0A%0A*Services:* ${sv}%0A*Site type:* ${v('site')}%0A*Team size:* ${v('g')}%0A*Coverage:* ${v('sh')}%0A*Name:* ${pn.value}%0A*Phone:* ${pp.value}%0A*Location:* ${pc.value}`;if(!pp.value.trim()){toast('Please enter your phone number.');pp.focus();return}open(`https://wa.me/${PH}?text=${m}`,'_blank');toast('Opening WhatsApp with your plan…')}})();
+const m=`Hello Parakram Security, I'd like a security plan.%0A%0A*Services:* ${encodeURIComponent(sv)}%0A*Site type:* ${encodeURIComponent(v('site'))}%0A*Team size:* ${encodeURIComponent(v('g'))}%0A*Coverage:* ${encodeURIComponent(v('sh'))}%0A*Name:* ${encodeURIComponent(pn.value)}%0A*Phone:* ${encodeURIComponent(pp.value)}%0A*Location:* ${encodeURIComponent(pc.value)}`;if(!pp.value.trim()){toast('Please enter your phone number.');pp.focus();return}open(`https://wa.me/${PH}?text=${m}`,'_blank');toast('Opening WhatsApp with your plan…')}})();
 /* contact form -> WhatsApp */
-cf.onsubmit=e=>{e.preventDefault();const m=`Hello Parakram Security,%0A*Name:* ${cn.value}%0A*Phone:* ${cp.value}%0A*Email:* ${ce.value}%0A*Service:* ${cs.value||'Not specified'}%0A*Details:* ${cm.value}`;open(`https://wa.me/${PH}?text=${m}`,'_blank');toast('Opening WhatsApp…')};
+cf.onsubmit=e=>{e.preventDefault();const m=`Hello Parakram Security,%0A*Name:* ${encodeURIComponent(cn.value)}%0A*Phone:* ${encodeURIComponent(cp.value)}%0A*Email:* ${encodeURIComponent(ce.value)}%0A*Services:* ${encodeURIComponent($('#cf input[name=svc]:checked').map(i=>i.value).join(', ')||'Not specified')}%0A*Details:* ${encodeURIComponent(cm.value)}`;open(`https://wa.me/${PH}?text=${m}`,'_blank');toast('Opening WhatsApp…')};
 </script>
 </body></html>'''
 mq=['Trained &amp; Verified Personnel','Customized Solutions','24/7 Availability','Support for Multiple Sites','Professionalism','Integrity','Courtesy','Your Safety Is Our Mission']
@@ -1265,6 +1271,7 @@ for _k in ['ind','com','hos','bnk','res','edu']:
     html=html.replace('@@IC_'+_k+'@@',IC[_k])
     html=html.replace('@@I_'+_k+'@@',IC[{'ind':'ind','com':'com','hos':'hos','bnk':'bnk','res':'res','edu':'edu'}[_k]])
 html=html.replace('@@ALLI@@','<svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>')
+html=html.replace('@@CHIPS2@@',chips.replace('<input type="checkbox"','<input type="checkbox" name="svc"'))
 html=(html.replace('@@MAP@@',mapsvg).replace('@@MEGA@@',mega).replace('@@TABS@@',tabs).replace('@@PANELS@@',panels).replace('@@CHIPS@@',chips)
  .replace('@@MARQUEE@@',''.join(f'<span>{x}</span>' for x in mq*2))
  .replace('@@OPTS@@',''.join(f'<option>{h}</option>' for _,h,*_ in SV)))
